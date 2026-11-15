@@ -1,0 +1,229 @@
+{
+  "run_id": "validation-c0697ed30f0e61",
+  "configuration_signature": "c0697ed30f0e61ce012262b5942f912a5fb59a617579e6a047dfb8008097d40b",
+  "run_code_commit": "4eda5f87c87147f8f79dfde47ebef19bf4646837",
+  "utc_start": "2026-11-15T16:48:21.245967+00:00",
+  "slurm_job": "61347410",
+  "field": {
+    "id": "validation",
+    "ra_deg": 35.76859318301772,
+    "dec_deg": -4.838157357975341,
+    "core_radius_deg": 0.6,
+    "read_radius_deg": 0.8099999999999999,
+    "mjd_min": 57007.03137043336,
+    "mjd_max": 57039.170921773446,
+    "exclude_des": false
+  },
+  "config": {
+    "schema_version": 1,
+    "inventory_file": "inputs/deep-inventory.npy",
+    "image_root": "/global/cfs/cdirs/cosmo/staging",
+    "gaia_root": "/global/cfs/cdirs/cosmo/data/gaia/edr3/healpix",
+    "sweep_root": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/south/sweep/11.0",
+    "selection": {
+      "selection_magnitude_max": 23.5,
+      "selection_max_window_days": 105,
+      "core_radius_deg": 1.3,
+      "exploration_radius_deg": 0.9,
+      "motion_buffer_deg": 0.45,
+      "max_ccds_validation": 850,
+      "max_ccds_exploration": 420,
+      "exploration_min_mjd": 58484
+    },
+    "extract": {
+      "catalog_snr": 4.25,
+      "detect_sigma": 1.5,
+      "min_area": 4,
+      "minimum_good_fraction": 0.6,
+      "aperture_fwhm": 1.15
+    },
+    "filter": {
+      "search_snr": 5.0,
+      "min_edge_pix": 10,
+      "max_mask_fraction": 0.08,
+      "min_fwhm_ratio": 0.45,
+      "max_axis_ratio": 2.2,
+      "astrom_floor_arcsec": 0.15,
+      "max_astrom_scatter_arcsec": 0.4,
+      "min_gaia_matches": 12,
+      "gaia_calibration_radius_arcsec": 2.0,
+      "gaia_static_max_arcsec": 0.85,
+      "ambiguous_radius_arcsec": 1.25,
+      "persistent_radius_arcsec": 0.75,
+      "persistent_min_nights": 3,
+      "persistent_min_span_days": 30,
+      "excess_sigma": 5.0,
+      "coadd_relative_floor": 0.18
+    },
+    "link": {
+      "min_distance_au": 30,
+      "max_distance_au": 300,
+      "bin_half_fraction": 0.05,
+      "escape_padding": 1.15,
+      "season_gap_days": 120,
+      "window_days": 60,
+      "far_window_days": 90,
+      "grow_window_days": 120,
+      "min_arc_days": 7,
+      "min_nights": 4,
+      "min_detections": 6,
+      "envelope_pad_arcsec": 1.8,
+      "growth_radius_arcsec": 6.0,
+      "seed_residual_arcsec": 4.5,
+      "max_pairs_per_bin": 750000,
+      "max_triplets_per_bin": 90000,
+      "max_chains_per_bin": 250,
+      "min_catalog_snr": 8
+    },
+    "fit": {
+      "reduced_chi2_max": 5,
+      "max_standardized_residual": 5,
+      "max_fits": 500,
+      "refine_radius_arcsec": 1.5
+    },
+    "validation": {
+      "truth_match_arcsec": 1.25,
+      "seed": 617225,
+      "null_repeats": 1,
+      "injection_objects": 0
+    }
+  },
+  "python": "3.11.13 (main, Jun  5 2025, 13:12:00) [GCC 11.2.0]",
+  "dependencies": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "astropy": "7.1.1",
+    "fitsio": "1.3.0",
+    "sep": "1.4.1",
+    "jplephem": "2.23"
+  },
+  "status": "partial",
+  "path": "/pscratch/sd/y/yunao/legacy-tno/runs/validation-c0697ed30f0e61",
+  "stages": {
+    "extract_and_clean": {
+      "n_raw": 1612244,
+      "n_calibrated": 1612244,
+      "classes": {
+        "artifact_flagged": 122073,
+        "ambiguous_static_match": 1150323,
+        "static_confident": 229738,
+        "quality_rejected": 76970,
+        "transient_clean": 33140
+      },
+      "seconds": 2.020306657999754
+    },
+    "blind_link_and_fit": {
+      "truncated": [
+        {
+          "season": 0,
+          "distance_bin": 11,
+          "z_min": 90.26781483007862,
+          "z_max": 99.76969007535007,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 12,
+          "z_min": 81.67088008435684,
+          "z_max": 90.26781483007862,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 13,
+          "z_min": 73.8927010287038,
+          "z_max": 81.67088008435684,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 14,
+          "z_min": 66.855300930732,
+          "z_max": 73.8927010287038,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 15,
+          "z_min": 60.48812941351943,
+          "z_max": 66.855300930732,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 16,
+          "z_min": 54.72735518366044,
+          "z_max": 60.48812941351943,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 17,
+          "z_min": 49.51522611854992,
+          "z_max": 54.72735518366044,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 18,
+          "z_min": 44.79949029773564,
+          "z_max": 49.51522611854992,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 19,
+          "z_min": 40.532872174141765,
+          "z_max": 44.79949029773564,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 20,
+          "z_min": 36.672598633747306,
+          "z_max": 40.532872174141765,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 21,
+          "z_min": 33.179970192438034,
+          "z_max": 36.672598633747306,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 22,
+          "z_min": 30.01997303125346,
+          "z_max": 33.179970192438034,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 23,
+          "z_min": 30.0,
+          "z_max": 30.01997303125346,
+          "reason": "pair budget exceeded"
+        }
+      ],
+      "pair_counts": {
+        "pairs": 13083974,
+        "triplets": 481991,
+        "chains": 22
+      },
+      "fit_counts": {
+        "attempted": 18,
+        "accepted": 2,
+        "residual_rejected": 16
+      },
+      "link_input": 28341,
+      "excluded_by_bright_search": 4799,
+      "seconds": 81.4142367420136
+    }
+  },
+  "catalog_code_signature": "d04c3e6972156bfa997b2eaec4afd8028efedbceeed2323ba11a0eb6944474ae",
+  "catalog_parent": "/pscratch/sd/y/yunao/legacy-tno/runs/validation-97d3348bc5c4b3",
+  "wall_seconds": 165.29444370197598,
+  "max_rss_kib": 3020284,
+  "utc_end": "2026-11-15T16:51:06.568053+00:00"
+}

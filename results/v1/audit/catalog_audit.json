@@ -1,0 +1,1677 @@
+{
+  "source": "DR11 DECam CP",
+  "product_samples": [
+    {
+      "expnum": 229046,
+      "ccdname": "S29",
+      "band": "r",
+      "mjd": 56535.00644024,
+      "exptime": 300.0,
+      "ccdzpt": 24.983800888061523,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5LS/CP20130830/c4d_130831_000916_ooi_r_ls11.fits.fz",
+          "size": 324576000,
+          "header": {
+            "MJD-OBS": 56535.00644024,
+            "DATE-OBS": "2013-08-31T00:09:16.436923",
+            "EXPTIME": 300.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V5.5LS",
+            "PLPROCID": "9e1685f",
+            "CHECKSUM": "ZVaadSTRZSZXdSZX",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 2095.30615234375,
+          "pixel_examples": [
+            1995.6585693359375,
+            1996.347412109375,
+            1998.7581787109375,
+            2006.449462890625,
+            2007.627685546875,
+            2008.1151123046875,
+            2008.2000732421875,
+            2008.3583984375
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5LS/CP20130830/c4d_130831_000916_oow_r_ls11.fits.fz",
+          "size": 265026240,
+          "header": {
+            "MJD-OBS": 56535.00644024,
+            "DATE-OBS": "2013-08-31T00:09:16.436923",
+            "EXPTIME": 300.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V5.5LS",
+            "PLPROCID": "9e1685f",
+            "CHECKSUM": "UTXUWSVSUSVSUSVS",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.002092337002977729,
+          "pixel_examples": [
+            6.625794776482508e-05,
+            6.656909681623802e-05,
+            6.66323394398205e-05,
+            6.698147626593709e-05,
+            6.756629591109231e-05,
+            6.822797877248377e-05,
+            6.834165833424777e-05,
+            6.881105218781158e-05
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5LS/CP20130830/c4d_130831_000916_ood_r_ls11.fits.fz",
+          "size": 7130880,
+          "header": {
+            "MJD-OBS": 56535.00644024,
+            "DATE-OBS": "2013-08-31T00:09:16.436923",
+            "EXPTIME": 300.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V5.5LS",
+            "PLPROCID": "9e1685f",
+            "CHECKSUM": "YHWac9WVZGWaa9WU",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            3,
+            4
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00229/00229046/decam-00229046-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00229/00229046/decam-00229046-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00229/00229046/decam-00229046-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00229/00229046/decam-00229046-S29.fits": false
+      }
+    },
+    {
+      "expnum": 339232,
+      "ccdname": "S29",
+      "band": "g",
+      "mjd": 56858.02277925,
+      "exptime": 40.0,
+      "ccdzpt": 25.139684677124023,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.2.2LS/CP20140719/c4d_140720_003419_ooi_g_ls10.fits.fz",
+          "size": 316788480,
+          "header": {
+            "MJD-OBS": 56858.02277925,
+            "DATE-OBS": "2014-07-20T00:32:48.127203",
+            "EXPTIME": 40.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V5.2.2LS",
+            "PLPROCID": "9abca81",
+            "CHECKSUM": "LeNfLdLeLdLeLdLe",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 49.85709762573242,
+          "pixel_examples": [
+            34.27040100097656,
+            34.8508415222168,
+            36.44242477416992,
+            36.85482406616211,
+            37.15558624267578,
+            37.311805725097656,
+            37.524349212646484,
+            37.70998764038086
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.2.2LS/CP20140719/c4d_140720_003419_oow_g_ls10.fits.fz",
+          "size": 257074560,
+          "header": {
+            "MJD-OBS": 56858.02277925,
+            "DATE-OBS": "2014-07-20T00:32:48.127203",
+            "EXPTIME": 40.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V5.2.2LS",
+            "PLPROCID": "9abca81",
+            "CHECKSUM": "BgIiDdHZBdHfBdHZ",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.06468574702739716,
+          "pixel_examples": [
+            0.0,
+            0.041288748383522034,
+            0.04309088736772537,
+            0.04359284043312073,
+            0.04854903742671013,
+            0.05105827748775482,
+            0.051147229969501495,
+            0.051181916147470474
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.2.2LS/CP20140719/c4d_140720_003419_ood_g_ls10.fits.fz",
+          "size": 4605120,
+          "header": {
+            "MJD-OBS": 56858.02277925,
+            "DATE-OBS": "2014-07-20T00:32:48.127203",
+            "EXPTIME": 40.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V5.2.2LS",
+            "PLPROCID": "9abca81",
+            "CHECKSUM": "LUMkORJiLRJiLRJi",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00339/00339232/decam-00339232-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00339/00339232/decam-00339232-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00339/00339232/decam-00339232-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00339/00339232/decam-00339232-S29.fits": false
+      }
+    },
+    {
+      "expnum": 396017,
+      "ccdname": "S29",
+      "band": "z",
+      "mjd": 57031.11534695,
+      "exptime": 90.0,
+      "ccdzpt": 24.951446533203125,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20150108/c4d_150109_024826_ooi_z_ls9.fits.fz",
+          "size": 318916800,
+          "header": {
+            "MJD-OBS": 57031.11534695,
+            "DATE-OBS": "2015-01-09T02:46:05.976459",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "961e1ae",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 3151.65625,
+          "pixel_examples": [
+            3049.0927734375,
+            3054.369140625,
+            3057.53369140625,
+            3059.498779296875,
+            3062.26953125,
+            3062.33154296875,
+            3062.533447265625,
+            3064.7724609375
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20150108/c4d_150109_024826_oow_z_ls9.fits.fz",
+          "size": 263217600,
+          "header": {
+            "MJD-OBS": 57031.11534695,
+            "DATE-OBS": "2015-01-09T02:46:05.976459",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "961e1ae",
+            "CHECKSUM": "FZGaGYFTFYFYFYFY",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.0011876400094479322,
+          "pixel_examples": [
+            0.0,
+            0.001144762383773923,
+            0.0011451574973762035,
+            0.0011456524953246117,
+            0.001147613162174821,
+            0.0011478806845843792,
+            0.0011484534479677677,
+            0.0011484903516247869
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20150108/c4d_150109_024826_ood_z_ls9.fits.fz",
+          "size": 4737600,
+          "header": {
+            "MJD-OBS": 57031.11534695,
+            "DATE-OBS": "2015-01-09T02:46:05.976459",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "961e1ae",
+            "CHECKSUM": "PHTYPGQYPGQYPGQY",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00396/00396017/decam-00396017-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00396/00396017/decam-00396017-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00396/00396017/decam-00396017-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00396/00396017/decam-00396017-S29.fits": false
+      }
+    },
+    {
+      "expnum": 470029,
+      "ccdname": "S29",
+      "band": "z",
+      "mjd": 57267.24218175,
+      "exptime": 90.0,
+      "ccdzpt": 24.998666763305664,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20150901/c4d_150902_055107_ooi_z_ls9.fits.fz",
+          "size": 319129920,
+          "header": {
+            "MJD-OBS": 57267.24218175,
+            "DATE-OBS": "2015-09-02T05:48:44.503410",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9620724",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 1198.42431640625,
+          "pixel_examples": [
+            1139.222900390625,
+            1142.4385986328125,
+            1142.563720703125,
+            1143.0631103515625,
+            1143.164306640625,
+            1143.5484619140625,
+            1144.036376953125,
+            1144.579345703125
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20150901/c4d_150902_055107_oow_z_ls9.fits.fz",
+          "size": 261866880,
+          "header": {
+            "MJD-OBS": 57267.24218175,
+            "DATE-OBS": "2015-09-02T05:48:44.503410",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9620724",
+            "CHECKSUM": "ZJBbfGBaZGBadGBa",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.00314744608476758,
+          "pixel_examples": [
+            0.0,
+            0.0029877303168177605,
+            0.002994248177856207,
+            0.0029944286216050386,
+            0.0029986784793436527,
+            0.0030034619849175215,
+            0.0030044736340641975,
+            0.0030064054299145937
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20150901/c4d_150902_055107_ood_z_ls9.fits.fz",
+          "size": 5195520,
+          "header": {
+            "MJD-OBS": 57267.24218175,
+            "DATE-OBS": "2015-09-02T05:48:44.503410",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9620724",
+            "CHECKSUM": "j6Nfj6MZj6Mfj6MZ",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00470/00470029/decam-00470029-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00470/00470029/decam-00470029-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00470/00470029/decam-00470029-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00470/00470029/decam-00470029-S29.fits": false
+      }
+    },
+    {
+      "expnum": 535933,
+      "ccdname": "S29",
+      "band": "g",
+      "mjd": 57488.09823838,
+      "exptime": 153.0,
+      "ccdzpt": 24.98263168334961,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20160409/c4d_160410_022448_ooi_g_ls9.fits.fz",
+          "size": 314902080,
+          "header": {
+            "MJD-OBS": 57488.09823838,
+            "DATE-OBS": "2016-04-10T02:21:27.795982",
+            "EXPTIME": 153.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9568910",
+            "CHECKSUM": "E4aBG2VAE2aAE2UA",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 199.05230712890625,
+          "pixel_examples": [
+            170.89511108398438,
+            171.37808227539062,
+            173.17807006835938,
+            174.66629028320312,
+            174.66761779785156,
+            175.02224731445312,
+            175.95578002929688,
+            176.02122497558594
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20160409/c4d_160410_022448_oow_g_ls9.fits.fz",
+          "size": 258408000,
+          "header": {
+            "MJD-OBS": 57488.09823838,
+            "DATE-OBS": "2016-04-10T02:21:27.795982",
+            "EXPTIME": 153.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9568910",
+            "CHECKSUM": "7qUHAnTE7nTEAnTE",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.01842406764626503,
+          "pixel_examples": [
+            -0.22701604664325714,
+            -0.06360018253326416,
+            -0.034672290086746216,
+            -0.028560632839798927,
+            -0.0198809914290905,
+            -0.016979359090328217,
+            -0.01602141559123993,
+            -0.012033971026539803
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20160409/c4d_160410_022448_ood_g_ls9.fits.fz",
+          "size": 5397120,
+          "header": {
+            "MJD-OBS": 57488.09823838,
+            "DATE-OBS": "2016-04-10T02:21:27.795982",
+            "EXPTIME": 153.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9568910",
+            "CHECKSUM": "DaaDEXWCDaaCDWUC",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            6
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00535/00535933/decam-00535933-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00535/00535933/decam-00535933-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00535/00535933/decam-00535933-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00535/00535933/decam-00535933-S29.fits": false
+      }
+    },
+    {
+      "expnum": 600546,
+      "ccdname": "S29",
+      "band": "z",
+      "mjd": 57729.17935904,
+      "exptime": 90.0,
+      "ccdzpt": 24.96436882019043,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2/CP20161206/c4d_161207_042037_ooi_z_ls9.fits.fz",
+          "size": 318620160,
+          "header": {
+            "MJD-OBS": 57729.17935904,
+            "DATE-OBS": "2016-12-07T04:18:16.620876",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V4.8.2",
+            "PLPROCID": "95044db",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 1983.100830078125,
+          "pixel_examples": [
+            1895.5841064453125,
+            1907.4407958984375,
+            1909.4254150390625,
+            1911.60400390625,
+            1912.4053955078125,
+            1912.7109375,
+            1914.3243408203125,
+            1915.4093017578125
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2/CP20161206/c4d_161207_042037_oow_z_ls9.fits.fz",
+          "size": 262880640,
+          "header": {
+            "MJD-OBS": 57729.17935904,
+            "DATE-OBS": "2016-12-07T04:18:16.620876",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V4.8.2",
+            "PLPROCID": "95044db",
+            "CHECKSUM": "Y8KAZ7I5Y7IAY7I5",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.001891756895929575,
+          "pixel_examples": [
+            0.0,
+            0.00179828773252666,
+            0.001800923957489431,
+            0.0018092234386131167,
+            0.001814181450754404,
+            0.0018145954236388206,
+            0.0018149892566725612,
+            0.0018155437428504229
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2/CP20161206/c4d_161207_042037_ood_z_ls9.fits.fz",
+          "size": 4881600,
+          "header": {
+            "MJD-OBS": 57729.17935904,
+            "DATE-OBS": "2016-12-07T04:18:16.620876",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V4.8.2",
+            "PLPROCID": "95044db",
+            "CHECKSUM": "bgWAdgV8bgVAbgV7",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00600/00600546/decam-00600546-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00600/00600546/decam-00600546-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00600/00600546/decam-00600546-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00600/00600546/decam-00600546-S29.fits": false
+      }
+    },
+    {
+      "expnum": 660479,
+      "ccdname": "S29",
+      "band": "g",
+      "mjd": 57955.26452462,
+      "exptime": 100.0,
+      "ccdzpt": 24.961050033569336,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2/CP20170720/c4d_170721_062326_ooi_g_ls9.fits.fz",
+          "size": 320549760,
+          "header": {
+            "MJD-OBS": 57955.26452462,
+            "DATE-OBS": "2017-07-21T06:20:54.927047",
+            "EXPTIME": 100.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V4.8.2",
+            "PLPROCID": "951ccd4",
+            "CHECKSUM": "kmeAmmc4kmc9kmc9",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 107.84201049804688,
+          "pixel_examples": [
+            86.69113159179688,
+            88.36447143554688,
+            88.46881866455078,
+            89.4721450805664,
+            89.7517318725586,
+            89.7847900390625,
+            89.83991241455078,
+            89.94001770019531
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2/CP20170720/c4d_170721_062326_oow_g_ls9.fits.fz",
+          "size": 262186560,
+          "header": {
+            "MJD-OBS": 57955.26452462,
+            "DATE-OBS": "2017-07-21T06:20:54.927047",
+            "EXPTIME": 100.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V4.8.2",
+            "PLPROCID": "951ccd4",
+            "CHECKSUM": "claAciV4ciZ9ciZ9",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.03343849629163742,
+          "pixel_examples": [
+            0.0,
+            0.026671329513192177,
+            0.026940573006868362,
+            0.026949377730488777,
+            0.027081001549959183,
+            0.02724427357316017,
+            0.02762633189558983,
+            0.02769230492413044
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2/CP20170720/c4d_170721_062326_ood_g_ls9.fits.fz",
+          "size": 5031360,
+          "header": {
+            "MJD-OBS": 57955.26452462,
+            "DATE-OBS": "2017-07-21T06:20:54.927047",
+            "EXPTIME": 100.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V4.8.2",
+            "PLPROCID": "951ccd4",
+            "CHECKSUM": "kadAlTc9kYcAkYc7",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00660/00660479/decam-00660479-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00660/00660479/decam-00660479-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00660/00660479/decam-00660479-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00660/00660479/decam-00660479-S29.fits": false
+      }
+    },
+    {
+      "expnum": 707435,
+      "ccdname": "S29",
+      "band": "z",
+      "mjd": 58113.17036658,
+      "exptime": 90.0,
+      "ccdzpt": 24.97414207458496,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.9/CP20171225/c4d_171226_040519_ooi_z_ls9.fits.fz",
+          "size": 323210880,
+          "header": {
+            "MJD-OBS": 58113.17036658,
+            "DATE-OBS": "2017-12-26T04:05:19.672816",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V4.9",
+            "PLPROCID": "9857641",
+            "CHECKSUM": "SjAUUh3SSh9SSh9S",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 1687.074951171875,
+          "pixel_examples": [
+            1611.946044921875,
+            1613.5340576171875,
+            1615.5950927734375,
+            1616.6529541015625,
+            1618.316162109375,
+            1619.211181640625,
+            1620.0404052734375,
+            1621.6181640625
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.9/CP20171225/c4d_171226_040519_oow_z_ls9.fits.fz",
+          "size": 266538240,
+          "header": {
+            "MJD-OBS": 58113.17036658,
+            "DATE-OBS": "2017-12-26T04:05:19.672816",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V4.9",
+            "PLPROCID": "9857641",
+            "CHECKSUM": "IimTJgmSIgmSIgmS",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.0022202865220606327,
+          "pixel_examples": [
+            0.0,
+            0.002100530778989196,
+            0.0021052833180874586,
+            0.0021079708822071552,
+            0.0021107301581650972,
+            0.0021129599772393703,
+            0.002114378148689866,
+            0.002116601914167404
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.9/CP20171225/c4d_171226_040519_ood_z_ls9.fits.fz",
+          "size": 5420160,
+          "header": {
+            "MJD-OBS": 58113.17036658,
+            "DATE-OBS": "2017-12-26T04:05:19.672816",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V4.9",
+            "PLPROCID": "9857641",
+            "CHECKSUM": "SU9UUT9RST9RST9R",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00707/00707435/decam-00707435-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00707/00707435/decam-00707435-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00707/00707435/decam-00707435-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00707/00707435/decam-00707435-S29.fits": false
+      }
+    },
+    {
+      "expnum": 769182,
+      "ccdname": "S29",
+      "band": "r",
+      "mjd": 58366.2918675,
+      "exptime": 40.0,
+      "ccdzpt": 25.363384246826172,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20180904/c4d_180905_070017_ooi_r_ls9.fits.fz",
+          "size": 278674560,
+          "header": {
+            "MJD-OBS": 58366.2918675,
+            "DATE-OBS": "2018-09-05T07:00:17.352102",
+            "EXPTIME": 40.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "964e95c",
+            "CHECKSUM": "Ine3Kme0Ime0Ime0",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 150.09568786621094,
+          "pixel_examples": [
+            122.9572525024414,
+            123.34796905517578,
+            123.70433807373047,
+            127.58937072753906,
+            128.33897399902344,
+            128.50924682617188,
+            128.99417114257812,
+            129.31192016601562
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20180904/c4d_180905_070017_oow_r_ls9.fits.fz",
+          "size": 227784960,
+          "header": {
+            "MJD-OBS": 58366.2918675,
+            "DATE-OBS": "2018-09-05T07:00:17.352102",
+            "EXPTIME": 40.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "964e95c",
+            "CHECKSUM": "9kb1HiZ09ib0GiZ0",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.024006614461541176,
+          "pixel_examples": [
+            0.0,
+            0.011900017969310284,
+            0.012641005218029022,
+            0.012896083295345306,
+            0.013018464669585228,
+            0.013235349208116531,
+            0.013367640785872936,
+            0.013599115423858166
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20180904/c4d_180905_070017_ood_r_ls9.fits.fz",
+          "size": 3833280,
+          "header": {
+            "MJD-OBS": 58366.2918675,
+            "DATE-OBS": "2018-09-05T07:00:17.352102",
+            "EXPTIME": 40.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "964e95c",
+            "CHECKSUM": "HXf3IWc0HWc0HWc0",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00769/00769182/decam-00769182-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00769/00769182/decam-00769182-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00769/00769182/decam-00769182-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00769/00769182/decam-00769182-S29.fits": false
+      }
+    },
+    {
+      "expnum": 823085,
+      "ccdname": "S29",
+      "band": "i",
+      "mjd": 58528.13149899,
+      "exptime": 90.0,
+      "ccdzpt": 25.29530906677246,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5.2LS/CP20190213/c4d_190214_030921_ooi_i_ls11.fits.fz",
+          "size": 329466240,
+          "header": {
+            "MJD-OBS": 58528.13149899,
+            "DATE-OBS": "2019-02-14T03:09:21.513018",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V5.5.2LS",
+            "PLPROCID": "a27b26a",
+            "CHECKSUM": "GaArGS4oGY9oGY9o",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 756.798583984375,
+          "pixel_examples": [
+            685.542724609375,
+            698.3482055664062,
+            700.978271484375,
+            701.065673828125,
+            701.1668701171875,
+            701.5059204101562,
+            701.9147338867188,
+            702.3265380859375
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5.2LS/CP20190213/c4d_190214_030921_oow_i_ls11.fits.fz",
+          "size": 266434560,
+          "header": {
+            "MJD-OBS": 58528.13149899,
+            "DATE-OBS": "2019-02-14T03:09:21.513018",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V5.5.2LS",
+            "PLPROCID": "a27b26a",
+            "CHECKSUM": "9W8jDV7i9V7iAV7i",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.004806359298527241,
+          "pixel_examples": [
+            0.0,
+            3.811517672147602e-05,
+            4.0534709114581347e-05,
+            4.0880535379983485e-05,
+            4.091006121598184e-05,
+            4.2269923142157495e-05,
+            4.487849946599454e-05,
+            4.5351291191764176e-05
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5.2LS/CP20190213/c4d_190214_030921_ood_i_ls11.fits.fz",
+          "size": 6750720,
+          "header": {
+            "MJD-OBS": 58528.13149899,
+            "DATE-OBS": "2019-02-14T03:09:21.513018",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V5.5.2LS",
+            "PLPROCID": "a27b26a",
+            "CHECKSUM": "EH87GG64EG64EG64",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1,
+            3,
+            4
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00823/00823085/decam-00823085-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00823/00823085/decam-00823085-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00823/00823085/decam-00823085-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00823/00823085/decam-00823085-S29.fits": false
+      }
+    },
+    {
+      "expnum": 906637,
+      "ccdname": "S29",
+      "band": "i",
+      "mjd": 58794.05748676,
+      "exptime": 90.0,
+      "ccdzpt": 25.29646873474121,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20191106/c4d_191107_012246_ooi_i_v1.fits.fz",
+          "size": 323245440,
+          "header": {
+            "MJD-OBS": 58794.05748676,
+            "DATE-OBS": "2019-11-07T01:22:46.856230",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9608ec2",
+            "CHECKSUM": "kfaalZaTkdaZkZaZ",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 1795.07080078125,
+          "pixel_examples": [
+            1700.804931640625,
+            1714.341064453125,
+            1718.4937744140625,
+            1722.4500732421875,
+            1722.8485107421875,
+            1724.46337890625,
+            1724.9442138671875,
+            1724.9720458984375
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20191106/c4d_191107_012246_oow_i_v1.fits.fz",
+          "size": 266086080,
+          "header": {
+            "MJD-OBS": 58794.05748676,
+            "DATE-OBS": "2019-11-07T01:22:46.856230",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9608ec2",
+            "CHECKSUM": "aYadaXZZaXabaXYZ",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.002042220439761877,
+          "pixel_examples": [
+            0.0,
+            0.00192960724234581,
+            0.001934757106937468,
+            0.0019359337165951729,
+            0.00193794013466686,
+            0.001939139561727643,
+            0.0019408105872571468,
+            0.0019464524229988456
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20191106/c4d_191107_012246_ood_i_v1.fits.fz",
+          "size": 7087680,
+          "header": {
+            "MJD-OBS": 58794.05748676,
+            "DATE-OBS": "2019-11-07T01:22:46.856230",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V4.8.2a",
+            "PLPROCID": "9608ec2",
+            "CHECKSUM": "jPbbjNZZjNabjNYZ",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            6
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00906/00906637/decam-00906637-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00906/00906637/decam-00906637-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00906/00906637/decam-00906637-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00906/00906637/decam-00906637-S29.fits": false
+      }
+    },
+    {
+      "expnum": 976999,
+      "ccdname": "S29",
+      "band": "i",
+      "mjd": 59298.14353662,
+      "exptime": 60.0,
+      "ccdzpt": 25.253433227539062,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.2/CP20210324/c4d_210325_032641_ooi_i_v1.fits.fz",
+          "size": 318156480,
+          "header": {
+            "MJD-OBS": 59298.14353662,
+            "DATE-OBS": "2021-03-25T03:26:41.563844",
+            "EXPTIME": 60.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V5.2",
+            "PLPROCID": "9a325fd",
+            "CHECKSUM": "9nDgJnBZ9nBdGnBZ",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 922.67822265625,
+          "pixel_examples": [
+            857.4105224609375,
+            868.8543701171875,
+            870.0184936523438,
+            871.1472778320312,
+            871.352294921875,
+            872.33056640625,
+            873.3557739257812,
+            873.440673828125
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.2/CP20210324/c4d_210325_032641_oow_i_v1.fits.fz",
+          "size": 264744000,
+          "header": {
+            "MJD-OBS": 59298.14353662,
+            "DATE-OBS": "2021-03-25T03:26:41.563844",
+            "EXPTIME": 60.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V5.2",
+            "PLPROCID": "9a325fd",
+            "CHECKSUM": "6fGc9d9c6dGc6d9c",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.0038692126981914043,
+          "pixel_examples": [
+            0.0,
+            0.0035778870806097984,
+            0.0036099557764828205,
+            0.003618628717958927,
+            0.00362384133040905,
+            0.0036269803531467915,
+            0.003628325881436467,
+            0.0036293717566877604
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.2/CP20210324/c4d_210325_032641_ood_i_v1.fits.fz",
+          "size": 6163200,
+          "header": {
+            "MJD-OBS": 59298.14353662,
+            "DATE-OBS": "2021-03-25T03:26:41.563844",
+            "EXPTIME": 60.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V5.2",
+            "PLPROCID": "9a325fd",
+            "CHECKSUM": "9aIcGX9b9aGbEW9b",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/00976/00976999/decam-00976999-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/00976/00976999/decam-00976999-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/00976/00976999/decam-00976999-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/00976/00976999/decam-00976999-S29.fits": false
+      }
+    },
+    {
+      "expnum": 1119494,
+      "ccdname": "S29",
+      "band": "z",
+      "mjd": 59802.37021966,
+      "exptime": 90.0,
+      "ccdzpt": 0.0,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5/CP20220810/c4d_220811_085306_ooi_z_v1.fits.fz",
+          "size": 317249280,
+          "header": {
+            "MJD-OBS": 59802.37021966,
+            "DATE-OBS": "2022-08-11T08:53:06.978267",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V5.5",
+            "PLPROCID": "9e54cc4",
+            "CHECKSUM": "9HNAA9K64EKA99K5",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 19408.36328125,
+          "pixel_examples": [
+            19108.1171875,
+            19156.373046875,
+            19167.365234375,
+            19168.423828125,
+            19170.71875,
+            19180.494140625,
+            19183.966796875,
+            19186.5703125
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5/CP20220810/c4d_220811_085306_oow_z_v1.fits.fz",
+          "size": 268686720,
+          "header": {
+            "MJD-OBS": 59802.37021966,
+            "DATE-OBS": "2022-08-11T08:53:06.978267",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V5.5",
+            "PLPROCID": "9e54cc4",
+            "CHECKSUM": "iDIAl9G3iAG9i9G9",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.00017607469635549933,
+          "pixel_examples": [
+            0.0,
+            0.00017018926155287772,
+            0.00017063689301721752,
+            0.000170989558682777,
+            0.00017134884546976537,
+            0.00017143377044703811,
+            0.00017156200192403048,
+            0.00017162224685307592
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5/CP20220810/c4d_220811_085306_ood_z_v1.fits.fz",
+          "size": 4688640,
+          "header": {
+            "MJD-OBS": 59802.37021966,
+            "DATE-OBS": "2022-08-11T08:53:06.978267",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V5.5",
+            "PLPROCID": "9e54cc4",
+            "CHECKSUM": "5iL9AiJ86iJ8AiJ8",
+            "DATASUM": "0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/01119/01119494/decam-01119494-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/01119/01119494/decam-01119494-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/01119/01119494/decam-01119494-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/01119/01119494/decam-01119494-S29.fits": false
+      }
+    },
+    {
+      "expnum": 1326804,
+      "ccdname": "S29",
+      "band": "i",
+      "mjd": 60564.15431328,
+      "exptime": 90.0,
+      "ccdzpt": 25.28008460998535,
+      "image_hdu": 1,
+      "products": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5.2/CP20240910/c4d_240911_034212_ooi_i_v1.fits.fz",
+          "size": 318300480,
+          "header": {
+            "MJD-OBS": 60564.15431328,
+            "DATE-OBS": "2024-09-11T03:42:12.667331",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "image",
+            "PLVER": "V5.5.2",
+            "PLPROCID": "a49c208",
+            "CHECKSUM": "lMa4mJW3lJa3lJU3",
+            "DATASUM": "         0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 1066.37939453125,
+          "pixel_examples": [
+            1005.9059448242188,
+            1006.6455078125,
+            1011.7489624023438,
+            1012.162353515625,
+            1012.7766723632812,
+            1012.8812255859375,
+            1013.0200805664062,
+            1014.1328735351562
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5.2/CP20240910/c4d_240911_034212_oow_i_v1.fits.fz",
+          "size": 265305600,
+          "header": {
+            "MJD-OBS": 60564.15431328,
+            "DATE-OBS": "2024-09-11T03:42:12.667331",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "wtmap",
+            "PLVER": "V5.5.2",
+            "PLPROCID": "a49c208",
+            "CHECKSUM": "aKa5aJZ5aJa5aJW5",
+            "DATASUM": "         0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "float32",
+          "median": 0.003429544623941183,
+          "pixel_examples": [
+            0.0,
+            0.00320357084274292,
+            0.0032039396464824677,
+            0.0032141946721822023,
+            0.003215768840163946,
+            0.0032195928506553173,
+            0.003226210828870535,
+            0.003233072580769658
+          ],
+          "status": "readable"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/staging/decam/CP/V5.5.2/CP20240910/c4d_240911_034212_ood_i_v1.fits.fz",
+          "size": 4775040,
+          "header": {
+            "MJD-OBS": 60564.15431328,
+            "DATE-OBS": "2024-09-11T03:42:12.667331",
+            "EXPTIME": 90.0,
+            "PROCTYPE": "InstCal",
+            "PRODTYPE": "dqmask",
+            "PLVER": "V5.5.2",
+            "PLPROCID": "a49c208",
+            "CHECKSUM": "lAa5n1T4l8Z4l8Z4",
+            "DATASUM": "         0",
+            "OBS-LONG": 70.81489,
+            "OBS-LAT": -30.16606,
+            "OBS-ELEV": 2215.0,
+            "EXTNAME": "S29",
+            "CTYPE1": "RA---TPV",
+            "CTYPE2": "DEC--TPV"
+          },
+          "dtype": "int32",
+          "median": 0.0,
+          "pixel_examples": [
+            0,
+            1
+          ],
+          "status": "readable"
+        }
+      ],
+      "se_paths": {
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/decam/se/01326/01326804/decam-01326804-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/decam/se/01326/01326804/decam-01326804-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr10/calib/decam/se/01326/01326804/decam-01326804-S29.fits": false,
+        "/global/cfs/cdirs/cosmo/data/legacysurvey/dr9/calib/decam/se/01326/01326804/decam-01326804-S29.fits": false
+      }
+    }
+  ],
+  "independent_se_table_found": false,
+  "cp_extraction_smoke": [
+    {
+      "expnum": 229046,
+      "error": "CP DQ encoding unverified for V5.5LS"
+    },
+    {
+      "file": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20131010/c4d_131011_081634_ooi_r_ls9.fits.fz",
+      "expnum": 242857,
+      "ccdname": "S29",
+      "band": "r",
+      "start_mjd": 56576.34484528,
+      "middle_mjd": 56576.34536611333,
+      "extracted": 4488,
+      "retained": 1748,
+      "dq_counts": [
+        8058286,
+        289091,
+        0,
+        2596,
+        19202,
+        6825,
+        324,
+        0,
+        0
+      ],
+      "sky_adu": 343.84320068359375,
+      "sky_rms_adu": 10.153482437133789,
+      "usable_fraction": 0.9620285700505377,
+      "nx": 2046,
+      "ny": 4094,
+      "weight_rms_adu": 9.332833290100098,
+      "flux_gain_e_per_adu": 3.8507844313797,
+      "ccdzpt": 25.323020935058594,
+      "source_backend": "SEP windowed centroid and matched detection",
+      "bunit": "ADU per DR11 data model",
+      "snr_quantiles": [
+        5.125733041763306,
+        9.902722835540771,
+        54.26811714172363
+      ],
+      "mag_quantiles": [
+        20.98691349029541,
+        23.01286220550537,
+        23.741174697875977
+      ]
+    },
+    {
+      "file": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20131205/c4d_131206_042957_ooi_r_ls9.fits.fz",
+      "expnum": 260873,
+      "ccdname": "S29",
+      "band": "r",
+      "start_mjd": 56632.18576213,
+      "middle_mjd": 56632.18628296333,
+      "extracted": 5042,
+      "retained": 1667,
+      "dq_counts": [
+        8071233,
+        289091,
+        0,
+        664,
+        6292,
+        9040,
+        4,
+        0,
+        0
+      ],
+      "sky_adu": 343.1755065917969,
+      "sky_rms_adu": 9.705657958984375,
+      "usable_fraction": 0.9635769819792072,
+      "nx": 2046,
+      "ny": 4094,
+      "weight_rms_adu": 9.089228630065918,
+      "flux_gain_e_per_adu": 3.82875706361218,
+      "ccdzpt": 25.343626022338867,
+      "source_backend": "SEP windowed centroid and matched detection",
+      "bunit": "ADU per DR11 data model",
+      "snr_quantiles": [
+        5.100824356079102,
+        9.823694229125977,
+        68.6250137329102
+      ],
+      "mag_quantiles": [
+        20.75164222717285,
+        23.083742141723633,
+        23.815899658203126
+      ]
+    },
+    {
+      "expnum": 280890,
+      "error": "CP DQ encoding unverified for V5.5LS"
+    }
+  ]
+}

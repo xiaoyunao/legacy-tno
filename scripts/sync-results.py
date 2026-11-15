@@ -12,7 +12,7 @@ TABLES = (
     "known_recovery_summary.json", "candidate_summary.json", "blind_known_plot_data.json",
     "null_test_summary.json", "injection_recovery_summary.json",
     "stage_counts.json", "performance_summary.json", "plot_data.json",
-    "known_miss_diagnostic.json", "stress_recovery_summary.json", "identity_revision.json",
+    "known_miss_diagnostic.json", "stress_recovery_summary.json", "identity_revision.json", "candidate_review.json", "bound_fit_sensitivity.json",
 )
 AUDIT = ("catalog_audit.json", "inventory_summary.json", "smoke_catalogs.json", "selected-fields.json", "anonymous_orbit_benchmark.json", "selected-deep-validation.json")
 FIGURES = ("coverage_nights", "cadence", "catalog_diagnostics", "gaia_residuals",
@@ -28,7 +28,7 @@ def permitted_file(path):
         return p.name in TABLES or p.name in AUDIT
     if len(p.parts)!=2 or p.parts[0]!="figures" or p.suffix not in (".png",".pdf"):
         return False
-    return p.stem in FIGURES or re.fullmatch(r"known_(track|residuals)_C\d{4}",p.stem) is not None
+    return p.stem in FIGURES or re.fullmatch(r"(known_(track|residuals)|candidate_stamps)_C\d{4}",p.stem) is not None
 
 
 def run():

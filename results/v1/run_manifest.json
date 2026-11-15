@@ -1,0 +1,209 @@
+{
+  "status": "partial",
+  "checked_utc": "2026-11-15T16:58:16.749488+00:00",
+  "archive": "DESI Legacy Surveys DR11 DECam",
+  "persistent_project": "/global/homes/y/yunao/projects/legacy-tno",
+  "work": "/pscratch/sd/y/yunao/legacy-tno",
+  "repository": "https://github.com/xiaoyunao/legacy-tno",
+  "unique_known_blind_objects": [
+    "2013 TV158",
+    "2017 OF201"
+  ],
+  "verified_files": 236,
+  "search_limits": "Distance-bin truncations, small bounded pilots, DES plus targeted Horizons identity",
+  "run_products": [
+    {
+      "label": "exploration",
+      "run_id": "exploration-f742d8b20d9ab4",
+      "run_code_commit": "0cd453a2c19ce6dc4035ee2b28eff973e2de8e37",
+      "slurm_job": "61347072",
+      "slurm_state": "CANCELLED by submitting user",
+      "exit_code": "0:0",
+      "pipeline_status": "running",
+      "remote_path": "/pscratch/sd/y/yunao/legacy-tno/runs/exploration-f742d8b20d9ab4",
+      "truncated_bins": 18,
+      "identity_revision": {},
+      "counts": {
+        "known_status_unresolved": 1
+      },
+      "des_validation_counts": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F_guided_only": 0
+      },
+      "finished_products": [
+        "exposure_summary",
+        "search_domain_summary",
+        "candidate_summary",
+        "known_recovery_summary",
+        "null_test_summary"
+      ]
+    },
+    {
+      "label": "exploration-narrow",
+      "run_id": "exploration-cb6d398cc191bd",
+      "run_code_commit": "d92781a1e259b3c58430ea629b5d3a3b9a606672",
+      "slurm_job": "61347537",
+      "slurm_state": "COMPLETED",
+      "exit_code": "0:0",
+      "pipeline_status": "completed",
+      "remote_path": "/pscratch/sd/y/yunao/legacy-tno/runs/exploration-cb6d398cc191bd",
+      "truncated_bins": 0,
+      "identity_revision": {},
+      "counts": {},
+      "des_validation_counts": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F_guided_only": 0
+      },
+      "finished_products": [
+        "exposure_summary",
+        "search_domain_summary",
+        "candidate_summary",
+        "known_recovery_summary",
+        "injection_recovery_summary",
+        "null_test_summary"
+      ]
+    },
+    {
+      "label": "of201",
+      "run_id": "validation-7185aa85687161",
+      "run_code_commit": "0cd453a2c19ce6dc4035ee2b28eff973e2de8e37",
+      "slurm_job": "61347163",
+      "slurm_state": "COMPLETED",
+      "exit_code": "0:0",
+      "pipeline_status": "partial",
+      "remote_path": "/pscratch/sd/y/yunao/legacy-tno/runs/validation-7185aa85687161",
+      "truncated_bins": 13,
+      "identity_revision": {},
+      "counts": {
+        "known_status_unresolved": 4,
+        "known_recovered_blind": 1
+      },
+      "des_validation_counts": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F_guided_only": 0
+      },
+      "finished_products": [
+        "exposure_summary",
+        "search_domain_summary",
+        "candidate_summary",
+        "known_recovery_summary",
+        "null_test_summary"
+      ]
+    },
+    {
+      "label": "validation",
+      "run_id": "validation-c36e0a643fc984",
+      "run_code_commit": "e56fee42cb2ffb6440fbac3ac6fcdc3a6a5dfba5",
+      "slurm_job": "61346087",
+      "slurm_state": "COMPLETED",
+      "exit_code": "0:0",
+      "pipeline_status": "field_processed",
+      "remote_path": "/pscratch/sd/y/yunao/legacy-tno/runs/validation-c36e0a643fc984",
+      "truncated_bins": 0,
+      "identity_revision": {
+        "des_epoch_tdb_mjd": 57388.5,
+        "identity_code_commit": "d92781a1e259b3c58430ea629b5d3a3b9a606672",
+        "updated_utc": "2026-11-15T16:49:10.905501+00:00",
+        "original_identity": "identity-v1/",
+        "blind_candidate_path": "blind_candidates.json"
+      },
+      "counts": {},
+      "des_validation_counts": {
+        "A": 2,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F_guided_only": 0
+      },
+      "finished_products": [
+        "exposure_summary",
+        "search_domain_summary",
+        "candidate_summary",
+        "known_recovery_summary",
+        "injection_recovery_summary",
+        "null_test_summary"
+      ]
+    },
+    {
+      "label": "validation-bright",
+      "run_id": "validation-c0697ed30f0e61",
+      "run_code_commit": "4eda5f87c87147f8f79dfde47ebef19bf4646837",
+      "slurm_job": "61347410",
+      "slurm_state": "COMPLETED",
+      "exit_code": "0:0",
+      "pipeline_status": "partial",
+      "remote_path": "/pscratch/sd/y/yunao/legacy-tno/runs/validation-c0697ed30f0e61",
+      "truncated_bins": 13,
+      "identity_revision": {},
+      "counts": {
+        "known_recovered_blind": 1,
+        "known_status_unresolved": 1
+      },
+      "des_validation_counts": {
+        "A": 2,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F_guided_only": 0
+      },
+      "finished_products": [
+        "exposure_summary",
+        "search_domain_summary",
+        "candidate_summary",
+        "known_recovery_summary",
+        "null_test_summary"
+      ]
+    },
+    {
+      "label": "validation-deep",
+      "run_id": "validation-97d3348bc5c4b3",
+      "run_code_commit": "e56fee4",
+      "slurm_job": "61346626",
+      "slurm_state": "TIMEOUT",
+      "exit_code": "0:0",
+      "pipeline_status": "running",
+      "remote_path": "/pscratch/sd/y/yunao/legacy-tno/runs/validation-97d3348bc5c4b3",
+      "truncated_bins": 14,
+      "identity_revision": {
+        "des_epoch_tdb_mjd": 57388.5,
+        "identity_code_commit": "d92781a1e259b3c58430ea629b5d3a3b9a606672",
+        "updated_utc": "2026-11-15T16:49:45.660629+00:00",
+        "original_identity": "identity-v1/",
+        "blind_candidate_path": "blind_candidates.json"
+      },
+      "counts": {
+        "known_recovered_blind": 1,
+        "known_status_unresolved": 1
+      },
+      "des_validation_counts": {
+        "A": 2,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": 1,
+        "F_guided_only": 0
+      },
+      "finished_products": [
+        "exposure_summary",
+        "search_domain_summary",
+        "candidate_summary",
+        "known_recovery_summary",
+        "null_test_summary"
+      ]
+    }
+  ]
+}

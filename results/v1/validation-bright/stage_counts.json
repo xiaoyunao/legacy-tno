@@ -1,0 +1,122 @@
+{
+  "extract_and_clean": {
+    "n_raw": 1612244,
+    "n_calibrated": 1612244,
+    "classes": {
+      "artifact_flagged": 122073,
+      "ambiguous_static_match": 1150323,
+      "static_confident": 229738,
+      "quality_rejected": 76970,
+      "transient_clean": 33140
+    },
+    "seconds": 2.020306657999754
+  },
+  "blind_link_and_fit": {
+    "truncated": [
+      {
+        "season": 0,
+        "distance_bin": 11,
+        "z_min": 90.26781483007862,
+        "z_max": 99.76969007535007,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 12,
+        "z_min": 81.67088008435684,
+        "z_max": 90.26781483007862,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 13,
+        "z_min": 73.8927010287038,
+        "z_max": 81.67088008435684,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 14,
+        "z_min": 66.855300930732,
+        "z_max": 73.8927010287038,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 15,
+        "z_min": 60.48812941351943,
+        "z_max": 66.855300930732,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 16,
+        "z_min": 54.72735518366044,
+        "z_max": 60.48812941351943,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 17,
+        "z_min": 49.51522611854992,
+        "z_max": 54.72735518366044,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 18,
+        "z_min": 44.79949029773564,
+        "z_max": 49.51522611854992,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 19,
+        "z_min": 40.532872174141765,
+        "z_max": 44.79949029773564,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 20,
+        "z_min": 36.672598633747306,
+        "z_max": 40.532872174141765,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 21,
+        "z_min": 33.179970192438034,
+        "z_max": 36.672598633747306,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 22,
+        "z_min": 30.01997303125346,
+        "z_max": 33.179970192438034,
+        "reason": "pair budget exceeded"
+      },
+      {
+        "season": 0,
+        "distance_bin": 23,
+        "z_min": 30.0,
+        "z_max": 30.01997303125346,
+        "reason": "pair budget exceeded"
+      }
+    ],
+    "pair_counts": {
+      "pairs": 13083974,
+      "triplets": 481991,
+      "chains": 22
+    },
+    "fit_counts": {
+      "attempted": 18,
+      "accepted": 2,
+      "residual_rejected": 16
+    },
+    "link_input": 28341,
+    "excluded_by_bright_search": 4799,
+    "seconds": 81.4142367420136
+  }
+}

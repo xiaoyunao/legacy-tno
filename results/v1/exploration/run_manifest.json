@@ -1,0 +1,117 @@
+{
+  "run_id": "exploration-f742d8b20d9ab4",
+  "configuration_signature": "f742d8b20d9ab4e42bab130c8ecfb1f9bfb9d936f5d08e3ef939f7ef7775b97d",
+  "run_code_commit": "0cd453a2c19ce6dc4035ee2b28eff973e2de8e37",
+  "utc_start": "2026-11-15T16:32:16.223839+00:00",
+  "slurm_job": "61347072",
+  "field": {
+    "id": "exploration",
+    "ra_deg": 212,
+    "dec_deg": -9,
+    "core_radius_deg": 0.9,
+    "read_radius_deg": 1.35,
+    "mjd_min": 59265.38235186,
+    "mjd_max": 59367.14230483,
+    "exclude_des": true
+  },
+  "config": {
+    "schema_version": 1,
+    "inventory_file": "smoke/inventory.npy",
+    "image_root": "/global/cfs/cdirs/cosmo/staging",
+    "gaia_root": "/global/cfs/cdirs/cosmo/data/gaia/edr3/healpix",
+    "sweep_root": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/south/sweep/11.0",
+    "selection": {
+      "selection_magnitude_max": 23.5,
+      "selection_max_window_days": 105,
+      "core_radius_deg": 1.3,
+      "exploration_radius_deg": 0.9,
+      "motion_buffer_deg": 0.45,
+      "max_ccds_validation": 850,
+      "max_ccds_exploration": 420,
+      "exploration_min_mjd": 58484
+    },
+    "extract": {
+      "catalog_snr": 4.25,
+      "detect_sigma": 1.5,
+      "min_area": 4,
+      "minimum_good_fraction": 0.6,
+      "aperture_fwhm": 1.15
+    },
+    "filter": {
+      "search_snr": 5.0,
+      "min_edge_pix": 10,
+      "max_mask_fraction": 0.08,
+      "min_fwhm_ratio": 0.45,
+      "max_axis_ratio": 2.2,
+      "astrom_floor_arcsec": 0.15,
+      "max_astrom_scatter_arcsec": 0.4,
+      "min_gaia_matches": 12,
+      "gaia_calibration_radius_arcsec": 2.0,
+      "gaia_static_max_arcsec": 0.85,
+      "ambiguous_radius_arcsec": 1.25,
+      "persistent_radius_arcsec": 0.75,
+      "persistent_min_nights": 3,
+      "persistent_min_span_days": 30,
+      "excess_sigma": 5.0,
+      "coadd_relative_floor": 0.18
+    },
+    "link": {
+      "min_distance_au": 30,
+      "max_distance_au": 300,
+      "bin_half_fraction": 0.05,
+      "escape_padding": 1.15,
+      "season_gap_days": 120,
+      "window_days": 60,
+      "far_window_days": 90,
+      "grow_window_days": 120,
+      "min_arc_days": 7,
+      "min_nights": 4,
+      "min_detections": 6,
+      "envelope_pad_arcsec": 1.8,
+      "growth_radius_arcsec": 6.0,
+      "seed_residual_arcsec": 4.5,
+      "max_pairs_per_bin": 750000,
+      "max_triplets_per_bin": 90000,
+      "max_chains_per_bin": 250
+    },
+    "fit": {
+      "reduced_chi2_max": 5,
+      "max_standardized_residual": 5,
+      "max_fits": 500,
+      "refine_radius_arcsec": 1.5
+    },
+    "validation": {
+      "truth_match_arcsec": 1.25,
+      "seed": 617225,
+      "null_repeats": 1,
+      "injection_objects": 32
+    }
+  },
+  "python": "3.11.13 (main, Jun  5 2025, 13:12:00) [GCC 11.2.0]",
+  "dependencies": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "astropy": "7.1.1",
+    "fitsio": "1.3.0",
+    "sep": "1.4.1",
+    "jplephem": "2.23"
+  },
+  "status": "running",
+  "path": "/pscratch/sd/y/yunao/legacy-tno/runs/exploration-f742d8b20d9ab4",
+  "stages": {
+    "extract_and_clean": {
+      "n_raw": 1329446,
+      "n_calibrated": 1329446,
+      "classes": {
+        "artifact_flagged": 75729,
+        "static_confident": 811111,
+        "quality_rejected": 89402,
+        "transient_clean": 16608,
+        "ambiguous_static_match": 336596
+      },
+      "seconds": 21.734750679985154
+    }
+  },
+  "catalog_code_signature": "d04c3e6972156bfa997b2eaec4afd8028efedbceeed2323ba11a0eb6944474ae",
+  "catalog_parent": "/pscratch/sd/y/yunao/legacy-tno/runs/exploration-063425cebcab5f"
+}

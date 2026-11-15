@@ -1,0 +1,198 @@
+{
+  "survey_rows": 18171054,
+  "annotated_rows": 18171054,
+  "distinct_expnum": 300004,
+  "bands": {
+    "Y": 925636,
+    "g": 4832978,
+    "i": 4010848,
+    "r": 4359659,
+    "z": 4041933
+  },
+  "min_mjd": 56535.00644024,
+  "max_mjd": 60564.15431328,
+  "total_depth_only": 4561714,
+  "total_passes": 10766364,
+  "cut_bit_counts": {
+    "0": 0,
+    "1": 925636,
+    "2": 0,
+    "3": 0,
+    "4": 40323,
+    "5": 835074,
+    "6": 2142285,
+    "7": 1105,
+    "8": 60339,
+    "9": 418733,
+    "10": 93131,
+    "11": 161041,
+    "12": 225,
+    "13": 0,
+    "14": 7404660,
+    "15": 2777113,
+    "16": 0,
+    "17": 21600,
+    "18": 0,
+    "19": 0,
+    "20": 0,
+    "21": 0,
+    "22": 0,
+    "23": 0
+  },
+  "input_files": [
+    {
+      "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/survey-ccds-decam-dr11.fits.gz",
+      "bytes": 1368122707,
+      "provider_sha256": "a95a1d3efb17990782d0658383eb9d2f54462c4b0c9cc578add2656d3708f502"
+    },
+    {
+      "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/ccds-annotated-decam-dr11.fits.gz",
+      "bytes": 5289549432,
+      "provider_sha256": "f3948c2f61d4fc467dbc83fa7724b3f6200e7fa0a41f0be5ead864e2123abab5"
+    }
+  ],
+  "inventory_dtype": [
+    [
+      "image_filename",
+      "<U65"
+    ],
+    [
+      "image_hdu",
+      ">i2"
+    ],
+    [
+      "camera",
+      "<U5"
+    ],
+    [
+      "expnum",
+      ">i8"
+    ],
+    [
+      "plver",
+      "<U8"
+    ],
+    [
+      "procdate",
+      "<U19"
+    ],
+    [
+      "plprocid",
+      "<U7"
+    ],
+    [
+      "ccdname",
+      "<U3"
+    ],
+    [
+      "propid",
+      "<U12"
+    ],
+    [
+      "filter",
+      "<U4"
+    ],
+    [
+      "exptime",
+      ">f4"
+    ],
+    [
+      "mjd_obs",
+      ">f8"
+    ],
+    [
+      "fwhm",
+      ">f4"
+    ],
+    [
+      "width",
+      ">i2"
+    ],
+    [
+      "height",
+      ">i2"
+    ],
+    [
+      "crpix1",
+      ">f4"
+    ],
+    [
+      "crpix2",
+      ">f4"
+    ],
+    [
+      "crval1",
+      ">f8"
+    ],
+    [
+      "crval2",
+      ">f8"
+    ],
+    [
+      "cd1_1",
+      ">f4"
+    ],
+    [
+      "cd1_2",
+      ">f4"
+    ],
+    [
+      "cd2_1",
+      ">f4"
+    ],
+    [
+      "cd2_2",
+      ">f4"
+    ],
+    [
+      "ra",
+      ">f8"
+    ],
+    [
+      "dec",
+      ">f8"
+    ],
+    [
+      "ccdzpt",
+      ">f4"
+    ],
+    [
+      "ccd_cuts",
+      ">i8"
+    ]
+  ],
+  "annotated_dtype": [
+    [
+      "camera",
+      "<U5"
+    ],
+    [
+      "expnum",
+      ">i8"
+    ],
+    [
+      "ccdname",
+      "<U3"
+    ],
+    [
+      "sig1",
+      ">f4"
+    ],
+    [
+      "ccd_cuts",
+      ">i8"
+    ],
+    [
+      "meansky",
+      ">f4"
+    ],
+    [
+      "psfdepth",
+      ">f4"
+    ],
+    [
+      "galdepth",
+      ">f4"
+    ]
+  ]
+}

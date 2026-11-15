@@ -1,0 +1,164 @@
+{
+  "method": "observing-night permutation, intra-night offsets preserved",
+  "controls": [
+    {
+      "repeat": 0,
+      "candidates": 2,
+      "fit_counts": {
+        "attempted": 6,
+        "residual_rejected": 4,
+        "accepted": 2
+      },
+      "truncated": [
+        {
+          "season": 0,
+          "distance_bin": 10,
+          "z_min": 99.76969007535007,
+          "z_max": 110.27176271486061,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 11,
+          "z_min": 90.26781483007862,
+          "z_max": 99.76969007535007,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 12,
+          "z_min": 81.67088008435684,
+          "z_max": 90.26781483007862,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 13,
+          "z_min": 73.8927010287038,
+          "z_max": 81.67088008435684,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 14,
+          "z_min": 66.855300930732,
+          "z_max": 73.8927010287038,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 15,
+          "z_min": 60.48812941351943,
+          "z_max": 66.855300930732,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 16,
+          "z_min": 54.72735518366044,
+          "z_max": 60.48812941351943,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 17,
+          "z_min": 49.51522611854992,
+          "z_max": 54.72735518366044,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 18,
+          "z_min": 44.79949029773564,
+          "z_max": 49.51522611854992,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 19,
+          "z_min": 40.532872174141765,
+          "z_max": 44.79949029773564,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 20,
+          "z_min": 36.672598633747306,
+          "z_max": 40.532872174141765,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 21,
+          "z_min": 33.179970192438034,
+          "z_max": 36.672598633747306,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 22,
+          "z_min": 30.01997303125346,
+          "z_max": 33.179970192438034,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 23,
+          "z_min": 30.0,
+          "z_max": 30.01997303125346,
+          "reason": "pair budget exceeded"
+        }
+      ],
+      "night_mapping": [
+        [
+          57006,
+          57017
+        ],
+        [
+          57011,
+          57025
+        ],
+        [
+          57013,
+          57013
+        ],
+        [
+          57017,
+          57011
+        ],
+        [
+          57018,
+          57024
+        ],
+        [
+          57024,
+          57036
+        ],
+        [
+          57025,
+          57032
+        ],
+        [
+          57029,
+          57029
+        ],
+        [
+          57031,
+          57038
+        ],
+        [
+          57032,
+          57006
+        ],
+        [
+          57036,
+          57018
+        ],
+        [
+          57038,
+          57031
+        ]
+      ]
+    }
+  ]
+}

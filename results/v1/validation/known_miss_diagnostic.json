@@ -1,0 +1,564 @@
+[
+  {
+    "target": "2013 RD124",
+    "ephemeris_source": "JPL Horizons W84 astrometric ICRF",
+    "des_horizons_rms_arcsec": 5.118849143369528,
+    "des_horizons_max_sep_arcsec": 7.26716284583101,
+    "matched_within_1p25_arcsec": 0,
+    "epoch_comparison": [
+      {
+        "epoch_tdb_mjd": 57387.5,
+        "rms_arcsec": 10.213745755115566,
+        "residuals_arcsec": [
+          [
+            13.975575562664968,
+            3.8609550544559026
+          ],
+          [
+            13.963279971946463,
+            3.8587608528641173
+          ],
+          [
+            13.95098271289471,
+            3.8565283834248327
+          ],
+          [
+            13.94474745144437,
+            3.855385422776453
+          ],
+          [
+            13.919565114305453,
+            3.850684566300905
+          ],
+          [
+            13.913217312427305,
+            3.8494788442417187
+          ],
+          [
+            13.906837290635783,
+            3.8482577646680856
+          ],
+          [
+            13.90044153888435,
+            3.847026205022859
+          ],
+          [
+            13.894030641042692,
+            3.845786671100645
+          ],
+          [
+            13.887580039569691,
+            3.8445262217131173
+          ],
+          [
+            13.881079080048606,
+            3.8432524594850075
+          ]
+        ]
+      },
+      {
+        "epoch_tdb_mjd": 57388.0,
+        "rms_arcsec": 5.118849143369528,
+        "residuals_arcsec": [
+          [
+            7.0031262255901,
+            1.9411024950472913
+          ],
+          [
+            6.996847061807384,
+            1.9405122076586239
+          ],
+          [
+            6.990499477114267,
+            1.939870049325273
+          ],
+          [
+            6.987257816348287,
+            1.9395288043571952
+          ],
+          [
+            6.974003256747105,
+            1.9380323682441172
+          ],
+          [
+            6.9706229400342865,
+            1.937626326739388
+          ],
+          [
+            6.967210281545834,
+            1.937205865897938
+          ],
+          [
+            6.9637726371146815,
+            1.9367733919387566
+          ],
+          [
+            6.960312574929326,
+            1.9363319378432833
+          ],
+          [
+            6.956816168312782,
+            1.935871436310191
+          ],
+          [
+            6.953276580013928,
+            1.935400530786102
+          ]
+        ]
+      },
+      {
+        "epoch_tdb_mjd": 57388.5,
+        "rms_arcsec": 0.026731679053445034,
+        "residuals_arcsec": [
+          [
+            0.030649261064604697,
+            0.021241987004656623
+          ],
+          [
+            0.030386580251895647,
+            0.02225557341155525
+          ],
+          [
+            0.029988717341337835,
+            0.02320368469817611
+          ],
+          [
+            0.029740678109054917,
+            0.023664133973524328
+          ],
+          [
+            0.028413959622768707,
+            0.02537202903340261
+          ],
+          [
+            0.02800113922637156,
+            0.02576564499056196
+          ],
+          [
+            0.027555852959296818,
+            0.026145779367549814
+          ],
+          [
+            0.027076322854583085,
+            0.02651236731051054
+          ],
+          [
+            0.02656710139662925,
+            0.026868968953368867
+          ],
+          [
+            0.026024892680941093,
+            0.027208390767975182
+          ],
+          [
+            0.025446677057098483,
+            0.027540317099408615
+          ]
+        ]
+      }
+    ],
+    "ccds": [
+      {
+        "expnum": 695965,
+        "ccd": "S20",
+        "mjd": 58071.02219570102,
+        "band": "z",
+        "nearest_sep_arcsec": 8.101131491263905,
+        "nearest_snr": 7.383499622344971,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 1.7252821431362202,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 696512,
+        "ccd": "S20",
+        "mjd": 58073.03614074085,
+        "band": "z",
+        "nearest_sep_arcsec": 4.517181124394054,
+        "nearest_snr": 6.583328723907471,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 3.1050714587782386,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 697214,
+        "ccd": "S20",
+        "mjd": 58075.02645921102,
+        "band": "z",
+        "nearest_sep_arcsec": 3.416530691104179,
+        "nearest_snr": 12.89665699005127,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 2.780146827200367,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 697568,
+        "ccd": "S20",
+        "mjd": 58076.028092861176,
+        "band": "z",
+        "nearest_sep_arcsec": 7.610206232216859,
+        "nearest_snr": 13.059561729431152,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 1.457584138841146,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 698729,
+        "ccd": "S20",
+        "mjd": 58080.02793106111,
+        "band": "z",
+        "nearest_sep_arcsec": 7.259179891592629,
+        "nearest_snr": 24.036449432373047,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 3.231336790269942,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 699106,
+        "ccd": "S20",
+        "mjd": 58081.02679252112,
+        "band": "z",
+        "nearest_sep_arcsec": 8.10156776471437,
+        "nearest_snr": 4.630152702331543,
+        "nearest_class": "quality_rejected",
+        "forced_aperture_snr": 1.2983042438625032,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 699444,
+        "ccd": "S20",
+        "mjd": 58082.0277033709,
+        "band": "z",
+        "nearest_sep_arcsec": 38.97863176208956,
+        "nearest_snr": 9.301814079284668,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 0.6648486455827399,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 699858,
+        "ccd": "S20",
+        "mjd": 58083.02790341107,
+        "band": "z",
+        "nearest_sep_arcsec": 10.96733604053805,
+        "nearest_snr": 10.881905555725098,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 1.8327899516339705,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 700238,
+        "ccd": "S20",
+        "mjd": 58084.02834410081,
+        "band": "z",
+        "nearest_sep_arcsec": 15.876153329915564,
+        "nearest_snr": 251.37416076660156,
+        "nearest_class": "static_confident",
+        "forced_aperture_snr": 2.319949040124904,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 700588,
+        "ccd": "S20",
+        "mjd": 58085.03289959114,
+        "band": "z",
+        "nearest_sep_arcsec": 21.552340803068812,
+        "nearest_snr": 9.887042045593262,
+        "nearest_class": "static_confident",
+        "forced_aperture_snr": -0.056653922420599336,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 700938,
+        "ccd": "S20",
+        "mjd": 58086.04317735089,
+        "band": "z",
+        "nearest_sep_arcsec": 7.4790862531503,
+        "nearest_snr": 5.10764217376709,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 0.33558386550666836,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      }
+    ]
+  },
+  {
+    "target": "2013 RQ157",
+    "ephemeris_source": "JPL Horizons W84 astrometric ICRF",
+    "des_horizons_rms_arcsec": 5.735377910002804,
+    "des_horizons_max_sep_arcsec": 8.138336532376758,
+    "matched_within_1p25_arcsec": 0,
+    "epoch_comparison": [
+      {
+        "epoch_tdb_mjd": 57387.5,
+        "rms_arcsec": 11.460713063553776,
+        "residuals_arcsec": [
+          [
+            14.580950100240754,
+            7.211424982199578
+          ],
+          [
+            14.568925303296203,
+            7.20275958763127
+          ],
+          [
+            14.55737678593031,
+            7.19430538397438
+          ],
+          [
+            14.551693894610153,
+            7.190100874013936
+          ],
+          [
+            14.529910926948117,
+            7.173647622448221
+          ],
+          [
+            14.524707987758722,
+            7.16963110525574
+          ],
+          [
+            14.519589865543487,
+            7.1656503852106725
+          ],
+          [
+            14.514578288182923,
+            7.161709402762234
+          ],
+          [
+            14.509662738511386,
+            7.157810566383427
+          ],
+          [
+            14.504833733114713,
+            7.153939719956983
+          ],
+          [
+            14.500077472891753,
+            7.15009334718561
+          ]
+        ]
+      },
+      {
+        "epoch_tdb_mjd": 57388.0,
+        "rms_arcsec": 5.735377910002804,
+        "residuals_arcsec": [
+          [
+            7.302088275730447,
+            3.5933310907371303
+          ],
+          [
+            7.296665802758518,
+            3.588157811685338
+          ],
+          [
+            7.291613404047533,
+            3.5831455943672723
+          ],
+          [
+            7.289186681165602,
+            3.580668561608225
+          ],
+          [
+            7.280293935573581,
+            3.5710683063724455
+          ],
+          [
+            7.278276840451504,
+            3.56874906249561
+          ],
+          [
+            7.276335910491021,
+            3.5664623995278233
+          ],
+          [
+            7.274483035735281,
+            3.5642070084956115
+          ],
+          [
+            7.272709811898036,
+            3.561986405262199
+          ],
+          [
+            7.271018029472537,
+            3.5597924354307233
+          ],
+          [
+            7.269397809149598,
+            3.557623678491311
+          ]
+        ]
+      },
+      {
+        "epoch_tdb_mjd": 57388.5,
+        "rms_arcsec": 0.03132991546317814,
+        "residuals_arcsec": [
+          [
+            0.023275625028405116,
+            -0.024737075069655307
+          ],
+          [
+            0.02445543204006615,
+            -0.02641834502641178
+          ],
+          [
+            0.025899099717912002,
+            -0.027988686908601578
+          ],
+          [
+            0.026728515597568822,
+            -0.02873830043880951
+          ],
+          [
+            0.03072585360870544,
+            -0.03148580362339374
+          ],
+          [
+            0.031894563008616365,
+            -0.03210783829627747
+          ],
+          [
+            0.03313078350212362,
+            -0.032700509691428556
+          ],
+          [
+            0.03443656779886311,
+            -0.03327037589795256
+          ],
+          [
+            0.03580562410266394,
+            -0.033812813853669944
+          ],
+          [
+            0.037251016962985675,
+            -0.0343299763177524
+          ],
+          [
+            0.03876678669081617,
+            -0.034821188109111244
+          ]
+        ]
+      }
+    ],
+    "ccds": [
+      {
+        "expnum": 695965,
+        "ccd": "S5",
+        "mjd": 58071.02219570102,
+        "band": "z",
+        "nearest_sep_arcsec": 5.476808625944368,
+        "nearest_snr": 287.1589050292969,
+        "nearest_class": "static_confident",
+        "forced_aperture_snr": 3.1123206687530183,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 696512,
+        "ccd": "S5",
+        "mjd": 58073.03614074085,
+        "band": "z",
+        "nearest_sep_arcsec": 4.710635507648456,
+        "nearest_snr": 5.126230716705322,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 0.392278414216319,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 698729,
+        "ccd": "N5",
+        "mjd": 58080.02793106111,
+        "band": "z",
+        "nearest_sep_arcsec": 6.090292950412137,
+        "nearest_snr": 19.377466201782227,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": -0.0263254267515314,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 699106,
+        "ccd": "N5",
+        "mjd": 58081.02679252112,
+        "band": "z",
+        "nearest_sep_arcsec": 9.086275117893882,
+        "nearest_snr": 174.2757568359375,
+        "nearest_class": "static_confident",
+        "forced_aperture_snr": 1.976597120139414,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 699444,
+        "ccd": "N5",
+        "mjd": 58082.0277033709,
+        "band": "z",
+        "nearest_sep_arcsec": 15.126142582403627,
+        "nearest_snr": 4.403509616851807,
+        "nearest_class": "quality_rejected",
+        "forced_aperture_snr": 0.8312952249733888,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 699858,
+        "ccd": "N5",
+        "mjd": 58083.02790341107,
+        "band": "z",
+        "nearest_sep_arcsec": 9.767930545703797,
+        "nearest_snr": 7.346842288970947,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 0.9742659128317364,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 700238,
+        "ccd": "N5",
+        "mjd": 58084.02834410081,
+        "band": "z",
+        "nearest_sep_arcsec": 6.676920841255875,
+        "nearest_snr": 21.885889053344727,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": 0.7651035312958959,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 700588,
+        "ccd": "N5",
+        "mjd": 58085.03289959114,
+        "band": "z",
+        "nearest_sep_arcsec": 10.82639041377482,
+        "nearest_snr": 59.3911247253418,
+        "nearest_class": "static_confident",
+        "forced_aperture_snr": 1.4969175158659707,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      },
+      {
+        "expnum": 700938,
+        "ccd": "N5",
+        "mjd": 58086.04317735089,
+        "band": "z",
+        "nearest_sep_arcsec": 11.739808939238037,
+        "nearest_snr": 7.67454719543457,
+        "nearest_class": "ambiguous_static_match",
+        "forced_aperture_snr": -0.5141279562196976,
+        "mask_at_center": false,
+        "extraction_forced_flags": 0
+      }
+    ]
+  }
+]

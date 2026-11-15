@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate the Chinese report from the reviewed small pilot outputs."""
 from collections import Counter
+import csv
+from statistics import median
 from datetime import date, timedelta
 import json
 from pathlib import Path
@@ -19,7 +21,28 @@ def day(mjd):
 
 
 def report():
+    ids=["validation","validation-deep","validation-bright","of201","exploration","exploration-narrow"]
+    fields=[fid for fid in ids if (RESULTS/fid/"run_manifest.json").exists()]
+    accounting_path=ROOT/"logs"/"slurm-accounting.psv"
+    accounting={}
+    if accounting_path.exists():
+        with accounting_path.open() as f:
+            accounting={r["JobID"]:r for r in csv.DictReader(f,delimiter="|")}
+    recovered=sorted({r["catalog_association"] for field in fields
+                      for r in get(field,"candidate_summary") or []
+                      if r["status"]=="known_recovered_blind"})
     lines=["# Legacy TNO v1 试点运行报告","","状态 **partial**。",""]
+    if recovered:
+        lines.extend([f"DR11 CP 独立提表和匿名关联回收了 **{len(recovered)}** 个已知对象，"
+                      + "、".join(recovered) + "。同一对象在不同阈值分支的复现按一个对象计数。",""])
+    narrow=get("exploration-narrow","search_domain_summary")
+    if narrow and not narrow["truncated"]:
+        e=get("exploration-narrow","exposure_summary")
+        cs=get("exploration-narrow","candidate_summary",) or []
+        lines.extend([f"独立非 DES 小区在孔径 SNR ≥ 8 的冻结条件下完成全部距离箱，核心覆盖 {e['core_covered_deg2']:.3f} 平方度，"
+                      f"{e['n_exp']} 个曝光和 {e['nights']} 个独立夜。通过轨道拟合的候选链 {len(cs)} 条。",""])
+    lines.extend(["持久项目位于 /global/homes/y/yunao/projects/legacy-tno，源表和完整观测成员位于 /pscratch/sd/y/yunao/legacy-tno。",
+                  "","[私人 GitHub 仓库](https://github.com/xiaoyunao/legacy-tno) · [跨运行 manifest](../results/v1/run_manifest.json)",""])
     inventory=get("audit","inventory_summary")
     products=get("audit","catalog_audit")
     if inventory and products:
@@ -31,24 +54,32 @@ def report():
          "",
          "[全表清点](../results/v1/audit/inventory_summary.json) · [产品审计](../results/v1/audit/catalog_audit.json) · [选区评分](../results/v1/audit/selected-fields.json)",""])
     lines += ["## 试点处理范围","",
-              "| 区域 | UTC 日期 | 核心覆盖 deg² | 读取并集 deg² | 核心至少四夜 deg² | CCD 成功/计划 | 曝光 | 夜 |",
-              "|---|---|---:|---:|---:|---:|---:|---:|"]
-    for fid in ("validation","exploration"):
+              "| 区域 | UTC 日期 | 核心覆盖 deg² | 读取并集 deg² | 核心至少四夜 deg² | CCD 成功/计划 | 曝光 | 夜 | 季 |",
+              "|---|---|---:|---:|---:|---:|---:|---:|---:|"]
+    for fid in fields:
         e=get(fid,"exposure_summary")
         if e:
+            metrics=get(fid,"plot_data") or {}
+            seasons=metrics.get("depth_season_coverage",{}).get("seasons","—")
             lines.append(f"| {fid} | {day(e['mjd_min'])} 至 {day(e['mjd_max'])} | "
                          f"{e['core_covered_deg2']:.3f} | {e['read_area_deg2']:.3f} | {e['core_four_nights_deg2']:.3f} | "
-                         f"{e['n_ccd_read']}/{e['n_ccd_requested']} | {e['n_exp']} | {e['nights']} |")
+                         f"{e['n_ccd_read']}/{e['n_ccd_requested']} | {e['n_exp']} | {e['nights']} | {seasons} |")
         else:
-            lines.append(f"| {fid} | 缺阶段统计 | — | — | — | — | — | — |")
+            lines.append(f"| {fid} | 缺阶段统计 | — | — | — | — | — | — | — |")
     lines.extend(["","面积来自 CCD 元数据 TAN 足迹并集，以 0.025° 网格积分。四夜面积按固定天区位置计算。探索区按采样选定并排除 DES 提案 2012B-0001，验证区使用 DES 已知对象的几何机会辅助选区。","",
                   "## 盲关联、测轨和身份","",
                   "SEP 源表保留积分 SNR ≥ 4.25 的测量。主搜索使用 SNR ≥ 5，结合历元 Gaia、Sweep 同波段点源通量及跨夜持久性清理静态源。关联使用距离箱内的视差和太阳逃逸速度限制两夜位移，第三夜容许区含有界径向速度和曲率余量，随后增长到四个独立夜。匿名轨道拟合采用 DE440s 主要天体摄动、CTIO 测站和迭代光行时。拟合完成后才读取 DES 发布表核对身份。",""])
-    for fid in ("validation","exploration"):
+    for fid in fields:
         lines += [f"### {fid}",""]
         manifest=get(fid,"run_manifest")
         if manifest:
-            lines.append(f"运行 {manifest['run_id']}，Slurm {manifest.get('slurm_job')}，代码 {manifest['run_code_commit']}，运行状态 {manifest['status']}。")
+            j=str(manifest.get("slurm_job"))
+            usage=accounting.get(j)
+            slurm=f"，Slurm 状态 {usage['State']}，退出码 {usage['ExitCode']}" if usage else ""
+            lines.append(f"运行 {manifest['run_id']}，Slurm {j}，运行代码 {manifest['run_code_commit']}，管线记录 {manifest['status']}{slurm}。")
+            identity=get(fid,"identity_revision")
+            if identity:
+                lines.append(f"后验身份核对使用 MJD {identity['des_epoch_tdb_mjd']:.1f} TDB，代码 {identity['identity_code_commit']}。")
             if manifest.get("failure"):
                 failure=manifest["failure"]
                 lines.append(f"失败阶段 {failure['stage']}，错误为 {failure['type']}。")
@@ -56,9 +87,15 @@ def report():
         if static:
             lines.append(f"天测校正后的 {sum(static.values()):,} 条检测中，{static.get('static_confident',0):,} 条为可靠静态匹配，{static.get('ambiguous_static_match',0):,} 条为静态邻近歧义，{static.get('transient_clean',0):,} 条进入主盲搜。")
         domain=get(fid,"search_domain_summary")
+        if manifest and "min_catalog_snr" in manifest["config"]["link"]:
+            minimum=manifest["config"]["link"]["min_catalog_snr"]
+            seen=domain.get("link_input") if domain else None
+            lines.append(f"该运行另设关联层孔径 SNR ≥ {minimum:g}。"+(f"有效关联输入 {seen:,} 条。" if seen is not None else ""))
         if domain:
             counts=domain["pair_counts"]
             lines.append(f"累计检查 {counts.get('pairs',0):,} 个距离箱内配对和 {counts.get('triplets',0):,} 个三元组合，生成 {counts.get('chains',0):,} 条链。截断距离箱 {len(domain['truncated'])} 个。")
+        if domain and domain["truncated"]:
+            lines.append("截断分片外的有效面积与轨道机会需要单独估算。下列已知对象计数记录实际证据，回收率分母须避开截断分片。")
         truth=get(fid,"known_recovery_summary")
         if truth:
             k=truth["counts"]
@@ -66,15 +103,30 @@ def report():
             lines.append("")
             for r in truth["objects"]:
                 lines.append(f"- {r['target']}，约 r={r['m_r']:.2f}，几何曝光 {r['A_geometry_exposures']}，原始匹配 {r['B_raw_detections']}，清洁匹配 {r['C_clean_detections']}，结论 {r['outcome']}。")
+        stress=get(fid,"stress_recovery_summary")
+        if stress:
+            lines.append(f"独立 Horizons 四夜压力测试目标 {stress['target']}，覆盖 {stress['A_geometry_exposures']} 个曝光及 {stress['A_geometry_nights']} 夜，原始检测 {stress['B_raw_detections']}，清洁检测 {stress['C_clean_detections']}，D={int(stress['D_linkable'])}，E={int(stress['E_blind'])}。")
         candidates=get(fid,"candidate_summary")
         if candidates is not None:
             counts=Counter(c["status"] for c in candidates)
             lines += ["",f"身份未解决链 {counts['known_status_unresolved']} 条，有污染或身份歧义的链 {counts['contaminated_or_ambiguous']} 条。"]
             for c in candidates:
+                if c["status"]=="known_status_unresolved":
+                    v=c["elements"]
+                    binding="束缚" if v["bound"] else "非束缚"
+                    lines.append(f"- {c['candidate_id']}，{c['n_det']} 个检测、{c['n_night']} 夜、{c['arc_days']:.2f} 天，RMS {c['rms_arcsec']:.3f}″，名义解 {binding}（e={v['e']:.3f}）。")
                 if c["status"] == "known_recovered_blind":
                     holds=[h["rms_arcsec"] for h in c.get("held_nights",[]) if "rms_arcsec" in h]
                     hold=f"，整夜留出 RMS 范围 {min(holds):.3f}–{max(holds):.3f}″" if holds else ""
                     lines.append(f"- **{c['catalog_association']}**，{c['n_det']} 个一致成员，{c['n_night']} 夜，弧长 {c['arc_days']:.2f} 天，双分量拟合 RMS {c['rms_arcsec']:.3f}″{hold}。")
+        qc=get(fid,"astrometry_photometry_qc")
+        if qc:
+            good=[r for r in qc if "astrometry" in r and "mad_arcsec" in r["astrometry"] and "exclusion" not in r["astrometry"]]
+            if good:
+                east=median(r["astrometry"]["mad_arcsec"][0] for r in good)
+                north=median(r["astrometry"]["mad_arcsec"][1] for r in good)
+                rms_ratio=median(r["weight_rms_adu"]/r["sky_rms_adu"] for r in good if r["sky_rms_adu"]>0)
+                lines += ["", f"Gaia 逐 CCD 散布的中位数为 {east:.3f}″（RA cos Dec）和 {north:.3f}″（Dec）。权重换算噪声与 SEP 背景 RMS 的中位比值为 {rms_ratio:.3f}。"]
         if manifest:
             lines += ["",f"[结果和 manifest](../results/v1/{fid}/)"]
         images=sorted((RESULTS/fid/"figures").glob("*.png"))
@@ -82,7 +134,30 @@ def report():
         if images:
             lines += [" · ".join(f"[{p.stem}](../results/v1/{fid}/figures/{p.name})" for p in keys or images[:3])]
         lines.append("")
+    misses=get("validation","known_miss_diagnostic")
+    if misses:
+        lines += ["## 初始验证区的漏检归因",""]
+        for r in misses:
+            snr=[q["forced_aperture_snr"] for q in r["ccds"] if q["forced_aperture_snr"] is not None]
+            final=min(r.get("epoch_comparison",[]),key=lambda x:x["rms_arcsec"],default=None)
+            check=f"，J2016.0 与 Horizons 相比 RMS {final['rms_arcsec']:.3f}″" if final else ""
+            lines.append(f"- {r['target']}，{len(snr)} 次 Horizons 位置强制测光，SNR 中位数 {median(snr):.2f}，峰值 {max(snr):.2f}{check}。")
+        lines += ["","[独立星历和漏点诊断](../results/v1/validation/known_miss_diagnostic.json)",""]
     lines += ["## 验证和计算成本",""]
+    bound=get("validation-deep","bound_fit_sensitivity")
+    if bound:
+        b=bound["best_bound"]
+        lines.extend([f"2013 TV158 匿名短弧的束缚解敏感性实验中，自由拟合的 RMS 为 {bound['nominal_rms_arcsec']:.3f}″，"
+                      f"施加太阳逃逸速度约束后的 RMS 为 {b['rms_arcsec']:.3f}″，拟合 χ² 增加 {bound['delta_chi2']:.3f}。"
+                      "短弧的径向速度和轨道能量仍有退化。","",
+                      "[束缚解敏感性](../results/v1/validation-deep/bound_fit_sensitivity.json)",""])
+    review=get("exploration","candidate_review")
+    if review:
+        fits=[h["rms_arcsec"] for r in review for h in r["holdouts"] if "rms_arcsec" in h]
+        if fits:
+            lines.extend([f"宽探索区未解决链的整夜留出 RMS 为 {min(fits):.2f}–{max(fits):.2f}″。"
+                          "CP 邮票显示末夜 z 波段检测邻近明显的横向条纹，中心 DQ 值为 0。该链的身份仍待核，当前证据等级低。",
+                          "", "[候选审查](../results/v1/exploration/candidate_review.json)",""])
     benchmark=get("audit","anonymous_orbit_benchmark")
     if benchmark:
         lines.append(f"另以 2017 OF201 的公开 W84 观测作匿名测轨实验。{benchmark['n_observations']} 个测量跨 {benchmark['n_nights']} 夜和 {benchmark['n_days']:.1f} 天，拟合 RMS {benchmark['rms_arcsec']:.3f}″，整夜留出汇总 RMS {benchmark['rms_arcsec_held_night']:.3f}″。该实验使用已发表的成员测量。")
@@ -90,7 +165,7 @@ def report():
             h=benchmark["horizons"]
             lines.append(f"同历元 W84 Horizons ICRF 星历对照的双分量 RMS 为 {h['rms_arcsec']:.3f}″，最大角分离 {h['max_separation_arcsec']:.3f}″。")
         lines += ["","[拟合验证](../results/v1/audit/anonymous_orbit_benchmark.json) · [公开测量](https://arxiv.org/html/2505.15806v2) · [Horizons](https://ssd-api.jpl.nasa.gov/doc/horizons.html)",""]
-    for fid in ("validation","exploration"):
+    for fid in fields:
         injection=get(fid,"injection_recovery_summary")
         if injection:
             for group in sorted({a["group"] for a in injection["objects"]}):
@@ -107,7 +182,7 @@ def report():
     lines.extend(["","注入两组分别指定进入源表的点和假定的噪声、缺测。像素提取、混叠和图像级完整性需要专门实验。","",
                   "Slurm 退出和资源用量见 [记账记录](../logs/slurm-accounting.psv)。初次试点触及压缩 annotated FITS 和选区的内存上限。后续作业采用磁盘暂存和紧凑选区字段。","",
                   "## 边界和验收","",
-                  "30–300 au 为工程距离范围。两区的固定时间窗、天空边界、质量掩膜和实际采样共同决定覆盖。短弧轨道和局部协方差可能严重退化。身份核对覆盖 DES 验证目录。完整 MPC 比对、跨季增长、歧义静态全分支、像素级确认和扩大注入仍是验收缺项。",
+                  "30–300 au 为工程距离范围。两区的固定时间窗、天空边界、质量掩膜和实际采样共同决定覆盖。短弧轨道和局部协方差可能严重退化。身份核对覆盖 DES 验证目录。完整 MPC 比对、跨季增长、歧义静态全分支、像素级确认和扩大注入仍是验收缺项。四夜 OF201 压力测试采用 4 个检测的门槛，原始六检测门槛保留在其他主支。OF201 每次留出一夜后只余 3 个测量，留出预测保持缺失状态。2013 TV158 的留出优化使用原匿名链的初始状态。宽区域的截断、超时和提前结束的注入均列在记账和 manifest 中。",
                   "",
                   "复跑入口见 [运行手册](../docs/operations.md)，其他范围限制见 [限制记录](../docs/limitations.md)。",""])
     (ROOT/"reports"/"v1_report.md").write_text("\n".join(lines))

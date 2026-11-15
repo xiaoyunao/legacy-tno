@@ -1,0 +1,769 @@
+{
+  "counts": {
+    "geometric": 16,
+    "requested": 16
+  },
+  "objects": [
+    {
+      "sim_id": "sim-0000",
+      "distance_au": 189.75195909675858,
+      "e": 0.2710615845945165,
+      "mag_r": 20.074621841117946,
+      "group": "all_points_present",
+      "geometry_nights": 7,
+      "geometry_exposures": 16,
+      "geometry_arc_days": 15.95797391999804,
+      "injected": 16,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0001",
+      "distance_au": 164.83833114169065,
+      "e": 0.5400032919848619,
+      "mag_r": 22.29728178685018,
+      "group": "hypothetical_missingness",
+      "geometry_nights": 9,
+      "geometry_exposures": 20,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 14,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0002",
+      "distance_au": 258.38907735612,
+      "e": 0.5107502127036648,
+      "mag_r": 19.51392669575717,
+      "group": "all_points_present",
+      "geometry_nights": 9,
+      "geometry_exposures": 20,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 20,
+      "recovered": true,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0003",
+      "distance_au": 218.5844561706456,
+      "e": 0.6256526621402247,
+      "mag_r": 21.13123630492446,
+      "group": "hypothetical_missingness",
+      "geometry_nights": 7,
+      "geometry_exposures": 14,
+      "geometry_arc_days": 18.846262339997338,
+      "injected": 14,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0004",
+      "distance_au": 146.72386909596852,
+      "e": 0.543163902776598,
+      "mag_r": 20.877745423932147,
+      "group": "all_points_present",
+      "geometry_nights": 9,
+      "geometry_exposures": 20,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 20,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0005",
+      "distance_au": 143.95301619709844,
+      "e": 0.7760694058415226,
+      "mag_r": 23.7317333555865,
+      "group": "hypothetical_missingness",
+      "geometry_nights": 7,
+      "geometry_exposures": 16,
+      "geometry_arc_days": 15.95797391999804,
+      "injected": 8,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0006",
+      "distance_au": 124.0185832651318,
+      "e": 0.11854676882102412,
+      "mag_r": 23.157540589514085,
+      "group": "all_points_present",
+      "geometry_nights": 9,
+      "geometry_exposures": 20,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 20,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0007",
+      "distance_au": 106.5062405380781,
+      "e": 0.07812192542680582,
+      "mag_r": 20.361215023787075,
+      "group": "hypothetical_missingness",
+      "geometry_nights": 9,
+      "geometry_exposures": 20,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 20,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0008",
+      "distance_au": 250.03969896605363,
+      "e": 0.228019250499558,
+      "mag_r": 20.441032020625197,
+      "group": "all_points_present",
+      "geometry_nights": 9,
+      "geometry_exposures": 20,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 20,
+      "recovered": true,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0009",
+      "distance_au": 277.156332102622,
+      "e": 0.1157840291907673,
+      "mag_r": 21.124088846677793,
+      "group": "hypothetical_missingness",
+      "geometry_nights": 7,
+      "geometry_exposures": 15,
+      "geometry_arc_days": 21.9049680600001,
+      "injected": 15,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0010",
+      "distance_au": 148.52996352157805,
+      "e": 0.614960683939867,
+      "mag_r": 23.012855405981234,
+      "group": "all_points_present",
+      "geometry_nights": 8,
+      "geometry_exposures": 15,
+      "geometry_arc_days": 18.846262339997338,
+      "injected": 15,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0011",
+      "distance_au": 118.67910471595891,
+      "e": 0.5735269453263903,
+      "mag_r": 23.18694624734156,
+      "group": "hypothetical_missingness",
+      "geometry_nights": 8,
+      "geometry_exposures": 18,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 12,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0012",
+      "distance_au": 240.72649522628575,
+      "e": 0.34377888969276277,
+      "mag_r": 20.847023218851927,
+      "group": "all_points_present",
+      "geometry_nights": 5,
+      "geometry_exposures": 10,
+      "geometry_arc_days": 13.788585009999224,
+      "injected": 10,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0013",
+      "distance_au": 145.56452928179934,
+      "e": 0.6418840272172969,
+      "mag_r": 20.657740082384038,
+      "group": "hypothetical_missingness",
+      "geometry_nights": 6,
+      "geometry_exposures": 12,
+      "geometry_arc_days": 15.773301189998165,
+      "injected": 12,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0014",
+      "distance_au": 156.41314086443413,
+      "e": 0.013084987012026797,
+      "mag_r": 22.170002785934795,
+      "group": "all_points_present",
+      "geometry_nights": 8,
+      "geometry_exposures": 18,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 18,
+      "recovered": false,
+      "search_truncated": false
+    },
+    {
+      "sim_id": "sim-0015",
+      "distance_au": 87.77467707027039,
+      "e": 0.3998979016091491,
+      "mag_r": 21.708825870129544,
+      "group": "hypothetical_missingness",
+      "geometry_nights": 9,
+      "geometry_exposures": 20,
+      "geometry_arc_days": 22.770811049995245,
+      "injected": 18,
+      "recovered": false,
+      "search_truncated": false
+    }
+  ],
+  "batches": [
+    {
+      "start": 0,
+      "truncated": [],
+      "fits": {
+        "attempted": 1,
+        "accepted": 1
+      }
+    },
+    {
+      "start": 8,
+      "truncated": [],
+      "fits": {
+        "attempted": 1,
+        "accepted": 1
+      }
+    }
+  ],
+  "model": "independent analytic Kepler ellipses, DE440s topocentric light time, hypothetical missingness",
+  "recovery_bins": [
+    {
+      "group": "all_points_present",
+      "variable": "distance_au",
+      "lo": 30,
+      "hi": 60,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "distance_au",
+      "lo": 60,
+      "hi": 120,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "distance_au",
+      "lo": 120,
+      "hi": 300.0001,
+      "n": 8,
+      "successes": 2,
+      "excluded_truncated": 0,
+      "fraction": 0.25,
+      "confidence_95": [
+        0.03185402624994424,
+        0.6508557944128243
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "mag_r",
+      "lo": 19,
+      "hi": 21,
+      "n": 5,
+      "successes": 2,
+      "excluded_truncated": 0,
+      "fraction": 0.4,
+      "confidence_95": [
+        0.05274495052631566,
+        0.8533672003653274
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "mag_r",
+      "lo": 21,
+      "hi": 22,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "mag_r",
+      "lo": 22,
+      "hi": 23,
+      "n": 1,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.975
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "mag_r",
+      "lo": 23,
+      "hi": 24,
+      "n": 2,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.841886116991607
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "geometry_nights",
+      "lo": 4,
+      "hi": 6,
+      "n": 1,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.975
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "geometry_nights",
+      "lo": 6,
+      "hi": 10,
+      "n": 7,
+      "successes": 2,
+      "excluded_truncated": 0,
+      "fraction": 0.2857142857142857,
+      "confidence_95": [
+        0.036692566176085656,
+        0.7095791362626575
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "geometry_nights",
+      "lo": 10,
+      "hi": 15,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "geometry_nights",
+      "lo": 15,
+      "hi": 100,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "geometry_arc_days",
+      "lo": 7,
+      "hi": 20,
+      "n": 3,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.7075982261787133
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "geometry_arc_days",
+      "lo": 20,
+      "hi": 50,
+      "n": 5,
+      "successes": 2,
+      "excluded_truncated": 0,
+      "fraction": 0.4,
+      "confidence_95": [
+        0.05274495052631566,
+        0.8533672003653274
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "geometry_arc_days",
+      "lo": 50,
+      "hi": 90,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "geometry_arc_days",
+      "lo": 90,
+      "hi": 181,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "e",
+      "lo": 0,
+      "hi": 0.3,
+      "n": 4,
+      "successes": 1,
+      "excluded_truncated": 0,
+      "fraction": 0.25,
+      "confidence_95": [
+        0.006309463209709889,
+        0.8058795503167566
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "e",
+      "lo": 0.3,
+      "hi": 0.6,
+      "n": 3,
+      "successes": 1,
+      "excluded_truncated": 0,
+      "fraction": 0.3333333333333333,
+      "confidence_95": [
+        0.008403758659612647,
+        0.9057006759492866
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "e",
+      "lo": 0.6,
+      "hi": 0.8,
+      "n": 1,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.975
+      ]
+    },
+    {
+      "group": "all_points_present",
+      "variable": "e",
+      "lo": 0.8,
+      "hi": 1,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "distance_au",
+      "lo": 30,
+      "hi": 60,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "distance_au",
+      "lo": 60,
+      "hi": 120,
+      "n": 3,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.7075982261787133
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "distance_au",
+      "lo": 120,
+      "hi": 300.0001,
+      "n": 5,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.5218237501049814
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "mag_r",
+      "lo": 19,
+      "hi": 21,
+      "n": 2,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.841886116991607
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "mag_r",
+      "lo": 21,
+      "hi": 22,
+      "n": 3,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.7075982261787133
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "mag_r",
+      "lo": 22,
+      "hi": 23,
+      "n": 1,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.975
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "mag_r",
+      "lo": 23,
+      "hi": 24,
+      "n": 2,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.841886116991607
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "geometry_nights",
+      "lo": 4,
+      "hi": 6,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "geometry_nights",
+      "lo": 6,
+      "hi": 10,
+      "n": 8,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.36941664755281917
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "geometry_nights",
+      "lo": 10,
+      "hi": 15,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "geometry_nights",
+      "lo": 15,
+      "hi": 100,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "geometry_arc_days",
+      "lo": 7,
+      "hi": 20,
+      "n": 3,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.7075982261787133
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "geometry_arc_days",
+      "lo": 20,
+      "hi": 50,
+      "n": 5,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.5218237501049814
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "geometry_arc_days",
+      "lo": 50,
+      "hi": 90,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "geometry_arc_days",
+      "lo": 90,
+      "hi": 181,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "e",
+      "lo": 0,
+      "hi": 0.3,
+      "n": 2,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.841886116991607
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "e",
+      "lo": 0.3,
+      "hi": 0.6,
+      "n": 3,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.7075982261787133
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "e",
+      "lo": 0.6,
+      "hi": 0.8,
+      "n": 3,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": 0.0,
+      "confidence_95": [
+        0.0,
+        0.7075982261787133
+      ]
+    },
+    {
+      "group": "hypothetical_missingness",
+      "variable": "e",
+      "lo": 0.8,
+      "hi": 1,
+      "n": 0,
+      "successes": 0,
+      "excluded_truncated": 0,
+      "fraction": null,
+      "confidence_95": [
+        null,
+        null
+      ]
+    }
+  ]
+}

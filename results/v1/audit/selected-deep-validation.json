@@ -1,0 +1,418 @@
+{
+  "fields": [
+    {
+      "id": "validation",
+      "ra_deg": 35.76859318301772,
+      "dec_deg": -4.838157357975341,
+      "core_radius_deg": 0.6,
+      "read_radius_deg": 0.8099999999999999,
+      "mjd_min": 57007.03137043336,
+      "mjd_max": 57039.170921773446,
+      "exclude_des": false
+    }
+  ],
+  "ranking": [
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.76859318301772,
+        "dec_deg": -4.838157357975341,
+        "core_radius_deg": 0.6,
+        "read_radius_deg": 0.8099999999999999,
+        "mjd_min": 57007.03137043336,
+        "mjd_max": 57039.170921773446,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 928,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.81280289691086,
+        "dec_deg": -4.858030066426932,
+        "core_radius_deg": 0.6,
+        "read_radius_deg": 0.8099999999999999,
+        "mjd_min": 57004.98286232344,
+        "mjd_max": 57032.210468803445,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 947,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.76859318301772,
+        "dec_deg": -4.838157357975341,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 57007.03137043336,
+        "mjd_max": 57039.170921773446,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 695,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.81280289691086,
+        "dec_deg": -4.858030066426932,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 57004.98286232344,
+        "mjd_max": 57032.210468803445,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 744,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.866038982593345,
+        "dec_deg": -4.8696386228935715,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 57000.947784873446,
+        "mjd_max": 57025.245687793446,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 768,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.95729987732827,
+        "dec_deg": -4.867834142189673,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 56986.98134449345,
+        "mjd_max": 57018.28369826344,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 769,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.73634065874451,
+        "dec_deg": -4.789459552342801,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 57018.025704833446,
+        "mjd_max": 57051.21032393344,
+        "exclude_des": false
+      },
+      "exposure_count": 30,
+      "depth_nights": 6,
+      "planned_ccds": 801,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.75473313604194,
+        "dec_deg": -4.820808123948173,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 57011.993375113445,
+        "mjd_max": 57044.222255223445,
+        "exclude_des": false
+      },
+      "exposure_count": 30,
+      "depth_nights": 6,
+      "planned_ccds": 846,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 36.0640646679112,
+        "dec_deg": -4.855239837654276,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 56979.976432333446,
+        "mjd_max": 57012.25132204344,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 850,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.795705614311245,
+        "dec_deg": -4.844828493277426,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 57004.98286232344,
+        "mjd_max": 57039.170921773446,
+        "exclude_des": false
+      },
+      "exposure_count": 31,
+      "depth_nights": 7,
+      "planned_ccds": 859,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 36.82901940518782,
+        "dec_deg": -4.61294833793173,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 56949.046621682224,
+        "mjd_max": 56961.348629062224,
+        "exclude_des": false
+      },
+      "exposure_count": 25,
+      "depth_nights": 6,
+      "planned_ccds": 875,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "r",
+        "z"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 36.834795084706776,
+        "dec_deg": -4.607562573012905,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 56949.02310176344,
+        "mjd_max": 56973.21313907483,
+        "exclude_des": false
+      },
+      "exposure_count": 20,
+      "depth_nights": 6,
+      "planned_ccds": 913,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "r",
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.84176464163056,
+        "dec_deg": -4.860920112803492,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 57000.947784873446,
+        "mjd_max": 57032.210468803445,
+        "exclude_des": false
+      },
+      "exposure_count": 31,
+      "depth_nights": 7,
+      "planned_ccds": 914,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 36.1313687428829,
+        "dec_deg": -4.845719884977265,
+        "core_radius_deg": 0.45,
+        "read_radius_deg": 0.63,
+        "mjd_min": 56972.93447644344,
+        "mjd_max": 57007.27137043336,
+        "exclude_des": false
+      },
+      "exposure_count": 22,
+      "depth_nights": 6,
+      "planned_ccds": 921,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.81280289691086,
+        "dec_deg": -4.858030066426932,
+        "core_radius_deg": 0.33,
+        "read_radius_deg": 0.49,
+        "mjd_min": 57004.98286232344,
+        "mjd_max": 57032.210468803445,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 491,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.76859318301772,
+        "dec_deg": -4.838157357975341,
+        "core_radius_deg": 0.33,
+        "read_radius_deg": 0.49,
+        "mjd_min": 57007.03137043336,
+        "mjd_max": 57039.170921773446,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 495,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.866038982593345,
+        "dec_deg": -4.8696386228935715,
+        "core_radius_deg": 0.33,
+        "read_radius_deg": 0.49,
+        "mjd_min": 57000.947784873446,
+        "mjd_max": 57025.245687793446,
+        "exclude_des": false
+      },
+      "exposure_count": 26,
+      "depth_nights": 6,
+      "planned_ccds": 551,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.75473313604194,
+        "dec_deg": -4.820808123948173,
+        "core_radius_deg": 0.33,
+        "read_radius_deg": 0.49,
+        "mjd_min": 57011.993375113445,
+        "mjd_max": 57044.222255223445,
+        "exclude_des": false
+      },
+      "exposure_count": 30,
+      "depth_nights": 6,
+      "planned_ccds": 576,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.795705614311245,
+        "dec_deg": -4.844828493277426,
+        "core_radius_deg": 0.33,
+        "read_radius_deg": 0.49,
+        "mjd_min": 57004.98286232344,
+        "mjd_max": 57039.170921773446,
+        "exclude_des": false
+      },
+      "exposure_count": 31,
+      "depth_nights": 7,
+      "planned_ccds": 588,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    },
+    {
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.73634065874451,
+        "dec_deg": -4.789459552342801,
+        "core_radius_deg": 0.33,
+        "read_radius_deg": 0.49,
+        "mjd_min": 57018.025704833446,
+        "mjd_max": 57051.21032393344,
+        "exclude_des": false
+      },
+      "exposure_count": 30,
+      "depth_nights": 6,
+      "planned_ccds": 607,
+      "target": "2013 TV158",
+      "expected_mag_r": 22.06824951,
+      "bands": [
+        "i"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "run": "validation-c0697ed30f0e61",
+  "scope": "main-process RSS in KiB; .batch MaxRSS in Slurm accounting",
+  "wall_seconds": 165.29444370197598,
+  "max_rss_kib": 3020284,
+  "stages": {
+    "extract_and_clean": 2.020306657999754,
+    "blind_link_and_fit": 81.4142367420136
+  },
+  "disk_bytes": 1787201186
+}

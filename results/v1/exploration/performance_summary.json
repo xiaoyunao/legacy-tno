@@ -1,0 +1,10 @@
+{
+  "run": "exploration-f742d8b20d9ab4",
+  "scope": "main-process RSS in KiB; .batch MaxRSS in Slurm accounting",
+  "wall_seconds": null,
+  "max_rss_kib": null,
+  "stages": {
+    "extract_and_clean": 21.734750679985154
+  },
+  "disk_bytes": 1486421504
+}

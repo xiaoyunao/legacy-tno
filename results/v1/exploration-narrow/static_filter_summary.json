@@ -1,0 +1,7 @@
+{
+  "quality_rejected": 20200,
+  "ambiguous_static_match": 171743,
+  "static_confident": 64354,
+  "artifact_flagged": 15381,
+  "transient_clean": 3837
+}

@@ -1,0 +1,14 @@
+{
+  "extract_and_clean": {
+    "n_raw": 1329446,
+    "n_calibrated": 1329446,
+    "classes": {
+      "artifact_flagged": 75729,
+      "static_confident": 811111,
+      "quality_rejected": 89402,
+      "transient_clean": 16608,
+      "ambiguous_static_match": 336596
+    },
+    "seconds": 21.734750679985154
+  }
+}

@@ -1,6 +1,12 @@
-# Execution plan
+# Current plan
 
-1. Inspect jobs 61346049 and 61346054 and confirm selection and annotated inventory completion.
-2. Freeze the selected validation and non-DES fields, build the single-CCD source tables, and run blind detection association and orbit fitting.
-3. Review DES catalog verification, whole-night holdout, catalog injection and permuted-night controls.
-4. Review truncated bins and failed CCDs, collect small artifacts, generate the Chinese report, tag only if all acceptance conditions are met.
+## Pilot checkpoint
+
+Perlmutter processed real DR11 CP science, weight, and DQ. The blind fit recovered 2013 TV158 and 2017 OF201 in separate validation settings. The bounded non-DES field completed all configured bins, the identity comparison, and both controls. Preserve the wide-field constraints, alternate runs, actual exit states, and result locations under `results/v1/`.
+
+## Remaining acceptance work
+
+1. Improve the scale of the pair–triplet search and design overlapping tiles with time windows that complete without caps. Confirm distance-envelope recall across bins independent of the seed approximation.
+2. Add a tested cross-season extension using the predicted footprint and multiple viable orbits. Keep the original anonymous memberships for provenance.
+3. Run the catalog-ambiguity sensitivity branch and a larger independent injection campaign, accounting for the depth and cadence of each field.
+4. Compare surviving candidate chains against a comprehensive current known-object catalog. Preserve image adjudication and all excluded regions.

@@ -1,0 +1,92 @@
+[
+  {
+    "expnum": 229046,
+    "error": "CP DQ encoding unverified for V5.5LS"
+  },
+  {
+    "file": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20131010/c4d_131011_081634_ooi_r_ls9.fits.fz",
+    "expnum": 242857,
+    "ccdname": "S29",
+    "band": "r",
+    "start_mjd": 56576.34484528,
+    "middle_mjd": 56576.34536611333,
+    "extracted": 4488,
+    "retained": 1748,
+    "dq_counts": [
+      8058286,
+      289091,
+      0,
+      2596,
+      19202,
+      6825,
+      324,
+      0,
+      0
+    ],
+    "sky_adu": 343.84320068359375,
+    "sky_rms_adu": 10.153482437133789,
+    "usable_fraction": 0.9620285700505377,
+    "nx": 2046,
+    "ny": 4094,
+    "weight_rms_adu": 9.332833290100098,
+    "flux_gain_e_per_adu": 3.8507844313797,
+    "ccdzpt": 25.323020935058594,
+    "source_backend": "SEP windowed centroid and matched detection",
+    "bunit": "ADU per DR11 data model",
+    "snr_quantiles": [
+      5.125733041763306,
+      9.902722835540771,
+      54.26811714172363
+    ],
+    "mag_quantiles": [
+      20.98691349029541,
+      23.01286220550537,
+      23.741174697875977
+    ]
+  },
+  {
+    "file": "/global/cfs/cdirs/cosmo/staging/decam/CP/V4.8.2a/CP20131205/c4d_131206_042957_ooi_r_ls9.fits.fz",
+    "expnum": 260873,
+    "ccdname": "S29",
+    "band": "r",
+    "start_mjd": 56632.18576213,
+    "middle_mjd": 56632.18628296333,
+    "extracted": 5042,
+    "retained": 1667,
+    "dq_counts": [
+      8071233,
+      289091,
+      0,
+      664,
+      6292,
+      9040,
+      4,
+      0,
+      0
+    ],
+    "sky_adu": 343.1755065917969,
+    "sky_rms_adu": 9.705657958984375,
+    "usable_fraction": 0.9635769819792072,
+    "nx": 2046,
+    "ny": 4094,
+    "weight_rms_adu": 9.089228630065918,
+    "flux_gain_e_per_adu": 3.82875706361218,
+    "ccdzpt": 25.343626022338867,
+    "source_backend": "SEP windowed centroid and matched detection",
+    "bunit": "ADU per DR11 data model",
+    "snr_quantiles": [
+      5.100824356079102,
+      9.823694229125977,
+      68.6250137329102
+    ],
+    "mag_quantiles": [
+      20.75164222717285,
+      23.083742141723633,
+      23.815899658203126
+    ]
+  },
+  {
+    "expnum": 280890,
+    "error": "CP DQ encoding unverified for V5.5LS"
+  }
+]

@@ -1,0 +1,101 @@
+{
+  "source": "Cheng, Li & Yang, arXiv:2505.15806v2, Table 2 DECam (W84)",
+  "proof": "published astrometry selected externally, not a blind catalog recovery",
+  "n_observations": 10,
+  "n_nights": 9,
+  "n_days": 1539.7571277718962,
+  "rms_arcsec": 0.08755701810127202,
+  "chi2": 13.752964555598464,
+  "dof": 14,
+  "success": true,
+  "returned_chi2": [
+    13.75296455588973,
+    13.752964555598464,
+    13.752964556408081,
+    13.752964556067903
+  ],
+  "reduced_chi2": 0.982354611114176,
+  "epoch_tdb_mjd": 57896.41098772936,
+  "heliocentric": {
+    "r_au": 85.4999772378314,
+    "a_au": 844.8217224432526,
+    "e": 0.9472413728667222,
+    "i_deg": 16.21552474602058,
+    "node_deg": 328.66640009109824,
+    "argperi_deg": 337.2273353515909,
+    "mean_anomaly_deg": 1.2691766562677358,
+    "q_au": 44.571634248476784,
+    "bound": true,
+    "frame": "heliocentric ecliptic J2000 osculating"
+  },
+  "rms_arcsec_held_night": 0.1268738610972785,
+  "held_nights": [
+    {
+      "night": 56881,
+      "n_points": 1,
+      "rms_arcsec": 0.20982633531644762,
+      "success": true
+    },
+    {
+      "night": 57305,
+      "n_points": 2,
+      "rms_arcsec": 0.16989573514053494,
+      "success": true
+    },
+    {
+      "night": 57956,
+      "n_points": 1,
+      "rms_arcsec": 0.10551479324072076,
+      "success": true
+    },
+    {
+      "night": 58012,
+      "n_points": 1,
+      "rms_arcsec": 0.14595716396017053,
+      "success": true
+    },
+    {
+      "night": 58068,
+      "n_points": 1,
+      "rms_arcsec": 0.04555798275417333,
+      "success": true
+    },
+    {
+      "night": 58324,
+      "n_points": 1,
+      "rms_arcsec": 0.04921683127425194,
+      "success": true
+    },
+    {
+      "night": 58339,
+      "n_points": 1,
+      "rms_arcsec": 0.08397539253764491,
+      "success": true
+    },
+    {
+      "night": 58340,
+      "n_points": 1,
+      "rms_arcsec": 0.03889057929683369,
+      "success": true
+    },
+    {
+      "night": 58421,
+      "n_points": 1,
+      "rms_arcsec": 0.1627332251544834,
+      "success": true
+    }
+  ],
+  "utc_start": 56882.412699189816,
+  "utc_end": 58422.169803819444,
+  "horizons": {
+    "max_separation_arcsec": 0.20836951371238194,
+    "rms_arcsec": 0.0826550849115183,
+    "api": {
+      "source": "NASA/JPL Horizons API",
+      "version": "1.2"
+    },
+    "retrieved_utc": "2026-11-15T15:58:57.064794+00:00",
+    "center": "W84",
+    "product": "astrometric ICRF RA/Dec"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "extract_and_clean": {
+    "n_raw": 743927,
+    "n_calibrated": 743927,
+    "classes": {
+      "ambiguous_static_match": 376058,
+      "static_confident": 282237,
+      "artifact_flagged": 35860,
+      "transient_clean": 5424,
+      "quality_rejected": 44348
+    },
+    "seconds": 360.39802967198193
+  },
+  "blind_link_and_fit": {
+    "truncated": [],
+    "pair_counts": {
+      "pairs": 496095,
+      "triplets": 2147
+    },
+    "fit_counts": {},
+    "seconds": 7.401979409973137
+  }
+}

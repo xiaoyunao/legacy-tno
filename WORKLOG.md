@@ -2,6 +2,11 @@
 
 ## 2026-11-16
 
+- Recovered 2013 TV158 blind with 23/23 clean matched detections across six nights. The fit RMS was 0.107 arcsec and held-night RMS values ranged from 0.043 to 0.444 arcsec. An independent bound-constrained fit produced nearly the same residual RMS, emphasizing energy degeneracy.
+- Recovered high-eccentricity 2017 OF201 with four independent nights, four pure members and a 96.74-day arc in the four-detection stress branch. The separate published W84 benchmark also agreed with Horizons.
+- The broad non-DES replay retained one weak, nominally hyperbolic chain and 18 truncated distance bins. Its held-night residuals and CP striping support a low validation grade. Completed the bounded non-DES field in job 61347537 with 283 CCDs, 23 exposures, 10 nights, and no truncated boxes or accepted chains.
+- Materialized report, small result tables, physical control summaries, figures, and Slurm accounting. Final acceptance remains partial until the broader search, cross-season growth, full identity screen and other stated gaps are closed.
+
 - Corrected DES barycentric state epoch to J2016.0 TDB (MJD 57388.5). Horizons checks for RD124 and RQ157 reduced RMS from 5.119 and 5.735 arcsec to 0.027 and 0.031 arcsec. Guided CP aperture probes peaked below SNR 3.3 in this shallow z-only window.
 
 - Completed DR11 inventory and initial validation. 14 sampled CP exposure triplets readable. Two geometrically covered DES objects had no close SEP detection at independent Horizons positions. Baseline catalog injections recovered 16/16 guaranteed and 3/16 noisy/missing tracks.

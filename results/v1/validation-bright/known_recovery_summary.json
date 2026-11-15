@@ -1,0 +1,47 @@
+{
+  "catalog": "DES Y6 published 814-object validation catalog",
+  "catalog_commit": "8f254ca30fa0e8fc1576a5a9fad7300124d3b3ee",
+  "geometry": "TAN approximation with five-pixel interior margin; not pixel-mask completeness",
+  "counts": {
+    "A": 2,
+    "B": 1,
+    "C": 1,
+    "D": 1,
+    "E": 1,
+    "F_guided_only": 0
+  },
+  "objects": [
+    {
+      "target": "2013 TG228",
+      "m_r": 24.0500302,
+      "reference_distance_au": 40.29997163368469,
+      "A_geometry_exposures": 3,
+      "B_raw_detections": 0,
+      "C_clean_detections": 0,
+      "C_any_calibrated": 0,
+      "geometry_nights": 3,
+      "clean_nights": 0,
+      "clean_arc_days": null,
+      "D_linkable": false,
+      "E_blind": false,
+      "F_guided_only": false,
+      "outcome": "no_catalog_detection"
+    },
+    {
+      "target": "2013 TV158",
+      "m_r": 22.06824951,
+      "reference_distance_au": 36.894185512191555,
+      "A_geometry_exposures": 26,
+      "B_raw_detections": 26,
+      "C_clean_detections": 23,
+      "C_any_calibrated": 26,
+      "geometry_nights": 6,
+      "clean_nights": 6,
+      "clean_arc_days": 31.899551350463298,
+      "D_linkable": true,
+      "E_blind": true,
+      "F_guided_only": false,
+      "outcome": "blind"
+    }
+  ]
+}
