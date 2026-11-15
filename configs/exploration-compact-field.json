@@ -1,0 +1,14 @@
+{
+  "fields": [
+    {
+      "id": "exploration",
+      "ra_deg": 211.766,
+      "dec_deg": -8.243,
+      "core_radius_deg": 0.2,
+      "read_radius_deg": 0.54,
+      "mjd_min": 59274.39,
+      "mjd_max": 59298.43,
+      "exclude_des": true
+    }
+  ]
+}
