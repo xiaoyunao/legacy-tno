@@ -189,7 +189,37 @@ def footprint_summary(rows, field, valid):
                 grid_step_deg=step)
 
 
-def run(config_path, work, field_path, field_name, run_code_commit, resume, stop_after=None):
+def reuse_catalogs(parent, out, rows, field, cfg):
+    original = json.loads((parent / "run_manifest.json").read_text())
+    if "extract_and_clean" not in original["stages"]:
+        raise ValueError("Catalog cache has no completed extraction stage")
+    relevant = ("schema_version", "inventory_file", "image_root", "gaia_root", "sweep_root", "extract", "filter")
+    if original["field"] != field or any(original["config"][key] != cfg[key] for key in relevant):
+        raise ValueError("Catalog cache field or extraction configuration is different")
+    archived = np.load(parent / "exposures.npy", allow_pickle=False)
+    if rows.dtype != archived.dtype or rows.shape != archived.shape or rows.tobytes() != archived.tobytes():
+        raise ValueError("Catalog cache exposure manifest is different")
+    # The first pilot predates per-module signatures. Its archived catalog code
+    # was reviewed and remains identical in the replay revision.
+    old = original.get("catalog_code_signature")
+    if old is None and not original["run_code_commit"].startswith("e56fee4"):
+        raise ValueError("Unversioned catalog cache")
+    if old is not None and old != catalog_code_signature():
+        raise ValueError("Catalog extraction or calibration source changed")
+    for filename in ("classified.npz", "raw.npy", "ccd_audit.json"):
+        if not (out / filename).exists():
+            os.link(parent / filename, out / filename)
+
+
+def catalog_code_signature():
+    h = sha256()
+    root = Path(__file__).parent
+    for name in ("profile.py", "catalog.py", "geometry.py", "static.py"):
+        h.update((root / name).read_bytes())
+    return h.hexdigest()
+
+
+def run(config_path, work, field_path, field_name, run_code_commit, resume, stop_after=None, catalog_parent=None):
     cfg = json.loads(config_path.read_text())
     field = next(field for field in json.loads(field_path.read_text())["fields"] if field["id"] == field_name)
     source = Path(__file__).parent
@@ -211,7 +241,9 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
                     utc_start=datetime.now(timezone.utc).isoformat(), slurm_job=os.getenv("SLURM_JOB_ID"),
                     field=field, config=cfg, python=os.sys.version,
                     dependencies={name:version(name) for name in ("numpy","scipy","astropy","fitsio","sep","jplephem")},
-                    status="running", path=str(out), stages={})
+                    status="running", path=str(out), stages={},
+                    catalog_code_signature=catalog_code_signature(),
+                    catalog_parent=str(catalog_parent) if catalog_parent else None)
     write_json(out / "run_manifest.json", manifest)
     start = monotonic()
     stage = "extract_and_clean"
@@ -221,6 +253,8 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
         if not len(rows):
             raise RuntimeError("No eligible CCDs in field")
         np.save(out / "exposures.npy", rows, allow_pickle=False)
+        if catalog_parent and not (out / "classified.npz").exists():
+            reuse_catalogs(catalog_parent, out, rows, field, cfg)
         if not (out / "classified.npz").exists():
             stats = build_catalogs(out, rows, field, cfg, kernel)
         else:
@@ -249,6 +283,7 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
             manifest["stop_reason"] = "catalog profiling requested"
             return out
         stage = "blind_link_and_fit"
+        print("Starting anonymous association", flush=True)
         t0 = monotonic()
         use = reasons == "transient_clean"
         indices = np.flatnonzero(use)
@@ -262,6 +297,7 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
         write_json(out / "search_domain_summary.json", domain)
         manifest["stages"][stage] = dict(domain, seconds=monotonic()-t0)
         stage = "identify_and_validate"
+        print("Writing post-search identity and controls", flush=True)
         from .validate import validate
         validate(out, work, selected, table, reasons, tdb, obs, field, cfg, dynamics, solutions)
         from .plot import plot

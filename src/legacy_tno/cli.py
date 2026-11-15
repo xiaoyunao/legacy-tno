@@ -19,6 +19,7 @@ def main():
             cmd.add_argument("--field", choices=("validation","exploration"), required=True)
             cmd.add_argument("--commit", required=True)
             cmd.add_argument("--resume", action="store_true")
+            cmd.add_argument("--catalog-parent", type=Path)
             cmd.add_argument("--stop-after", choices=("catalog",))
     args = parser.parse_args()
     if args.command == "inventory":
@@ -32,7 +33,7 @@ def main():
         print(json.dumps(selected["fields"], indent=2))
     if args.command == "run":
         from .pipeline import run
-        run(args.config, args.work, args.fields, args.field, args.commit, args.resume, args.stop_after)
+        run(args.config, args.work, args.fields, args.field, args.commit, args.resume, args.stop_after, args.catalog_parent)
     if args.command == "plot":
         from .plot import plot
         plot(args.work)

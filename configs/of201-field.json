@@ -1,0 +1,14 @@
+{
+  "fields": [
+    {
+      "id": "validation",
+      "ra_deg": 27.2,
+      "dec_deg": 27.28,
+      "core_radius_deg": 1.1,
+      "read_radius_deg": 1.45,
+      "mjd_min": 58324,
+      "mjd_max": 58423,
+      "exclude_des": false
+    }
+  ]
+}

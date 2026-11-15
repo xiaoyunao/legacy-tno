@@ -1,7 +1,10 @@
 """Blind two-night pairs, bounded depth triplets, and four-night growth."""
 from collections import Counter
+from concurrent.futures import ProcessPoolExecutor
+from contextlib import nullcontext
 from dataclasses import dataclass
 from itertools import combinations
+import os
 
 import numpy as np
 from scipy.optimize import lsq_linear
@@ -91,26 +94,32 @@ def search(table, time, observer, field, cfg):
     membership = season_labels(table["night"], cfg["season_gap_days"])
     field_chord = 2*np.sin(np.deg2rad(field["core_radius_deg"])/2)
     in_core = np.linalg.norm(directions - axes[2], axis=-1) <= field_chord
-    for season in np.unique(membership):
-        nights = np.unique(table["night"][membership == season])
-        if len(nights) < cfg["min_nights"]:
-            counts["no_seed_seasons"] += 1
-            continue
-        exposures = [np.flatnonzero((table["expnum"] == exp) & (membership == season))
-                     for exp in np.unique(table["expnum"][membership == season])]
-        exposures = [idx for idx in exposures if idx.size]
-        exposures.sort(key=lambda idx: time[idx[0]])
-        ix = np.array([i[0] for i in exposures])
-        trees = [cKDTree(theta[idx]) for idx in exposures]
-        for bin_number, bounds in enumerate(depth_bins(cfg["min_distance_au"],
-                                                       cfg["max_distance_au"],
-                                                       cfg["bin_half_fraction"])):
-            try:
-                search_bin(table, time, theta, observ, sigma, in_core, ix, exposures, trees,
-                           axes, bounds, cfg, counts, chains)
-            except SearchLimit as exc:
-                truncated.append(dict(season=int(season), distance_bin=bin_number,
-                                      z_min=bounds[0], z_max=bounds[1], reason=str(exc)))
+    workers = int(os.getenv("LEGACY_TNO_LINK_WORKERS","1"))
+    executor = ProcessPoolExecutor(max_workers=workers) if workers > 1 else nullcontext()
+    with executor as pool:
+        for season in np.unique(membership):
+            nights = np.unique(table["night"][membership == season])
+            if len(nights) < cfg["min_nights"]:
+                counts["no_seed_seasons"] += 1
+                continue
+            exposures = [np.flatnonzero((table["expnum"] == exp) & (membership == season))
+                         for exp in np.unique(table["expnum"][membership == season])]
+            exposures = [idx for idx in exposures if idx.size]
+            exposures.sort(key=lambda idx: time[idx[0]])
+            ix = np.array([i[0] for i in exposures])
+            trees = [cKDTree(theta[idx]) for idx in exposures]
+            bins = depth_bins(cfg["min_distance_au"], cfg["max_distance_au"], cfg["bin_half_fraction"])
+            jobs = [(table["night"][ix], time, theta, observ, sigma, in_core, ix, exposures,
+                     trees, axes, bounds, cfg) for bounds in bins]
+            results = (pool.map(search_distance_bin, jobs) if pool else map(search_distance_bin, jobs))
+            for bin_number, (found, bin_counts, reason) in enumerate(results):
+                counts.update(bin_counts)
+                for key, value in found.items():
+                    chains.setdefault(key, value)
+                if reason:
+                    bounds = bins[bin_number]
+                    truncated.append(dict(season=int(season), distance_bin=bin_number,
+                                          z_min=bounds[0], z_max=bounds[1], reason=reason))
     return SearchResult(chains, counts, truncated)
 
 
@@ -118,7 +127,17 @@ class SearchLimit(Exception):
     """An explicit bound prevents reporting a partially searched bin as complete."""
 
 
-def search_bin(table, time, theta, observ, sigma, in_core, ix, exposures, trees, axes,
+def search_distance_bin(args):
+    counts, chains = Counter(), {}
+    reason = None
+    try:
+        search_bin(*args, counts, chains)
+    except SearchLimit as exc:
+        reason = str(exc)
+    return chains, counts, reason
+
+
+def search_bin(night, time, theta, observ, sigma, in_core, ix, exposures, trees, axes,
                bounds, cfg, counts, chains):
     low, high = bounds
     escape = np.sqrt(2*GM["sun"]/(low-2)) * cfg["escape_padding"]
@@ -126,7 +145,6 @@ def search_bin(table, time, theta, observ, sigma, in_core, ix, exposures, trees,
     midpoint = (low + high)/2
     window = cfg["far_window_days"] if low >= 50 else cfg["window_days"]
     mjd = time[ix]
-    night = table["night"][ix]
     n_pair = n_triplet = n_chains = 0
     for k, l in combinations(range(len(exposures)), 2):
         span = mjd[l] - mjd[k]
