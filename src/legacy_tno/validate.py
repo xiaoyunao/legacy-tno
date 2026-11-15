@@ -239,7 +239,8 @@ def catalog_injections(exposures, table, reasons, tdb, obs, field, cfg, model, k
         combined = np.concatenate([*group, table])
         inj_tdb, inj_obs = time_map(combined["mjd_mid_utc"], kernel)
         kinds, *_ = classify(combined, gaia, sweep, inj_tdb, inj_obs, cfg["filter"])
-        take = kinds=="transient_clean"
+        minimum = cfg["link"].get("min_catalog_snr",cfg["filter"]["search_snr"])
+        take = (kinds=="transient_clean") & (combined["snr"]>=minimum)
         linked = search(combined[take],inj_tdb[take],inj_obs[take],field,cfg["link"])
         fitted, counts = fit_chains(combined[take],inj_tdb[take],inj_obs[take],model,linked,cfg)
         pure = set()

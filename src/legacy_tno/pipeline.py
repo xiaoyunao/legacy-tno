@@ -285,6 +285,9 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
         stage = "blind_link_and_fit"
         print("Starting anonymous association", flush=True)
         t0 = monotonic()
+        minimum = cfg["link"].get("min_catalog_snr", cfg["filter"]["search_snr"])
+        disqualified = (reasons == "transient_clean") & (table["snr"] < minimum)
+        reasons[disqualified] = "quality_rejected"
         use = reasons == "transient_clean"
         indices = np.flatnonzero(use)
         dynamics = Dynamics(tdb.min(), tdb.max(), kernel)
@@ -293,7 +296,8 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
         for candidate in solutions:
             candidate["members"] = indices[candidate["members"]]
         write_json(out / "blind_candidates.json", solutions)
-        domain = dict(truncated=search_result.truncated, pair_counts=dict(search_result.counts), fit_counts=fit_counts)
+        domain = dict(truncated=search_result.truncated, pair_counts=dict(search_result.counts), fit_counts=fit_counts,
+                      link_input=len(indices), excluded_by_bright_search=int(np.count_nonzero(disqualified)))
         write_json(out / "search_domain_summary.json", domain)
         manifest["stages"][stage] = dict(domain, seconds=monotonic()-t0)
         stage = "identify_and_validate"
@@ -303,7 +307,7 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
         from .plot import plot
         plot(out)
         manifest["status"] = "partial" if (search_result.truncated or fit_counts.get("fit_budget_exhausted") or
-                                          len(selected) != len(rows)) else "field_processed"
+                                          len(selected) != len(rows)) else "completed"
         return out
     except Exception as exc:
         manifest["status"] = "failed"
