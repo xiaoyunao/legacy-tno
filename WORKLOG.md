@@ -2,6 +2,8 @@
 
 ## 2026-11-16
 
+- Corrected DES barycentric state epoch to J2016.0 TDB (MJD 57388.5). Horizons checks for RD124 and RQ157 reduced RMS from 5.119 and 5.735 arcsec to 0.027 and 0.031 arcsec. Guided CP aperture probes peaked below SNR 3.3 in this shallow z-only window.
+
 - Completed DR11 inventory and initial validation. 14 sampled CP exposure triplets readable. Two geometrically covered DES objects had no close SEP detection at independent Horizons positions. Baseline catalog injections recovered 16/16 guaranteed and 3/16 noisy/missing tracks.
 - Completed anonymous published W84 orbital benchmark. Exploratory run, added deep validation, and an independent four-night 2017 OF201 stress test are in progress.
 - Added parallel per-distance-bin association and compatible catalog replay after serial association proved costly for the larger survey field. Validated identical synthetic acceptance in serial and parallel.

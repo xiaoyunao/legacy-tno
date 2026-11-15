@@ -12,7 +12,7 @@ TABLES = (
     "known_recovery_summary.json", "candidate_summary.json", "blind_known_plot_data.json",
     "null_test_summary.json", "injection_recovery_summary.json",
     "stage_counts.json", "performance_summary.json", "plot_data.json",
-    "known_miss_diagnostic.json", "stress_recovery_summary.json",
+    "known_miss_diagnostic.json", "stress_recovery_summary.json", "identity_revision.json",
 )
 AUDIT = ("catalog_audit.json", "inventory_summary.json", "smoke_catalogs.json", "selected-fields.json", "anonymous_orbit_benchmark.json", "selected-deep-validation.json")
 FIGURES = ("coverage_nights", "cadence", "catalog_diagnostics", "gaia_residuals",

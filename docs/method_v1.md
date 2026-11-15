@@ -8,6 +8,6 @@ Directions are projected onto one tangent plane per field. NERSC reductions use 
 
 The orbit fitter optimizes six SSB ICRS Cartesian parameters. DOP853 propagates under DE440s Sun and planetary-system positions, including the Earth–Moon barycenter. Astropy converts reception UTC to TDB and computes the CTIO observer offset from the geocenter. The fitter iterates retarded time and minimizes RA cos Dec and Dec residuals. The output gives Cartesian fit parameters and heliocentric ecliptic J2000 osculating elements. A local covariance is available for well-conditioned derivatives. Short arcs and nonbound solutions are labeled ambiguous.
 
-[Bernardinelli et al. 2020](https://arxiv.org/html/1909.01478v2)  
-[JPL DE440s](https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/)  
+[Bernardinelli et al. 2020](https://arxiv.org/html/1909.01478v2)
+[JPL DE440s](https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/)
 [Find_Orb command-line documentation](https://www.projectpluto.com/fo_usage.htm)

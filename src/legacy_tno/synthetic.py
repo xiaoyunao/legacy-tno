@@ -11,6 +11,7 @@ from .geometry import angular_residual, basis, night_id, sky, unit
 from .link import depth_bins, search
 from .orbit import GM, LIGHT_SPEED
 from .validate import kepler_generator
+from .static import GAIA_COLUMNS, SWEEP_COLUMNS, classify
 
 
 class ScientificChecks(unittest.TestCase):
@@ -43,6 +44,31 @@ class ScientificChecks(unittest.TestCase):
         self.assertAlmostEqual(bins[-1][0],30)
         for high,low in zip(bins,bins[1:]):
             self.assertEqual(high[0],low[1])
+
+    def test_static_persistence_counts_nights_and_span(self):
+        cfg = json.loads((Path(__file__).parents[2]/"configs"/"pilot.json").read_text())["filter"]
+        rows = np.zeros(4, dtype=DETECTION)
+        rows["band"] = "r"
+        rows["expnum"] = np.arange(4)
+        rows["ra_deg"] = .005
+        rows["dec_deg"] = 32.
+        rows["flux"], rows["flux_err"], rows["snr"] = 100, 5, 20
+        rows["sigma_arcsec"], rows["fwhm_arcsec"] = .15, 1
+        rows["a_pix"] = rows["b_pix"] = 1.7
+        rows["edge_distance_pix"] = 100
+        rows["mjd_mid_utc"] = np.array([58001,58001.1,58001.2,58001.3])
+        rows["night"] = night_id(rows["mjd_mid_utc"])
+        gaia = np.empty(0, dtype=[(name,"f8") for name in GAIA_COLUMNS])
+        sweep = np.zeros(1, dtype=[(name,"U3" if name=="type" else "f8")
+                                   for name in SWEEP_COLUMNS])
+        sweep["ra"], sweep["dec"], sweep["type"] = .005, 32., "PSF"
+        sweep["flux_r"], sweep["flux_ivar_r"] = 100, .04
+        identified, *_ = classify(rows,gaia,sweep,rows["mjd_mid_utc"],np.zeros((4,3)),cfg)
+        self.assertEqual(set(identified),{"ambiguous_static_match"})
+        rows["mjd_mid_utc"] += np.arange(4)*12
+        rows["night"] = night_id(rows["mjd_mid_utc"])
+        identified, *_ = classify(rows,gaia,sweep,rows["mjd_mid_utc"],np.zeros((4,3)),cfg)
+        self.assertEqual(set(identified),{"static_confident"})
 
     def test_analytic_high_eccentricity_track(self):
         cfg = json.loads((Path(__file__).parents[2]/"configs"/"pilot.json").read_text())["link"]

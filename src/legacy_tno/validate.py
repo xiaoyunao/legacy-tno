@@ -64,7 +64,6 @@ def verify_truth(out, work, exposures, table, reasons, tdb, obs, field, cfg, wor
     times, observer = observatory(mjd, kernel)
     planets = Dynamics(min(DES_EPOCH_TDB,times.min()), max(DES_EPOCH_TDB,times.max()), kernel)
     raw = np.load(out/"raw.npy", allow_pickle=False, mmap_mode="r")
-    row_times = np.flatnonzero(np.r_[True, np.diff(np.sort(dates))>0])
     _, row_index = np.unique(dates,return_index=True)
     result = []
     membership = {}
@@ -257,7 +256,7 @@ def catalog_injections(exposures, table, reasons, tdb, obs, field, cfg, model, k
                 model="independent analytic Kepler ellipses, DE440s topocentric light time, hypothetical missingness")
 
 
-def validate(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions):
+def write_identity(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions):
     truth = verify_truth(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions)
     write_json(out/"known_recovery_summary.json", truth)
     summaries = []
@@ -275,6 +274,10 @@ def validate(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, 
                                 offsets_arcsec=sol["offsets_arcsec"], held_nights=sol["held_nights"]))
     write_json(out/"candidate_summary.json", summaries)
     write_json(out/"blind_known_plot_data.json",members)
+
+
+def validate(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions):
+    write_identity(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions)
     use = reasons=="transient_clean"
     t, o = tdb[use],obs[use]
     row = table[use]

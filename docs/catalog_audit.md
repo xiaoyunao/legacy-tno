@@ -6,6 +6,6 @@ The fallback reads CP InstCal science, inverse variance and integer DQ. For each
 
 Distance to edges, masked fraction, shape, aperture flags and DQ are retained. Weight <=0 and severe DQ classes are masked. Raw code 7 is retained where positive weight exists. Legacy releases before the CP 3.5 integer-code convention are rejected by this adapter. Pixel coordinates are zero-based in SEP and in WCS evaluation.
 
-[DR11 data model](https://www.legacysurvey.org/dr11/files/)  
-[NOIRLab pipeline handbook index](https://nsf-noirlab.gitlab.io/csdc/csdc-mso-docs/)  
+[DR11 data model](https://www.legacysurvey.org/dr11/files/)
+[NOIRLab pipeline handbook index](https://nsf-noirlab.gitlab.io/csdc/csdc-mso-docs/)
 [legacypipe DECam adapter](https://github.com/legacysurvey/legacypipe/blob/main/py/legacypipe/decam.py)

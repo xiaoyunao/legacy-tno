@@ -11,5 +11,5 @@ Shared archive paths verified on Perlmutter:
 
 The pilot union areas use the metadata TAN WCS on a 0.025° grid, with cosine-weighted declination. The four-night count measures coverage at a fixed location and puts no floor on target detection probability. CCD interiors and gaps are represented at the grid resolution. Pixel masks, nonuniform depth and moving-object reach require a separate measurement.
 
-[DR11 files](https://www.legacysurvey.org/dr11/files/)  
+[DR11 files](https://www.legacysurvey.org/dr11/files/)
 [DR11 CCD cut bits](https://www.legacysurvey.org/dr11/bitmasks/)

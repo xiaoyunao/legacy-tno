@@ -11,7 +11,9 @@ from .orbit import Dynamics, observatory
 
 DEPTH_BITS = (1 << 14) | (1 << 18)
 DES = "2012B-0001"
-DES_EPOCH_TDB = 57388.0
+# J2016.0, TDB. A UTC-calendar-style midnight epoch offsets DES tracks
+# by several arcseconds. Compare the epoch check against JPL Horizons W84.
+DES_EPOCH_TDB = 57388.5
 
 
 def evaluate_footprint(rows, angles, pad_px=0):
