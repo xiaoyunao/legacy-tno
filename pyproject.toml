@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legacy-tno"
+version = "0.1.0"
+description = "Single-exposure DECam moving-object pilot"
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+
+[project.scripts]
+legacy-tno = "legacy_tno.cli:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["configs/requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where = ["src"]
