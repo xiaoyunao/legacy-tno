@@ -1,0 +1,326 @@
+{
+  "run_id": "exploration-b49f1211213970",
+  "seed": 617225,
+  "cells": [
+    {
+      "distance_au": [
+        30,
+        60
+      ],
+      "mag_r": [
+        20,
+        21.8
+      ],
+      "trials": 21,
+      "injected": 2
+    },
+    {
+      "distance_au": [
+        30,
+        60
+      ],
+      "mag_r": [
+        21.8,
+        23.2
+      ],
+      "trials": 25,
+      "injected": 2
+    },
+    {
+      "distance_au": [
+        60,
+        120
+      ],
+      "mag_r": [
+        20,
+        21.8
+      ],
+      "trials": 3,
+      "injected": 2
+    },
+    {
+      "distance_au": [
+        60,
+        120
+      ],
+      "mag_r": [
+        21.8,
+        23.2
+      ],
+      "trials": 12,
+      "injected": 2
+    },
+    {
+      "distance_au": [
+        120,
+        300
+      ],
+      "mag_r": [
+        20,
+        21.8
+      ],
+      "trials": 3,
+      "injected": 2
+    },
+    {
+      "distance_au": [
+        120,
+        300
+      ],
+      "mag_r": [
+        21.8,
+        23.2
+      ],
+      "trials": 9,
+      "injected": 2
+    }
+  ],
+  "objects": [
+    {
+      "injection_id": "sim-000",
+      "distance_au": 40.16155246955969,
+      "mag_r": 21.79407913649823,
+      "eccentricity": 0.2952008679162599,
+      "apparent_mean_arcsec_per_day": 97.85694984798002,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 5,
+      "recovered": false,
+      "largest_pure_chain": 0,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-001",
+      "distance_au": 39.162986572631084,
+      "mag_r": 21.53035298813837,
+      "eccentricity": 0.12399205087033585,
+      "apparent_mean_arcsec_per_day": 97.50722871701757,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": true,
+      "largest_pure_chain": 6,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-002",
+      "distance_au": 56.46950248477103,
+      "mag_r": 22.992167065304002,
+      "eccentricity": 0.300211129185833,
+      "apparent_mean_arcsec_per_day": 55.32450959234301,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": true,
+      "largest_pure_chain": 6,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-003",
+      "distance_au": 31.778938419335862,
+      "mag_r": 22.426669911925387,
+      "eccentricity": 0.17024017912070064,
+      "apparent_mean_arcsec_per_day": 109.49729976080225,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": true,
+      "largest_pure_chain": 6,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-004",
+      "distance_au": 106.3889751739897,
+      "mag_r": 20.013458219017977,
+      "eccentricity": 0.09591457047819792,
+      "apparent_mean_arcsec_per_day": 27.892541025561663,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": false,
+      "largest_pure_chain": 0,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-005",
+      "distance_au": 113.2484865025295,
+      "mag_r": 21.467705914700936,
+      "eccentricity": 0.0887458683707086,
+      "apparent_mean_arcsec_per_day": 31.151561871449207,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": false,
+      "largest_pure_chain": 0,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-006",
+      "distance_au": 69.67041375407452,
+      "mag_r": 22.766514185916336,
+      "eccentricity": 0.23747072223619137,
+      "apparent_mean_arcsec_per_day": 46.21427378303662,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": true,
+      "largest_pure_chain": 6,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-007",
+      "distance_au": 89.82574949976122,
+      "mag_r": 22.39105642569815,
+      "eccentricity": 0.6286388147879625,
+      "apparent_mean_arcsec_per_day": 39.99277631392966,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": false,
+      "largest_pure_chain": 0,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-008",
+      "distance_au": 263.4629119671407,
+      "mag_r": 20.84921890554844,
+      "eccentricity": 0.07918983629567584,
+      "apparent_mean_arcsec_per_day": 12.390559189729453,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 5,
+      "recovered": false,
+      "largest_pure_chain": 0,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-009",
+      "distance_au": 174.9893422562044,
+      "mag_r": 21.681618059613957,
+      "eccentricity": 0.2867374496438748,
+      "apparent_mean_arcsec_per_day": 18.71647204088304,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": false,
+      "largest_pure_chain": 0,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-010",
+      "distance_au": 161.88088429346777,
+      "mag_r": 22.832320324028196,
+      "eccentricity": 0.37302107373911114,
+      "apparent_mean_arcsec_per_day": 21.91049446595658,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": false,
+      "largest_pure_chain": 0,
+      "truncated": false
+    },
+    {
+      "injection_id": "sim-011",
+      "distance_au": 163.3282899617681,
+      "mag_r": 22.727906962243367,
+      "eccentricity": 0.20613548101056667,
+      "apparent_mean_arcsec_per_day": 21.799776745285612,
+      "usable_geometry_exposures": 6,
+      "nights": 4,
+      "arc_days": 13.090592915927118,
+      "empirical_snr_epochs": 6,
+      "engineering_snr_epochs": 0,
+      "survived": 6,
+      "recovered": false,
+      "largest_pure_chain": 0,
+      "truncated": false
+    }
+  ],
+  "batches": [
+    {
+      "start": 0,
+      "injected_detections": 12,
+      "real_detections": 227331,
+      "fit_counts": {
+        "attempted": 1,
+        "accepted": 1
+      },
+      "truncated": []
+    },
+    {
+      "start": 2,
+      "injected_detections": 12,
+      "real_detections": 227331,
+      "fit_counts": {
+        "attempted": 2,
+        "accepted": 2
+      },
+      "truncated": []
+    },
+    {
+      "start": 4,
+      "injected_detections": 12,
+      "real_detections": 227331,
+      "fit_counts": {},
+      "truncated": []
+    },
+    {
+      "start": 6,
+      "injected_detections": 12,
+      "real_detections": 227331,
+      "fit_counts": {
+        "attempted": 1,
+        "accepted": 1
+      },
+      "truncated": []
+    },
+    {
+      "start": 8,
+      "injected_detections": 12,
+      "real_detections": 227331,
+      "fit_counts": {},
+      "truncated": []
+    },
+    {
+      "start": 10,
+      "injected_detections": 12,
+      "real_detections": 227331,
+      "fit_counts": {},
+      "truncated": []
+    }
+  ],
+  "scope": "conditional on usable CCD catalogs and TAN geometry; no pixel-level completeness calibration"
+}
