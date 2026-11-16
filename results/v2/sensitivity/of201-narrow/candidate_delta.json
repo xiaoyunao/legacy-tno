@@ -1,0 +1,40 @@
+{
+  "baseline": "validation-ef4655b225ac2a",
+  "replay": "validation-b02f4cf0f8959c",
+  "chains": [
+    {
+      "replay_id": "C0001",
+      "identical_baseline": [
+        "C0004"
+      ],
+      "competing_baseline": [
+        {
+          "baseline_id": "C0007",
+          "shared_measurements": 2
+        }
+      ]
+    },
+    {
+      "replay_id": "C0002",
+      "identical_baseline": [],
+      "competing_baseline": []
+    },
+    {
+      "replay_id": "C0003",
+      "identical_baseline": [
+        "C0007"
+      ],
+      "competing_baseline": [
+        {
+          "baseline_id": "C0004",
+          "shared_measurements": 2
+        }
+      ]
+    },
+    {
+      "replay_id": "C0004",
+      "identical_baseline": [],
+      "competing_baseline": []
+    }
+  ]
+}

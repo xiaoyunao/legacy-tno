@@ -1,0 +1,313 @@
+{
+  "truncated": [],
+  "pair_counts": {
+    "pairs": 1698506,
+    "triplets": 97376,
+    "chains": 72
+  },
+  "fit_counts": {
+    "attempted": 68,
+    "residual_rejected": 64,
+    "accepted": 4
+  },
+  "distance_bins": [
+    {
+      "season": 0,
+      "distance_bin": 0,
+      "z_min": 271.4285714285714,
+      "z_max": 300.0,
+      "status": "complete",
+      "counts": {
+        "pairs": 1995,
+        "triplets": 92
+      },
+      "worker_wall_seconds": 0.17329207801958546
+    },
+    {
+      "season": 0,
+      "distance_bin": 1,
+      "z_min": 245.5782312925169,
+      "z_max": 271.4285714285714,
+      "status": "complete",
+      "counts": {
+        "pairs": 2769,
+        "triplets": 113
+      },
+      "worker_wall_seconds": 0.1878107069642283
+    },
+    {
+      "season": 0,
+      "distance_bin": 2,
+      "z_min": 222.18982831227717,
+      "z_max": 245.5782312925169,
+      "status": "complete",
+      "counts": {
+        "pairs": 3739,
+        "triplets": 57
+      },
+      "worker_wall_seconds": 0.21463516697986051
+    },
+    {
+      "season": 0,
+      "distance_bin": 3,
+      "z_min": 201.02889228253648,
+      "z_max": 222.18982831227717,
+      "status": "complete",
+      "counts": {
+        "pairs": 4927,
+        "triplets": 127
+      },
+      "worker_wall_seconds": 0.2846826710156165
+    },
+    {
+      "season": 0,
+      "distance_bin": 4,
+      "z_min": 181.88328349372347,
+      "z_max": 201.02889228253648,
+      "status": "complete",
+      "counts": {
+        "pairs": 6355,
+        "triplets": 242
+      },
+      "worker_wall_seconds": 0.37789399799657986
+    },
+    {
+      "season": 0,
+      "distance_bin": 5,
+      "z_min": 164.56106601813073,
+      "z_max": 181.88328349372347,
+      "status": "complete",
+      "counts": {
+        "pairs": 8244,
+        "triplets": 229
+      },
+      "worker_wall_seconds": 0.4579431089805439
+    },
+    {
+      "season": 0,
+      "distance_bin": 6,
+      "z_min": 148.88858354021352,
+      "z_max": 164.56106601813073,
+      "status": "complete",
+      "counts": {
+        "pairs": 10581,
+        "triplets": 376
+      },
+      "worker_wall_seconds": 0.6332167669897899
+    },
+    {
+      "season": 0,
+      "distance_bin": 7,
+      "z_min": 134.70871844114555,
+      "z_max": 148.88858354021352,
+      "status": "complete",
+      "counts": {
+        "pairs": 13051,
+        "triplets": 560
+      },
+      "worker_wall_seconds": 0.827632674947381
+    },
+    {
+      "season": 0,
+      "distance_bin": 8,
+      "z_min": 121.87931668484596,
+      "z_max": 134.70871844114555,
+      "status": "complete",
+      "counts": {
+        "pairs": 15705,
+        "triplets": 752
+      },
+      "worker_wall_seconds": 0.9520344630000181
+    },
+    {
+      "season": 0,
+      "distance_bin": 9,
+      "z_min": 110.27176271486061,
+      "z_max": 121.87931668484596,
+      "status": "complete",
+      "counts": {
+        "pairs": 19498,
+        "triplets": 1173
+      },
+      "worker_wall_seconds": 1.237360418017488
+    },
+    {
+      "season": 0,
+      "distance_bin": 10,
+      "z_min": 99.76969007535007,
+      "z_max": 110.27176271486061,
+      "status": "complete",
+      "counts": {
+        "pairs": 24472,
+        "triplets": 1794
+      },
+      "worker_wall_seconds": 1.6093964000465348
+    },
+    {
+      "season": 0,
+      "distance_bin": 11,
+      "z_min": 90.26781483007862,
+      "z_max": 99.76969007535007,
+      "status": "complete",
+      "counts": {
+        "pairs": 30704,
+        "triplets": 2799
+      },
+      "worker_wall_seconds": 2.102611540001817
+    },
+    {
+      "season": 0,
+      "distance_bin": 12,
+      "z_min": 81.67088008435684,
+      "z_max": 90.26781483007862,
+      "status": "complete",
+      "counts": {
+        "pairs": 38814,
+        "triplets": 4652
+      },
+      "worker_wall_seconds": 2.852184452000074
+    },
+    {
+      "season": 0,
+      "distance_bin": 13,
+      "z_min": 73.8927010287038,
+      "z_max": 81.67088008435684,
+      "status": "complete",
+      "counts": {
+        "pairs": 49635,
+        "triplets": 8064
+      },
+      "worker_wall_seconds": 4.005845041014254
+    },
+    {
+      "season": 0,
+      "distance_bin": 14,
+      "z_min": 66.855300930732,
+      "z_max": 73.8927010287038,
+      "status": "complete",
+      "counts": {
+        "pairs": 64533,
+        "triplets": 14221
+      },
+      "worker_wall_seconds": 5.80577470199205
+    },
+    {
+      "season": 0,
+      "distance_bin": 15,
+      "z_min": 60.48812941351943,
+      "z_max": 66.855300930732,
+      "status": "complete",
+      "counts": {
+        "pairs": 81792,
+        "triplets": 23873,
+        "chains": 13
+      },
+      "worker_wall_seconds": 8.485394912015181
+    },
+    {
+      "season": 0,
+      "distance_bin": 16,
+      "z_min": 54.72735518366044,
+      "z_max": 60.48812941351943,
+      "status": "complete",
+      "counts": {
+        "pairs": 102393,
+        "triplets": 35590,
+        "chains": 57
+      },
+      "worker_wall_seconds": 11.778989268001169
+    },
+    {
+      "season": 0,
+      "distance_bin": 17,
+      "z_min": 49.51522611854992,
+      "z_max": 54.72735518366044,
+      "status": "complete",
+      "counts": {
+        "pairs": 124650,
+        "triplets": 121
+      },
+      "worker_wall_seconds": 1.5770986480056308
+    },
+    {
+      "season": 0,
+      "distance_bin": 18,
+      "z_min": 44.79949029773564,
+      "z_max": 49.51522611854992,
+      "status": "complete",
+      "counts": {
+        "pairs": 147934,
+        "triplets": 203
+      },
+      "worker_wall_seconds": 1.8634228340233676
+    },
+    {
+      "season": 0,
+      "distance_bin": 19,
+      "z_min": 40.532872174141765,
+      "z_max": 44.79949029773564,
+      "status": "complete",
+      "counts": {
+        "pairs": 171130,
+        "triplets": 286,
+        "chains": 1
+      },
+      "worker_wall_seconds": 2.227401309006382
+    },
+    {
+      "season": 0,
+      "distance_bin": 20,
+      "z_min": 36.672598633747306,
+      "z_max": 40.532872174141765,
+      "status": "complete",
+      "counts": {
+        "pairs": 193729,
+        "triplets": 412
+      },
+      "worker_wall_seconds": 2.603643914044369
+    },
+    {
+      "season": 0,
+      "distance_bin": 21,
+      "z_min": 33.179970192438034,
+      "z_max": 36.672598633747306,
+      "status": "complete",
+      "counts": {
+        "pairs": 213412,
+        "triplets": 595
+      },
+      "worker_wall_seconds": 2.9672416840330698
+    },
+    {
+      "season": 0,
+      "distance_bin": 22,
+      "z_min": 30.01997303125346,
+      "z_max": 33.179970192438034,
+      "status": "complete",
+      "counts": {
+        "pairs": 235081,
+        "triplets": 744,
+        "chains": 1
+      },
+      "worker_wall_seconds": 3.320162440009881
+    },
+    {
+      "season": 0,
+      "distance_bin": 23,
+      "z_min": 30.0,
+      "z_max": 30.01997303125346,
+      "status": "complete",
+      "counts": {
+        "pairs": 133363,
+        "triplets": 301
+      },
+      "worker_wall_seconds": 1.9447584809968248
+    }
+  ],
+  "restricted_first_endpoint_radius_deg": 0.16,
+  "link_input": 23810,
+  "link_classes": [
+    "transient_clean"
+  ],
+  "excluded_by_bright_search": 0
+}
