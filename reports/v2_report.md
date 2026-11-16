@@ -16,6 +16,10 @@
 
 每组测量返回行数均和 NSC 芯片索引一致。下载以曝光与一至八个 CCD 组为单位缓存，保留测量 ID。适配器采用 CP 的 UTC 起始时刻加半曝光时长，将 NSC 的 AUTO AB 星等转换为纳米马吉，使用 RA、Dec 两个角秒位置误差中较大的值作为共同权重分量。CP 权重、DQ、边缘和 NSC 提源旗标提供质量筛选。按曝光历元传播 Gaia 星表，实测 CCD 偏移与散布。NSC 原有标定位置进入拟合，附加散布下限 0.15″。NSC AUTO 流量和 Sweep PSF 流量的显著超量判定在本版关闭。默认关联输入仅含通过静态与质量筛选且 SNR ≥ 5 的检测，静态歧义检测仍留在分类结果。
 
+三个控制场和独立试点共 2,810 个 Legacy CCD，其中 2,805 个可直接使用 NSC，覆盖 94/95 张曝光。唯一缺口出现在 TV158 场的一张曝光。2021 年宽、窄归档场的 1,163 和 283 个 CCD 均无 NSC 曝光匹配，现有 SEP 归档支持两个范围。这两个视场可能重叠。逐 CCD 账本合并了 Legacy 路径、NSC 查询键、实际载入与 Gaia 校验状态、检测数和足迹索引，保存在 NERSC 的 `v2/nsc-coverage-ledger.json`。[按场、年份和波段的覆盖表](../results/v2/nsc-coverage-public.json) · [覆盖与年份图](../results/v2/figures/nsc_coverage.png)
+
+两控制场中选取包含已回收成员的 27 个共同 CCD，NSC 和 SEP 分别有 36,085 和 43,571 条源记录，获得 33,585 个 1″ 内的互为最近邻配对。按波段和 SEP 星等分组报告位置差与 AUTO − 孔径星等的分位数。各星等组的匹配位置偏差中位数约为 0.016–0.089″；AUTO 与 SEP 孔径差有波段及亮度依赖，无法用单一零点平移概括。各场各波段的 Gaia 东、北分量 CCD 中位偏移绝对值均小于 0.036″。归一化没有强制将 Gaia 偏移写回 NSC 坐标。[同 CCD 统计](../results/v2/nsc-sep-by-magnitude.json) · [星等趋势图](../results/v2/figures/nsc_sep_comparison.png) · [Gaia 与 CP 掩膜质控](../results/v2/nsc-qc-summary.json)
+
 ## 冻结全池盲搜
 
 | 目标 | A 几何曝光 | B 实测 | C 入池 | D 可关联 | E 盲搜 | 相应距离箱 |

@@ -1,0 +1,522 @@
+{
+  "fields": [
+    {
+      "field_id": "validation-c36e0a643fc984",
+      "label": "Original misses",
+      "run_id": "validation-fdd2c34bae73f8",
+      "field": {
+        "id": "validation",
+        "ra_deg": 322.43747386305023,
+        "dec_deg": 0.8980770217449207,
+        "core_radius_deg": 1.3,
+        "read_radius_deg": 1.75,
+        "mjd_min": 58071.01202209,
+        "mjd_max": 58086.05300374,
+        "exclude_des": false
+      },
+      "total": {
+        "legacy_ccds": 670,
+        "legacy_exposures": 11,
+        "legacy_nights": 11,
+        "nsc_metadata": {
+          "chip_listed": 670
+        },
+        "nsc_exposures": 11,
+        "usable_ccds": {
+          "NSC": 670
+        },
+        "usable_exposures": 11,
+        "usable_nights": 11,
+        "mjd_min": 58071.02202209,
+        "mjd_max": 58086.04300374,
+        "exclusions": {}
+      },
+      "breakdown": [
+        {
+          "year": 2017,
+          "band": "z",
+          "legacy_ccds": 670,
+          "legacy_exposures": 11,
+          "legacy_nights": 11,
+          "nsc_metadata": {
+            "chip_listed": 670
+          },
+          "nsc_exposures": 11,
+          "usable_ccds": {
+            "NSC": 670
+          },
+          "usable_exposures": 11,
+          "usable_nights": 11,
+          "mjd_min": 58071.02202209,
+          "mjd_max": 58086.04300374,
+          "exclusions": {}
+        }
+      ]
+    },
+    {
+      "field_id": "validation-97d3348bc5c4b3",
+      "label": "TV158 control",
+      "run_id": "validation-2757671f191346",
+      "field": {
+        "id": "validation",
+        "ra_deg": 35.76859318301772,
+        "dec_deg": -4.838157357975341,
+        "core_radius_deg": 0.6,
+        "read_radius_deg": 0.8099999999999999,
+        "mjd_min": 57007.03137043336,
+        "mjd_max": 57039.170921773446,
+        "exclude_des": false
+      },
+      "total": {
+        "legacy_ccds": 928,
+        "legacy_exposures": 36,
+        "legacy_nights": 12,
+        "nsc_metadata": {
+          "chip_listed": 923,
+          "no_nsc_exposure": 5
+        },
+        "nsc_exposures": 35,
+        "usable_ccds": {
+          "NSC": 923,
+          "none": 5
+        },
+        "usable_exposures": 35,
+        "usable_nights": 12,
+        "mjd_min": 57007.1608496,
+        "mjd_max": 57039.05883844,
+        "exclusions": {
+          "No prepared NSC catalog for this physical CCD": 5
+        }
+      },
+      "breakdown": [
+        {
+          "year": 2014,
+          "band": "i",
+          "legacy_ccds": 393,
+          "legacy_exposures": 16,
+          "legacy_nights": 5,
+          "nsc_metadata": {
+            "chip_listed": 388,
+            "no_nsc_exposure": 5
+          },
+          "nsc_exposures": 15,
+          "usable_ccds": {
+            "NSC": 388,
+            "none": 5
+          },
+          "usable_exposures": 15,
+          "usable_nights": 5,
+          "mjd_min": 57007.1608496,
+          "mjd_max": 57019.0888538,
+          "exclusions": {
+            "No prepared NSC catalog for this physical CCD": 5
+          }
+        },
+        {
+          "year": 2015,
+          "band": "i",
+          "legacy_ccds": 535,
+          "legacy_exposures": 20,
+          "legacy_nights": 7,
+          "nsc_metadata": {
+            "chip_listed": 535
+          },
+          "nsc_exposures": 20,
+          "usable_ccds": {
+            "NSC": 535
+          },
+          "usable_exposures": 20,
+          "usable_nights": 7,
+          "mjd_min": 57025.09041031,
+          "mjd_max": 57039.05883844,
+          "exclusions": {}
+        }
+      ]
+    },
+    {
+      "field_id": "validation-7185aa85687161",
+      "label": "OF201 control",
+      "run_id": "validation-ef4655b225ac2a",
+      "field": {
+        "id": "validation",
+        "ra_deg": 27.2,
+        "dec_deg": 27.28,
+        "core_radius_deg": 1.1,
+        "read_radius_deg": 1.45,
+        "mjd_min": 58324,
+        "mjd_max": 58423,
+        "exclude_des": false
+      },
+      "total": {
+        "legacy_ccds": 962,
+        "legacy_exposures": 38,
+        "legacy_nights": 13,
+        "nsc_metadata": {
+          "chip_listed": 962
+        },
+        "nsc_exposures": 38,
+        "usable_ccds": {
+          "NSC": 962
+        },
+        "usable_exposures": 38,
+        "usable_nights": 13,
+        "mjd_min": 58324.40975322,
+        "mjd_max": 58422.16912094,
+        "exclusions": {}
+      },
+      "breakdown": [
+        {
+          "year": 2018,
+          "band": "g",
+          "legacy_ccds": 309,
+          "legacy_exposures": 12,
+          "legacy_nights": 4,
+          "nsc_metadata": {
+            "chip_listed": 309
+          },
+          "nsc_exposures": 12,
+          "usable_ccds": {
+            "NSC": 309
+          },
+          "usable_exposures": 12,
+          "usable_nights": 4,
+          "mjd_min": 58340.37898141,
+          "mjd_max": 58393.19206415,
+          "exclusions": {}
+        },
+        {
+          "year": 2018,
+          "band": "r",
+          "legacy_ccds": 353,
+          "legacy_exposures": 13,
+          "legacy_nights": 6,
+          "nsc_metadata": {
+            "chip_listed": 353
+          },
+          "nsc_exposures": 13,
+          "usable_ccds": {
+            "NSC": 353
+          },
+          "usable_exposures": 13,
+          "usable_nights": 6,
+          "mjd_min": 58340.38131077,
+          "mjd_max": 58422.16912094,
+          "exclusions": {}
+        },
+        {
+          "year": 2018,
+          "band": "z",
+          "legacy_ccds": 300,
+          "legacy_exposures": 13,
+          "legacy_nights": 8,
+          "nsc_metadata": {
+            "chip_listed": 300
+          },
+          "nsc_exposures": 13,
+          "usable_ccds": {
+            "NSC": 300
+          },
+          "usable_exposures": 13,
+          "usable_nights": 8,
+          "mjd_min": 58324.40975322,
+          "mjd_max": 58408.2205548,
+          "exclusions": {}
+        }
+      ]
+    },
+    {
+      "field_id": "exploration-f742d8b20d9ab4",
+      "label": "2021 broad",
+      "run_id": "exploration-f742d8b20d9ab4",
+      "field": {
+        "id": "exploration",
+        "ra_deg": 212,
+        "dec_deg": -9,
+        "core_radius_deg": 0.9,
+        "read_radius_deg": 1.35,
+        "mjd_min": 59265.38235186,
+        "mjd_max": 59367.14230483,
+        "exclude_des": true
+      },
+      "total": {
+        "legacy_ccds": 1163,
+        "legacy_exposures": 63,
+        "legacy_nights": 25,
+        "nsc_metadata": {
+          "no_nsc_exposure": 1163
+        },
+        "nsc_exposures": 0,
+        "usable_ccds": {
+          "SEP": 1163
+        },
+        "usable_exposures": 63,
+        "usable_nights": 25,
+        "mjd_min": 59265.39235186,
+        "mjd_max": 59367.13230483,
+        "exclusions": {}
+      },
+      "breakdown": [
+        {
+          "year": 2021,
+          "band": "g",
+          "legacy_ccds": 316,
+          "legacy_exposures": 18,
+          "legacy_nights": 18,
+          "nsc_metadata": {
+            "no_nsc_exposure": 316
+          },
+          "nsc_exposures": 0,
+          "usable_ccds": {
+            "SEP": 316
+          },
+          "usable_exposures": 18,
+          "usable_nights": 18,
+          "mjd_min": 59265.39235186,
+          "mjd_max": 59367.13230483,
+          "exclusions": {}
+        },
+        {
+          "year": 2021,
+          "band": "i",
+          "legacy_ccds": 503,
+          "legacy_exposures": 26,
+          "legacy_nights": 17,
+          "nsc_metadata": {
+            "no_nsc_exposure": 503
+          },
+          "nsc_exposures": 0,
+          "usable_ccds": {
+            "SEP": 503
+          },
+          "usable_exposures": 26,
+          "usable_nights": 17,
+          "mjd_min": 59265.39418479,
+          "mjd_max": 59365.19639898,
+          "exclusions": {}
+        },
+        {
+          "year": 2021,
+          "band": "r",
+          "legacy_ccds": 265,
+          "legacy_exposures": 15,
+          "legacy_nights": 15,
+          "nsc_metadata": {
+            "no_nsc_exposure": 265
+          },
+          "nsc_exposures": 0,
+          "usable_ccds": {
+            "SEP": 265
+          },
+          "usable_exposures": 15,
+          "usable_nights": 15,
+          "mjd_min": 59265.3932714,
+          "mjd_max": 59367.13138968,
+          "exclusions": {}
+        },
+        {
+          "year": 2021,
+          "band": "z",
+          "legacy_ccds": 79,
+          "legacy_exposures": 4,
+          "legacy_nights": 4,
+          "nsc_metadata": {
+            "no_nsc_exposure": 79
+          },
+          "nsc_exposures": 0,
+          "usable_ccds": {
+            "SEP": 79
+          },
+          "usable_exposures": 4,
+          "usable_nights": 4,
+          "mjd_min": 59265.3951082,
+          "mjd_max": 59361.11885539,
+          "exclusions": {}
+        }
+      ]
+    },
+    {
+      "field_id": "exploration-cb6d398cc191bd",
+      "label": "2021 narrow",
+      "run_id": "exploration-cb6d398cc191bd",
+      "field": {
+        "id": "exploration",
+        "ra_deg": 211.766,
+        "dec_deg": -8.243,
+        "core_radius_deg": 0.2,
+        "read_radius_deg": 0.54,
+        "mjd_min": 59274.39,
+        "mjd_max": 59298.43,
+        "exclude_des": true
+      },
+      "total": {
+        "legacy_ccds": 283,
+        "legacy_exposures": 23,
+        "legacy_nights": 10,
+        "nsc_metadata": {
+          "no_nsc_exposure": 283
+        },
+        "nsc_exposures": 0,
+        "usable_ccds": {
+          "SEP": 283
+        },
+        "usable_exposures": 23,
+        "usable_nights": 10,
+        "mjd_min": 59274.40256005,
+        "mjd_max": 59297.1733711,
+        "exclusions": {}
+      },
+      "breakdown": [
+        {
+          "year": 2021,
+          "band": "g",
+          "legacy_ccds": 117,
+          "legacy_exposures": 9,
+          "legacy_nights": 9,
+          "nsc_metadata": {
+            "no_nsc_exposure": 117
+          },
+          "nsc_exposures": 0,
+          "usable_ccds": {
+            "SEP": 117
+          },
+          "usable_exposures": 9,
+          "usable_nights": 9,
+          "mjd_min": 59274.40256005,
+          "mjd_max": 59297.17247501,
+          "exclusions": {}
+        },
+        {
+          "year": 2021,
+          "band": "i",
+          "legacy_ccds": 88,
+          "legacy_exposures": 8,
+          "legacy_nights": 6,
+          "nsc_metadata": {
+            "no_nsc_exposure": 88
+          },
+          "nsc_exposures": 0,
+          "usable_ccds": {
+            "SEP": 88
+          },
+          "usable_exposures": 8,
+          "usable_nights": 6,
+          "mjd_min": 59274.40438457,
+          "mjd_max": 59296.21287593,
+          "exclusions": {}
+        },
+        {
+          "year": 2021,
+          "band": "r",
+          "legacy_ccds": 78,
+          "legacy_exposures": 6,
+          "legacy_nights": 6,
+          "nsc_metadata": {
+            "no_nsc_exposure": 78
+          },
+          "nsc_exposures": 0,
+          "usable_ccds": {
+            "SEP": 78
+          },
+          "usable_exposures": 6,
+          "usable_nights": 6,
+          "mjd_min": 59274.40347789,
+          "mjd_max": 59297.1733711,
+          "exclusions": {}
+        }
+      ]
+    },
+    {
+      "field_id": "pilot-38-10",
+      "label": "2018 independent pilot",
+      "run_id": "exploration-b49f1211213970",
+      "field": {
+        "id": "exploration",
+        "ra_deg": 38.0,
+        "dec_deg": 10.0,
+        "core_radius_deg": 0.2,
+        "read_radius_deg": 0.96,
+        "mjd_min": 58394.210210820005,
+        "mjd_max": 58407.30271693,
+        "exclude_des": true
+      },
+      "total": {
+        "legacy_ccds": 250,
+        "legacy_exposures": 10,
+        "legacy_nights": 5,
+        "nsc_metadata": {
+          "chip_listed": 250
+        },
+        "nsc_exposures": 10,
+        "usable_ccds": {
+          "NSC": 250
+        },
+        "usable_exposures": 10,
+        "usable_nights": 5,
+        "mjd_min": 58394.21121082,
+        "mjd_max": 58407.30171693,
+        "exclusions": {}
+      },
+      "breakdown": [
+        {
+          "year": 2018,
+          "band": "g",
+          "legacy_ccds": 91,
+          "legacy_exposures": 4,
+          "legacy_nights": 3,
+          "nsc_metadata": {
+            "chip_listed": 91
+          },
+          "nsc_exposures": 4,
+          "usable_ccds": {
+            "NSC": 91
+          },
+          "usable_exposures": 4,
+          "usable_nights": 3,
+          "mjd_min": 58394.21684792,
+          "mjd_max": 58398.16101791,
+          "exclusions": {}
+        },
+        {
+          "year": 2018,
+          "band": "r",
+          "legacy_ccds": 119,
+          "legacy_exposures": 4,
+          "legacy_nights": 3,
+          "nsc_metadata": {
+            "chip_listed": 119
+          },
+          "nsc_exposures": 4,
+          "usable_ccds": {
+            "NSC": 119
+          },
+          "usable_exposures": 4,
+          "usable_nights": 3,
+          "mjd_min": 58394.21121082,
+          "mjd_max": 58407.30171693,
+          "exclusions": {}
+        },
+        {
+          "year": 2018,
+          "band": "z",
+          "legacy_ccds": 40,
+          "legacy_exposures": 2,
+          "legacy_nights": 2,
+          "nsc_metadata": {
+            "chip_listed": 40
+          },
+          "nsc_exposures": 2,
+          "usable_ccds": {
+            "NSC": 40
+          },
+          "usable_exposures": 2,
+          "usable_nights": 2,
+          "mjd_min": 58406.14527589,
+          "mjd_max": 58407.12835485,
+          "exclusions": {}
+        }
+      ]
+    }
+  ],
+  "detailed_ledger": "/pscratch/sd/y/yunao/legacy-tno/v2/nsc-coverage-ledger.json",
+  "scope": "Sampled archived fields and independent pilot; archived 2021 scopes can overlap. Totals are per field and must not be added as unique survey coverage."
+}

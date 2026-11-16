@@ -20,9 +20,14 @@ def main():
     p.add_argument("growth", type=Path)
     p.add_argument("target")
     p.add_argument("output", type=Path)
+    p.add_argument("--anonymous-selection", type=Path)
     args = p.parse_args()
     trial = json.loads(args.growth.read_text())
-    measurements = trial["supporting_measurements"]
+    selection = json.loads(args.anonymous_selection.read_text()) if args.anonymous_selection else None
+    if selection is not None and selection["run_id"] != trial["run_id"]:
+        raise ValueError("Anonymous selection is from a different run")
+    measurements = (trial["supporting_measurements"] if selection is None
+                    else selection.pop("selected", []))
     checks = {}
     signature = None
     if measurements:
@@ -48,7 +53,7 @@ def main():
                 mask_fraction=row["mask_fraction"], residual_arcsec=delta,
                 matched=bool(np.linalg.norm(delta) <= 1.25))
     accepted = []
-    for start in trial["growth"]:
+    for start in trial["growth"] if selection is None else []:
         hit = checks[start["added_detection_id"]]
         for item in start["independent_predictions"]:
             test = checks[item["detection_id"]]
@@ -62,6 +67,9 @@ def main():
         "footprint_count", "attempted_ccds", "attempted_subset", "family_count", "training_arc_days",
         "training_distance_range_au", "checks", "source_matches", "single_epoch_refits",
         "independent_night_prediction_pairs", "scope")}
+    if selection is not None:
+        summary["anonymous_refinement"] = selection
+        summary["selected_epoch_scores"] = list(checks.values())
     write_json(args.output, dict(**summary, target=args.target, scorer=signature,
         candidates_in_scoring=len(checks), horizon_matches=sum(x["matched"] for x in checks.values()),
         confirmed_unique_nights=len({v["night"] for v in checks.values() if v["matched"]}),
