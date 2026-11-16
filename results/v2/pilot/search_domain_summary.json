@@ -1,0 +1,13 @@
+{
+  "truncated": [],
+  "pair_counts": {
+    "pairs": 1060727,
+    "triplets": 684
+  },
+  "fit_counts": {},
+  "link_input": 7705,
+  "link_classes": [
+    "transient_clean"
+  ],
+  "excluded_by_bright_search": 0
+}

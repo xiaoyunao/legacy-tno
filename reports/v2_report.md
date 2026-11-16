@@ -40,6 +40,19 @@ OF201 场用于测试四夜门槛。共 23,810 个干净检测也进入了搜索
 
 采用 Legacy 采样节奏、NSC 曝光覆盖和曝光源密度作初选，冻结中心 RA 38°、Dec +10°，核心半径 0.20°，读取半径 0.96°。时间窗为 MJD 58394.21021082–58407.30271693，含五个 Legacy 夜、10 张曝光、250 个候选 CCD，来自提案 2014B-0404。全部 10 张曝光在 NSC 元数据有唯一匹配。仅排除 DES 提案曝光，天区是否与 DES 搜索重叠需要单独核验。主运行保留 SNR ≥ 5、24 个距离箱。关联内部按种子参考时刻的 SSB 切平面深度分箱；最终轨道另按种子参考时刻的日心瞬时距离 30–300 au 验收。该试点只有一个核心与读取缓冲区，不声明连续多分片覆盖。[选区证据](../results/v2/nsc_pilot_selection.json) · [冻结参数](../configs/v2-nsc-pilot.json)
 
+主搜索作业 61392409 完成（565 s，0:0）。250/250 个 CCD 通过入池核验，覆盖 10 张曝光、五夜。0.025° 网格估计读取覆盖 3.635 deg²，核心有覆盖 0.112 deg²，核心至少四夜覆盖 0.0450 deg²。227,331 条标定记录中有 7,705 条进入主关联，检查 1,060,727 个曝光对组合和 684 个三元组。24 个距离箱全部结束。未形成达到拟合门槛的链，夜重排也无候选或截断。本次结果适用于冻结的天区、时间窗、SNR 门槛和干净源策略。[搜索范围](../results/v2/pilot/search_domain_summary.json) · [覆盖图](../results/v2/pilot/figures/coverage_nights.png) · [夜重排](../results/v2/pilot/null_test_summary.json) · [作业记账](../logs/slurm-v2-accounting.psv)
+
+可在 Perlmutter 用冻结代码重跑主试点。作业对已经封存的 NSC 产品使用续跑路径。
+
+```bash
+work=/pscratch/sd/y/yunao/legacy-tno
+revision=c7cd9e0f4c603a6dcea68cb4b9eb18baab15e345
+code="$HOME/projects/legacy-tno/revisions/$revision"
+sbatch --account=desi --constraint=cpu --qos=debug \
+  -o "$work/v2/nsc-pilot-%j.log" "$code/slurm/v2-nsc-pilot.sbatch" \
+  "$code" "$work" "$revision"
+```
+
 ## 尚待验收
 
-原漏检控制的逐历元复核、试点搜索与置换的完整覆盖、歧义静态分支、两个目标的跨季增长、候选图像与扩展身份检查、分层目录注入，都需要将运行结果和退出状态归档。当前不能从控制场或该试点推断全 DR11 搜索完整度，也未测量图像级完整度。
+原漏检控制的独立逐历元复核、歧义静态分支、两个目标的跨季增长、候选图像与扩展身份检查、分层目录注入仍需归档运行结果和退出状态。该试点的全 DR11 代表性及图像级完整度未经标定。

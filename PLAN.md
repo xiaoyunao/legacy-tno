@@ -25,5 +25,5 @@ The archived image headers confirmed 2,555 common control-field CCDs listed in N
 
 1. Add Gaia QC summaries to the completed NSC normalization and catalog runs, including astrometric offsets and source-retention counts by reason.
 2. The frozen TV158 control was recovered blind. OF201 has three surviving epochs, cannot meet the baseline four-night test, and had 15 truncated bins. Finish the original-miss control and independent Horizons epoch diagnostics. Run a bounded ambiguity branch and a product-independent SEP sensitivity check.
-3. The independent pilot geometry is frozen at RA 38°, Dec +10° with a 0.20° core and 0.96° read radius, 13.1 days and five Legacy nights. Run the declared 30–300 au domain at SNR ≥ 5 and close any truncations by reruns or explicitly scoped subdivision.
+3. The independent pilot at RA 38°, Dec +10° completed all 24 declared distance bins at SNR ≥ 5 with zero accepted chains. Its single 0.20° core has 0.112 deg² with coverage and the 13.1-day interval spans five Legacy nights. Compare the separate bright and ambiguous static branches on its frozen catalog product.
 4. Attempt the two cross-season extensions from anonymous training arcs and conduct equivalent identity, image and hold-out checks. Run stratified catalog injections, then package the public audit. Keep complete source measurements and tables under NERSC scratch.

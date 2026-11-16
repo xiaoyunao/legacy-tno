@@ -1,0 +1,14 @@
+{
+  "catalog": "DES Y6 published 814-object validation catalog",
+  "catalog_commit": "8f254ca30fa0e8fc1576a5a9fad7300124d3b3ee",
+  "geometry": "TAN approximation with five-pixel interior margin; not pixel-mask completeness",
+  "counts": {
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F_guided_only": 0
+  },
+  "objects": []
+}

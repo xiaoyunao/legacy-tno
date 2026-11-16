@@ -1,0 +1,33 @@
+{
+  "method": "observing-night permutation, intra-night offsets preserved",
+  "controls": [
+    {
+      "repeat": 0,
+      "candidates": 0,
+      "fit_counts": {},
+      "truncated": [],
+      "night_mapping": [
+        [
+          58393,
+          58395
+        ],
+        [
+          58395,
+          58397
+        ],
+        [
+          58397,
+          58405
+        ],
+        [
+          58405,
+          58406
+        ],
+        [
+          58406,
+          58393
+        ]
+      ]
+    }
+  ]
+}
