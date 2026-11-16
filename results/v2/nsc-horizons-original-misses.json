@@ -1,0 +1,472 @@
+{
+  "reference": "JPL Horizons W84 astrometric ICRF at CP midpoint UTC",
+  "run_id": "validation-fdd2c34bae73f8",
+  "targets": [
+    {
+      "target": "2013 RD124",
+      "retrieved_utc": "2026-11-16T08:05:32.750071+00:00",
+      "api": {
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
+      },
+      "epoch_status_counts": {
+        "no_independent_detection_within_radius": 11
+      },
+      "ccd_epochs": [
+        {
+          "expnum": 695965,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58071.022195701116,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 197.5357921634277,
+            "y": 1026.8323958227381,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 10.386130175123457,
+          "nearest_raw_snr": 51.90191650390625,
+          "nearest_classified_arcsec": 10.386130175123457,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 696512,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58073.03614074112,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 324.44903704702665,
+            "y": 1156.0009988240813,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 4.520994733172362,
+          "nearest_raw_snr": 5.8189897537231445,
+          "nearest_classified_arcsec": 4.520994733172362,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 697214,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58075.02645921111,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 437.7870955550861,
+            "y": 1309.0292851145591,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 3.4218450393087023,
+          "nearest_raw_snr": 8.84402084350586,
+          "nearest_classified_arcsec": 3.4218450393087023,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 697568,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58076.02809286112,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 511.80896729116284,
+            "y": 1402.9210418358455,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 7.61613479484573,
+          "nearest_raw_snr": 8.845101356506348,
+          "nearest_classified_arcsec": 7.61613479484573,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 698729,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58080.027931061115,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 754.3220935809295,
+            "y": 1797.7801359527161,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 7.224846518505678,
+          "nearest_raw_snr": 13.733587265014648,
+          "nearest_classified_arcsec": 7.224846518505678,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 699106,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58081.026792521116,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 833.0802624602147,
+            "y": 1931.5709810971694,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 16.900749221424523,
+          "nearest_raw_snr": 5.678328514099121,
+          "nearest_classified_arcsec": 16.900749221424523,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 699444,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58082.02770337112,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 865.7120463267765,
+            "y": 2103.3030808145672,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 38.995689727887715,
+          "nearest_raw_snr": 7.762855052947998,
+          "nearest_classified_arcsec": 38.995689727887715,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 699858,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58083.027903411115,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 935.9223476020716,
+            "y": 2185.257477306142,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 11.170535227192941,
+          "nearest_raw_snr": 9.25424861907959,
+          "nearest_classified_arcsec": 11.170535227192941,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 700238,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58084.02834410111,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 957.2980028517322,
+            "y": 2354.9135601195444,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 15.875725308688908,
+          "nearest_raw_snr": 173.2742156982422,
+          "nearest_classified_arcsec": 15.875725308688908,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 700588,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58085.03289959112,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 989.6804407339041,
+            "y": 2529.9678536362535,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 21.568583074325485,
+          "nearest_raw_snr": 9.049309730529785,
+          "nearest_classified_arcsec": 21.568583074325485,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 700938,
+          "ccdname": "S20",
+          "band": "z",
+          "midpoint_utc_mjd": 58086.043177351115,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 1022.3792095594827,
+            "y": 2649.2087697217307,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 7.465098840109765,
+          "nearest_raw_snr": 5.690351963043213,
+          "nearest_classified_arcsec": 7.465098840109765,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        }
+      ]
+    },
+    {
+      "target": "2013 RQ157",
+      "retrieved_utc": "2026-11-16T08:05:49.577987+00:00",
+      "api": {
+        "source": "NASA/JPL Horizons API",
+        "version": "1.2"
+      },
+      "epoch_status_counts": {
+        "no_independent_detection_within_radius": 9
+      },
+      "ccd_epochs": [
+        {
+          "expnum": 695965,
+          "ccdname": "S5",
+          "band": "z",
+          "midpoint_utc_mjd": 58071.022195701116,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 1865.8802312014743,
+            "y": 2200.979157401686,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 5.4825150460718985,
+          "nearest_raw_snr": 208.67503356933594,
+          "nearest_classified_arcsec": 5.4825150460718985,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 696512,
+          "ccdname": "S5",
+          "band": "z",
+          "midpoint_utc_mjd": 58073.03614074112,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 1977.318802592683,
+            "y": 2323.7272933592353,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 17.47975220852551,
+          "nearest_raw_snr": 11.294340133666992,
+          "nearest_classified_arcsec": 17.47975220852551,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 698729,
+          "ccdname": "N5",
+          "band": "z",
+          "midpoint_utc_mjd": 58080.027931061115,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 94.7097803861274,
+            "y": 2969.7475528735476,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 6.126569890957842,
+          "nearest_raw_snr": 12.95643424987793,
+          "nearest_classified_arcsec": 6.126569890957842,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 699106,
+          "ccdname": "N5",
+          "band": "z",
+          "midpoint_utc_mjd": 58081.026792521116,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 163.63077088328066,
+            "y": 3105.695870738828,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 9.089591042414824,
+          "nearest_raw_snr": 120.86566162109375,
+          "nearest_classified_arcsec": 9.089591042414824,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 699444,
+          "ccdname": "N5",
+          "band": "z",
+          "midpoint_utc_mjd": 58082.02770337112,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 185.90379718333423,
+            "y": 3279.994811395677,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 27.134885061666033,
+          "nearest_raw_snr": 112.82720947265625,
+          "nearest_classified_arcsec": 27.134885061666033,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 699858,
+          "ccdname": "N5",
+          "band": "z",
+          "midpoint_utc_mjd": 58083.027903411115,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 245.91212911854802,
+            "y": 3365.826916546225,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 16.548101412196964,
+          "nearest_raw_snr": 7.722108840942383,
+          "nearest_classified_arcsec": 16.548101412196964,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 700238,
+          "ccdname": "N5",
+          "band": "z",
+          "midpoint_utc_mjd": 58084.02834410111,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 256.9769455472442,
+            "y": 3539.2276633116794,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 6.70151765437579,
+          "nearest_raw_snr": 15.200854301452637,
+          "nearest_classified_arcsec": 6.70151765437579,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 700588,
+          "ccdname": "N5",
+          "band": "z",
+          "midpoint_utc_mjd": 58085.03289959112,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 279.04152654162004,
+            "y": 3718.118056873238,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 10.800906257084984,
+          "nearest_raw_snr": 43.49382019042969,
+          "nearest_classified_arcsec": 10.800906257084984,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 700938,
+          "ccdname": "N5",
+          "band": "z",
+          "midpoint_utc_mjd": 58086.043177351115,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 299.6309009874398,
+            "y": 3840.938139073367,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 11.733568830159104,
+          "nearest_raw_snr": 5.361316204071045,
+          "nearest_classified_arcsec": 11.733568830159104,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        }
+      ]
+    }
+  ]
+}

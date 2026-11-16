@@ -2,6 +2,7 @@
 """Search Legacy exposure footprints in other seasons using anonymous orbit families."""
 import argparse
 from collections import Counter, defaultdict
+from concurrent.futures import ProcessPoolExecutor
 import json
 from pathlib import Path
 
@@ -125,6 +126,48 @@ def growth(model, kernel, epoch, family, new_sources, track, old_tdb, old_obs):
     return solutions
 
 
+def probe_ccd(args):
+    row, names, cache, images, config, predictions = args
+    exp, ccd = int(row["expnum"]), str(row["ccdname"]).strip()
+    mjd, duration, band = float(row["mjd_obs"]), float(row["exptime"]), str(row["filter"]).strip()
+    opts = [item for item in names if abs(float(item["mjd"])-mjd)*86400 <= 2 and
+            abs(float(item["exptime"])-duration) <= .1 and item["filter"].lower() == band.lower()]
+    record = dict(expnum=exp, ccdname=ccd, mjd=mjd, family_samples=len(predictions), n_matches=0)
+    if len(opts) != 1:
+        return dict(record, status="no_unique_nsc_exposure"), []
+    name = opts[0]["exposure"]
+    relpath, hdu = str(row["image_filename"]).strip(), int(row["image_hdu"])
+    try:
+        with fitsio.FITS(images/relpath) as f:
+            ccdnum = int(f[hdu].read_header()["CCDNUM"])
+        chip = query_chip_details(name, cache).get(ccdnum)
+        if chip is None:
+            return dict(record, status="no_nsc_chip"), []
+        measured = query_measurement_group(name, [ccdnum], cache)
+        if len(measured) != int(chip["nmeas"]):
+            raise ValueError("Measurement and chip counts differ")
+        table, qc = normalize(measured, chip, dict(image_filename=relpath, image_hdu=hdu,
+            ccdname=ccd, expnum=exp, exptime=duration, mjd=mjd, band=band), images, config["extract"])
+    except (ValueError, RuntimeError, OverflowError, OSError, KeyError) as error:
+        return dict(record, status="unreadable_product", error=str(error)), []
+    if qc["usable_fraction"] < config["extract"]["minimum_good_fraction"]:
+        return dict(record, status="insufficient_usable_cp_pixels"), []
+    valid = ((table["snr"] >= 5) & (table["mask_fraction"] <= config["filter"]["max_mask_fraction"])
+             & (table["edge_distance_pix"] >= config["filter"]["min_edge_pix"])
+             & ((table["extractor_flags"] & FATAL_EXTRACTOR_FLAGS) == 0))
+    table = table[valid]
+    tree = cKDTree(unit(table["ra_deg"], table["dec_deg"]))
+    hits = {}
+    for member, predicted in predictions:
+        for k in tree.query_ball_point(predicted, MATCH_ARCSEC/ARCSEC):
+            distance = np.linalg.norm(angular_residual(predicted, unit(table[k]["ra_deg"], table[k]["dec_deg"])))
+            if k not in hits or distance < hits[k][0]:
+                hits[k] = (distance, member)
+    found = [dict(detection=table[k], distance_arcsec=distance, family_index=member)
+             for k, (distance, member) in hits.items()]
+    return dict(record, status="catalog_read", n_matches=len(hits), valid_detections=int(valid.sum())), found
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("work", type=Path)
@@ -132,6 +175,7 @@ def main():
     parser.add_argument("candidate")
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--max-ccds", type=int, default=140)
+    parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
     work = args.work
     run = work/"runs"/args.run
@@ -165,52 +209,16 @@ def main():
     names = lookup_exposures(rows[work_rows], cache)
     trace, detections = [], {}
     images = Path(config["image_root"])
-    for j in work_rows:
-        row = rows[j]
-        exp, ccd = int(row["expnum"]), str(row["ccdname"]).strip()
-        mjd, duration, band = float(row["mjd_obs"]), float(row["exptime"]), str(row["filter"]).strip()
-        opts = [item for item in names[exp] if abs(float(item["mjd"])-mjd)*86400 <= 2 and
-                abs(float(item["exptime"])-duration) <= .1 and item["filter"].lower() == band.lower()]
-        record = dict(expnum=exp, ccdname=ccd, mjd=mjd, family_samples=len(footprint[j]), n_matches=0)
-        if len(opts) != 1:
-            trace.append(dict(record, status="no_unique_nsc_exposure"))
-            continue
-        name = opts[0]["exposure"]
-        relpath, hdu = str(row["image_filename"]).strip(), int(row["image_hdu"])
-        try:
-            with fitsio.FITS(images/relpath) as f:
-                ccdnum = int(f[hdu].read_header()["CCDNUM"])
-            chip = query_chip_details(name, cache).get(ccdnum)
-            if chip is None:
-                trace.append(dict(record, status="no_nsc_chip"))
-                continue
-            measured = query_measurement_group(name, [ccdnum], cache)
-            if len(measured) != int(chip["nmeas"]):
-                raise ValueError("Measurement and chip counts differ")
-            table, qc = normalize(measured, chip, dict(image_filename=relpath, image_hdu=hdu,
-                ccdname=ccd, expnum=exp, exptime=duration, mjd=mjd, band=band), images, config["extract"])
-        except (ValueError, RuntimeError, OverflowError, OSError, KeyError) as error:
-            trace.append(dict(record, status="unreadable_product", error=str(error)))
-            continue
-        if qc["usable_fraction"] < config["extract"]["minimum_good_fraction"]:
-            trace.append(dict(record, status="insufficient_usable_cp_pixels"))
-            continue
-        valid = ((table["snr"] >= 5) & (table["mask_fraction"] <= config["filter"]["max_mask_fraction"])
-                 & (table["edge_distance_pix"] >= config["filter"]["min_edge_pix"])
-                 & ((table["extractor_flags"] & FATAL_EXTRACTOR_FLAGS) == 0))
-        table = table[valid]
-        tree = cKDTree(unit(table["ra_deg"], table["dec_deg"]))
-        hits = {}
-        for member in footprint[j]:
-            predicted = directions[member][indices[j]]
-            for k in tree.query_ball_point(predicted, MATCH_ARCSEC/ARCSEC):
-                distance = np.linalg.norm(angular_residual(predicted, unit(table[k]["ra_deg"], table[k]["dec_deg"])))
-                if k not in hits or distance < hits[k][0]:
-                    hits[k] = (distance, member)
-        for k, (distance, member) in hits.items():
-            point = table[k]
-            detections[str(point["det_id"])] = dict(detection=point, distance_arcsec=distance, family_index=member)
-        trace.append(dict(record, status="catalog_read", n_matches=len(hits), valid_detections=int(valid.sum())))
+    jobs = [(rows[j], names[int(rows[j]["expnum"])], cache, images, config,
+             [(member, directions[member][indices[j]]) for member in footprint[j]]) for j in work_rows]
+    with ProcessPoolExecutor(max_workers=args.workers) as pool:
+        for count, (record, found) in enumerate(pool.map(probe_ccd, jobs), 1):
+            trace.append(record)
+            for item in found:
+                detections[str(item["detection"]["det_id"])] = item
+            if count % 10 == 0 or count == len(jobs):
+                print(f"Probed {count}/{len(jobs)} CCDs, {len(detections)} match candidates", flush=True)
+    print(f"Refitting {len(detections)} distinct match candidates", flush=True)
     extension = growth(model, kernel, candidate["epoch_tdb_mjd"], family, list(detections.values()),
                        tracks, old_tdb, old_obs)
     summary = dict(run_id=args.run, candidate_id=args.candidate, window_days=MAX_DAYS, season_gap_days=SEASON_GAP,

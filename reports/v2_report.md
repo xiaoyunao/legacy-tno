@@ -30,7 +30,7 @@
 
 OF201 场用于测试四夜门槛。共 23,810 个干净检测也进入了搜索。真实场七条四夜链通过数值拟合，夜重排六条，分别有 15、16 个距离箱触发上限；这些链的身份和图像检查仍待完成。OF201 第四个预期历元为 EXPNUM 759212、N26、z 波段。独立 Horizons W84 星历位置上 CP 中心 DQ 为 0，9×9 像素窗可用比例为 98.8%，最近 NSC 源在 32.66″ 外。同 CCD SEP 对照表明原 v1 检测在 NSC 缺失。该历元无法进入冻结四夜流程，距离箱截断另外记录。盲搜本体写齐结果后，作业 61392252 的 Slurm 文件名解析以 2:0 退出，独立身份后处理由作业 61392263 完成（24 s，0:0）。[OF201 盲搜范围](../results/v2/of201/search_domain_summary.json) · [回收结果](../results/v2/of201/stress_recovery_summary.json) · [独立历元审计](../results/v2/nsc-horizons-of201.json)
 
-原漏检控制场作业 61392388 完成（280 s，0:0）。5,289 个干净检测参加盲搜，主搜索和夜重排均无截断或通过拟合的链。DES 状态预测的 11 个 RD124 和 9 个 RQ157 覆盖曝光内均无 NSC 匹配检测。该场的独立 Horizons 像素复核仍待归档。[原漏检控制](../results/v2/original-misses/known_recovery_summary.json)
+原漏检控制场作业 61392388 完成（280 s，0:0）。5,289 个干净检测参加盲搜，主搜索和夜重排均无截断或通过拟合的链。独立 Horizons 和实际 CP WCS 复核到 11 个 RD124 及 9 个 RQ157 覆盖位置，中心可用且均无 1.25″ 内的 NSC 检测。[原漏检控制](../results/v2/original-misses/known_recovery_summary.json) · [独立历元审计](../results/v2/nsc-horizons-original-misses.json)
 
 ## 独立拟合
 
@@ -59,4 +59,4 @@ sbatch --account=desi --constraint=cpu --qos=debug \
 
 ## 尚待验收
 
-原漏检控制的独立逐历元复核、歧义静态分支、两个目标的跨季增长、候选图像与扩展身份检查仍需归档运行结果和退出状态。该试点的全 DR11 代表性及图像级完整度未经标定。
+歧义静态分支、两个目标的跨季增长、候选图像与扩展身份检查仍需归档运行结果和退出状态。该试点的全 DR11 代表性及图像级完整度未经标定。
