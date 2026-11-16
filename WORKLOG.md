@@ -2,6 +2,8 @@
 
 ## 2026-11-16
 
+- Archived the OF201 cross-season Horizons score and pilot sensitivity runs. Both extra NSC nights matched Horizons. The two reciprocal independent predictions missed by 0.37 and 0.85 arcsec. Six observations extend the v1 arc to 464.73 d. The SNR ≥8 sensitivity finished all bins, and the 173,839-source ambiguity run stopped at 21 real and 18 permuted bin budgets. Prepared same-core clean/ambiguity and OF201 stress reruns with an explicit first-endpoint radius.
+
 - Recovered image and MPCORB results from completed job 61392580. Viewed all seven OF201-field image strips covering 28 candidate-night stamps. No multipoint MPCORB match among those chains; six showed clear image contamination or competing associations, and one is unresolved with low confidence. The TV158 chain's single multi-night alternative is MPC h7360, verified as JPL 437360. Prepared a versioned replay with per-bin counters, same-CCD magnitude trends and a joined coverage ledger.
 
 - Independent Horizons and CP WCS checks for the original misses confirmed 11 usable RD124 and nine usable RQ157 positions with no NSC detection within 1.25 arcsec. Added bounded parallel CCD reads and progress output to the anonymous extension worker after the 111-CCD TV158 trial ran slowly. Replaced the pending serial scoring job 61392581 with parallel job 61392681, which also produces Gaia QC. Image/MPCORB review is job 61392580. Syntax and whitespace checks passed.

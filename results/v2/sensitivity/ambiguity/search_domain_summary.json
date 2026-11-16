@@ -1,0 +1,162 @@
+{
+  "truncated": [
+    {
+      "season": 0,
+      "distance_bin": 3,
+      "z_min": 201.02889228253648,
+      "z_max": 222.18982831227717,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 4,
+      "z_min": 181.88328349372347,
+      "z_max": 201.02889228253648,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 5,
+      "z_min": 164.56106601813073,
+      "z_max": 181.88328349372347,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 6,
+      "z_min": 148.88858354021352,
+      "z_max": 164.56106601813073,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 7,
+      "z_min": 134.70871844114555,
+      "z_max": 148.88858354021352,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 8,
+      "z_min": 121.87931668484596,
+      "z_max": 134.70871844114555,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 9,
+      "z_min": 110.27176271486061,
+      "z_max": 121.87931668484596,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 10,
+      "z_min": 99.76969007535007,
+      "z_max": 110.27176271486061,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 11,
+      "z_min": 90.26781483007862,
+      "z_max": 99.76969007535007,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 12,
+      "z_min": 81.67088008435684,
+      "z_max": 90.26781483007862,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 13,
+      "z_min": 73.8927010287038,
+      "z_max": 81.67088008435684,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 14,
+      "z_min": 66.855300930732,
+      "z_max": 73.8927010287038,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 15,
+      "z_min": 60.48812941351943,
+      "z_max": 66.855300930732,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 16,
+      "z_min": 54.72735518366044,
+      "z_max": 60.48812941351943,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 17,
+      "z_min": 49.51522611854992,
+      "z_max": 54.72735518366044,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 18,
+      "z_min": 44.79949029773564,
+      "z_max": 49.51522611854992,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 19,
+      "z_min": 40.532872174141765,
+      "z_max": 44.79949029773564,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 20,
+      "z_min": 36.672598633747306,
+      "z_max": 40.532872174141765,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 21,
+      "z_min": 33.179970192438034,
+      "z_max": 36.672598633747306,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 22,
+      "z_min": 30.01997303125346,
+      "z_max": 33.179970192438034,
+      "reason": "pair budget exceeded"
+    },
+    {
+      "season": 0,
+      "distance_bin": 23,
+      "z_min": 30.0,
+      "z_max": 30.01997303125346,
+      "reason": "pair budget exceeded"
+    }
+  ],
+  "pair_counts": {
+    "pairs": 49619607,
+    "triplets": 204499
+  },
+  "fit_counts": {},
+  "link_input": 173839,
+  "link_classes": [
+    "transient_clean",
+    "ambiguous_static_match"
+  ],
+  "excluded_by_bright_search": 0
+}

@@ -94,7 +94,10 @@ def search(table, time, observer, field, cfg):
     observ = observer @ axes.T
     sigma = table["sigma_arcsec"]
     membership = season_labels(table["night"], cfg["season_gap_days"])
-    field_chord = 2*np.sin(np.deg2rad(field["core_radius_deg"])/2)
+    seed_core = cfg.get("seed_core_radius_deg", field["core_radius_deg"])
+    if not 0 < seed_core <= field["core_radius_deg"]:
+        raise ValueError("Seed core must be inside the field core")
+    field_chord = 2*np.sin(np.deg2rad(seed_core)/2)
     in_core = np.linalg.norm(directions - axes[2], axis=-1) <= field_chord
     workers = int(os.getenv("LEGACY_TNO_LINK_WORKERS","1"))
     executor = ProcessPoolExecutor(max_workers=workers) if workers > 1 else nullcontext()
@@ -161,6 +164,10 @@ def search_bin(night, time, theta, observ, sigma, in_core, ix, exposures, trees,
             continue
         p, q = ix[k], ix[l]
         first, last = exposures[k], exposures[l]
+        if "seed_core_radius_deg" in cfg:
+            first = first[in_core[first]]
+        if not len(first):
+            continue
         correction = (observ[p, :2] - observ[q, :2]) / midpoint
         pad = np.linalg.norm(observ[p] - observ[q]) * (1/low - 1/high) + escape*span/(low-2)
         pad += cfg["envelope_pad_arcsec"] / ARCSEC

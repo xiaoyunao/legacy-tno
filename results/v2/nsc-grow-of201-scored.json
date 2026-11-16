@@ -1,0 +1,125 @@
+{
+  "run_id": "validation-7185aa85687161",
+  "candidate_id": "C0004",
+  "window_days": 760,
+  "season_gap_days": 120,
+  "initial_sky_gate_deg": 17,
+  "footprint_count": 3,
+  "attempted_ccds": 3,
+  "attempted_subset": false,
+  "family_count": 23,
+  "training_arc_days": 96.74066576889163,
+  "training_distance_range_au": [
+    86.15341686438529,
+    86.61516032365573
+  ],
+  "checks": {
+    "catalog_read": 3
+  },
+  "source_matches": 2,
+  "single_epoch_refits": 2,
+  "independent_night_prediction_pairs": 2,
+  "scope": "Legacy exposures only, NSC AUTO detections, bound training orbit grid",
+  "target": "2017 OF201",
+  "scorer": {
+    "source": "NASA/JPL Horizons API",
+    "version": "1.2"
+  },
+  "candidates_in_scoring": 2,
+  "horizon_matches": 2,
+  "confirmed_unique_nights": 2,
+  "independently_reproduced_pairs": [
+    {
+      "first": {
+        "expnum": 678449,
+        "night": 58012,
+        "ccdname": "S28",
+        "mjd_mid_utc": 58013.306713664075,
+        "snr": 7.397736549377441,
+        "mask_fraction": 0.0,
+        "residual_arcsec": [
+          0.016619910023703666,
+          0.012966753227328003
+        ],
+        "matched": true
+      },
+      "independent": {
+        "expnum": 661358,
+        "night": 57956,
+        "ccdname": "S22",
+        "mjd_mid_utc": 57957.439114129265,
+        "snr": 7.373520851135254,
+        "mask_fraction": 0.0,
+        "residual_arcsec": [
+          -0.1970680018624773,
+          -0.09109093282404065
+        ],
+        "matched": true
+      },
+      "both_match_horizons": true,
+      "refit_rms_arcsec": 0.07940406577454857,
+      "independent_prediction_arcsec": [
+        -0.367339957431509,
+        -0.06462855584668997
+      ],
+      "heliocentric": {
+        "r_au": 86.24441699485547,
+        "a_au": 769.6793752109023,
+        "e": 0.9419174681216202,
+        "i_deg": 16.200244451908745,
+        "node_deg": 328.5396288586206,
+        "argperi_deg": 337.3705810311445,
+        "mean_anomaly_deg": 1.4839793695138266,
+        "q_au": 44.70492684681879,
+        "bound": true,
+        "frame": "heliocentric ecliptic J2000 osculating"
+      }
+    },
+    {
+      "first": {
+        "expnum": 661358,
+        "night": 57956,
+        "ccdname": "S22",
+        "mjd_mid_utc": 57957.439114129265,
+        "snr": 7.373520851135254,
+        "mask_fraction": 0.0,
+        "residual_arcsec": [
+          -0.1970680018624773,
+          -0.09109093282404065
+        ],
+        "matched": true
+      },
+      "independent": {
+        "expnum": 678449,
+        "night": 58012,
+        "ccdname": "S28",
+        "mjd_mid_utc": 58013.306713664075,
+        "snr": 7.397736549377441,
+        "mask_fraction": 0.0,
+        "residual_arcsec": [
+          0.016619910023703666,
+          0.012966753227328003
+        ],
+        "matched": true
+      },
+      "both_match_horizons": true,
+      "refit_rms_arcsec": 0.07940405273238642,
+      "independent_prediction_arcsec": [
+        0.8369521152002065,
+        -0.1741130249976555
+      ],
+      "heliocentric": {
+        "r_au": 86.24441699452778,
+        "a_au": 769.6834636500198,
+        "e": 0.9419177860574464,
+        "i_deg": 16.200244451873544,
+        "node_deg": 328.53962885810455,
+        "argperi_deg": 337.3705810007685,
+        "mean_anomaly_deg": 1.4839672552446395,
+        "q_au": 44.70491960376609,
+        "bound": true,
+        "frame": "heliocentric ecliptic J2000 osculating"
+      }
+    }
+  ]
+}
