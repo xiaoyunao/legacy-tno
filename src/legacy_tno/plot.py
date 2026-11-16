@@ -9,6 +9,8 @@ import numpy as np
 from astropy.coordinates import SkyCoord
 from astropy import units as u
 
+from .nsc_adapter import PRODUCT
+
 
 def read(out, filename):
     return json.loads((out/filename).read_text())
@@ -30,6 +32,8 @@ def plot(out: Path):
     with np.load(out/"classified.npz",allow_pickle=False) as table:
         sources, reasons, gaia, sep, excess = (table[k] for k in
             ("detections","reasons","gaia_residual","gaia_sep_arcsec","excess"))
+    nsc = sources["processing_version"] == PRODUCT
+    photometry_label = ("NSC AUTO" if nsc.all() else "AUTO or aperture by product" if nsc.any() else "aperture")
 
     def save(name, fig):
         fig.suptitle(label, y=.997)
@@ -69,15 +73,15 @@ def plot(out: Path):
         subset=sources[sources["band"]==band]
         axes[0].hist(subset["mag_ab"],bins=np.arange(15,26,.25),histtype="step",label=band)
     axes[0].legend(title="Band")
-    axes[0].set(xlabel="AB aperture magnitude",ylabel="Detections",yscale="log")
+    axes[0].set(xlabel=f"AB magnitude ({photometry_label})",ylabel="Detections",yscale="log")
     axes[1].hist(sources["snr"],bins=np.geomspace(4,1500,36),color="#2C6977")
-    axes[1].set(xlabel="Integrated aperture SNR",ylabel="Detections",xscale="log",yscale="log")
+    axes[1].set(xlabel=f"Photometric SNR ({photometry_label})",ylabel="Detections",xscale="log",yscale="log")
     axes[2].hist([r["retained"] for r in qc if "retained" in r],bins=24,color="#2C6977")
     axes[2].set(xlabel="Retained sources per CP CCD",ylabel="CCD count")
     save("catalog_diagnostics",fig)
 
     fig, axes=plt.subplots(2,3,figsize=(11,6))
-    for column,label_x in enumerate(("CCD x (pix)","CCD y (pix)","AB aperture magnitude")):
+    for column,label_x in enumerate(("CCD x (pix)","CCD y (pix)",f"AB magnitude ({photometry_label})")):
         for j, label_y in enumerate(("Gaia − measured RA cos Dec (arcsec)","Gaia − measured Dec (arcsec)")):
             axes[j,column].hexbin(gaia[:,column],gaia[:,j+3],gridsize=36,mincnt=1,bins="log",cmap="viridis")
             axes[j,column].set(xlabel=label_x,ylabel=label_y)
@@ -91,7 +95,10 @@ def plot(out: Path):
     axes[1].set(xlabel="Gaia separation (arcsec)",ylabel="Detections")
     finite=excess[np.isfinite(excess)]
     axes[2].hist(np.clip(finite,-15,15),bins=36,color="#2C6977")
-    axes[2].set(xlabel="Single epoch − Sweep PSF flux (σ), clipped",ylabel="Detections")
+    axes[2].set(xlabel="SEP aperture − Sweep PSF flux (σ), clipped",ylabel="Detections")
+    if nsc.all():
+        axes[2].text(.5, .5, "NSC AUTO flux excluded from this comparison",
+                     transform=axes[2].transAxes, ha="center", va="center", wrap=True)
     save("static_classification",fig)
 
     fig,ax=plt.subplots(figsize=(8,4))

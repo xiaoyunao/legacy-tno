@@ -55,13 +55,18 @@ def main():
     parser.add_argument("--image-root", required=True, type=Path)
     parser.add_argument("--config", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--fields", type=Path, help="Frozen field file for a new field without an archived run")
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--limit-ccds", type=int)
     args = parser.parse_args()
     fetch_bytes = args.fetched.read_bytes()
     fetched = json.loads(fetch_bytes)
     work = args.ccd_inventory.parent.parent
-    archived = json.loads((work / "runs" / fetched["field"] / "run_manifest.json").read_text())
+    if args.fields:
+        [field] = json.loads(args.fields.read_text())["fields"]
+    else:
+        archived = json.loads((work / "runs" / fetched["field"] / "run_manifest.json").read_text())
+        field = archived["field"]
     source = json.loads(args.ccd_inventory.read_text())[fetched["field"]]
     rows = [row for row in source if row["nsc_chip_status"] == "chip_listed"]
     if args.limit_ccds is not None:
@@ -91,7 +96,7 @@ def main():
                    retained=sum(r["retained"] for r in all_ccds),
                    outside_cp=sum(r["outside_cp"] for r in all_ccds),
                    diagnostic_subset=args.limit_ccds is not None)
-    write_json(args.output / "manifest.json", dict(**summary, legacy_field=archived["field"],
+    write_json(args.output / "manifest.json", dict(**summary, legacy_field=field,
                fetch_sha256=hashlib.sha256(fetch_bytes).hexdigest(), mask_config=config, ccds=all_ccds))
     print(json.dumps(summary), flush=True)
 
