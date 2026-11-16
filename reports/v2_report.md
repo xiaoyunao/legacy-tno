@@ -4,7 +4,7 @@
 
 ## 数据入口
 
-按 legacypipe DR11.1.0 的 `sefn` 命名规则，在 NERSC 的 DR11 data 和 work 根目录核验五个归档场共 7,446 条唯一 SE 路径。这些路径在本次检查中均缺失。逐场与逐路径统计见 [SE 审计](../results/v2/legacy_se_fields_summary.json) 和 NERSC 的 `v2/legacy_se_fields.json`。[legacypipe DR11.1.0](https://github.com/legacysurvey/legacypipe/blob/DR11.1.0/py/legacypipe/image.py)
+在 NERSC 的 DR11 data 和 work 根目录核验五个归档场及独立试点共 7,946 条唯一 SE 路径，其中归档场 7,446 条。作业 61393062 直接用 DR11.1.0 上游的命名方法在真实 CCD 元数据上重建 `im.sefn`，逐条和当时的路径审计核对一致。这些路径在本次检查中均缺失。上游流水线可以生成 SE 文件，并会在合并 PSFEx 产品通过校验后清理逐 CCD 文件。具体曝光是否曾生成以及其他区域是否公开保留，超出本次路径核验范围。[SE 审计](../results/v2/legacy_se_fields_summary.json) · [逐路径上游复核](../results/v2/legacy_se_upstream_verified.json) · [上游清理逻辑](https://github.com/legacysurvey/legacypipe/blob/769e266b837196a7d5c2dfda245cd1f5d64abd91/py/legacyzpts/legacy_zeropoints.py#L355-L372)
 
 通过 NOIRLab Query Client 读取 `nsc_dr2.exposure`、`chip`、`meas`，按 DECam EXPNUM、UTC 曝光起始时刻、波段、曝光时长和 CP 图像 HDU 上的物理 CCD 编号核对。三组归档控制场的 Legacy 曝光与 NSC 匹配分别为 11/11、35/36、38/38。共同 CCD 分别为 670/670、923/928、962/962。归档的两个 2021 年窗口没有 NSC DR2 曝光匹配。该年份缺口保留 SEP 路径和原有实测结果。[曝光审计](../results/v2/nsc_inventory_summary.json) · [CCD 审计](../results/v2/nsc_ccd_summary.json) · [NSC DR2 测量定义](https://datalab.noirlab.edu/data-explorer?showTable=nsc_dr2.meas)
 
@@ -19,6 +19,8 @@
 三个控制场和独立试点共 2,810 个 Legacy CCD，其中 2,805 个可直接使用 NSC，覆盖 94/95 张曝光。唯一缺口出现在 TV158 场的一张曝光。2021 年宽、窄归档场的 1,163 和 283 个 CCD 均无 NSC 曝光匹配，现有 SEP 归档支持两个范围。这两个视场可能重叠。逐 CCD 账本合并了 Legacy 路径、NSC 查询键、实际载入与 Gaia 校验状态、检测数和足迹索引，保存在 NERSC 的 `v2/nsc-coverage-ledger.json`。[按场、年份和波段的覆盖表](../results/v2/nsc-coverage-public.json) · [覆盖与年份图](../results/v2/figures/nsc_coverage.png)
 
 两控制场中选取包含已回收成员的 27 个共同 CCD，NSC 和 SEP 分别有 36,085 和 43,571 条源记录，获得 33,585 个 1″ 内的互为最近邻配对。按波段和 SEP 星等分组报告位置差与 AUTO − 孔径星等的分位数。各星等组的匹配位置偏差中位数约为 0.016–0.089″；AUTO 与 SEP 孔径差有波段及亮度依赖，无法用单一零点平移概括。各场各波段的 Gaia 东、北分量 CCD 中位偏移绝对值均小于 0.036″。归一化没有强制将 Gaia 偏移写回 NSC 坐标。[同 CCD 统计](../results/v2/nsc-sep-by-magnitude.json) · [星等趋势图](../results/v2/figures/nsc_sep_comparison.png) · [Gaia 与 CP 掩膜质控](../results/v2/nsc-qc-summary.json)
+
+同一批 CCD 内，按波段将 CCD 物理像素位置划为 4×4 网格，各格中位位置分离为 0.033–0.089″，统计覆盖全部 33,585 个配对。进入静态分类的 SEP 和 NSC 分别有 43,571 和 35,950 条，其中干净瞬变分类有 876 和 211 条，定义及分类标志见逐 CCD 统计。两套提源和测光的差异也会改变输入池构成。
 
 在上游 NSC 的 DR2 自行修正实现中，`raerr` 由角秒转为毫角秒，权重对应已乘以 cos δ 的东西向位置差。这里直接使用角秒误差，不再重复乘 cos δ。拟合残差由单位方向投影至局部东西和南北基底。[NSC 上游切平面换算](https://github.com/noaodatalab/noaosourcecatalog/blob/7c0756eea30b7a3afcab0e204310ee39e1c5dabc/python/nsc/fix_pms.py#L229-L240)
 
@@ -109,3 +111,5 @@ sbatch --account=desi --constraint=cpu --qos=debug \
 ## 尚待验收
 
 有界复跑中新出现的链仍需最终审查。该试点的全 DR11 代表性及图像级完整度未经标定。
+
+各阶段的可恢复入口、归档路径和版本用法见 [v2 复跑与续跑](../docs/v2_operations.md)。
