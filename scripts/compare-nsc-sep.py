@@ -16,6 +16,8 @@ CONTROLS = {
     "validation-97d3348bc5c4b3": "2013 TV158",
     "validation-7185aa85687161": "2017 OF201",
 }
+NSC_RUNS = {"2013 TV158": "validation-2757671f191346",
+            "2017 OF201": "validation-ef4655b225ac2a"}
 
 
 def get_control(run, target):
@@ -28,7 +30,7 @@ def get_control(run, target):
     return next(r for r in candidates if r["candidate_id"] == matched[0]["candidate_id"])
 
 
-def compare(sep, nsc, expected_ids):
+def compare(sep, nsc, expected_ids, width, height):
     ra = np.array([float(row["ra"] or "nan") for row in nsc])
     dec = np.array([float(row["dec"] or "nan") for row in nsc])
     auto = np.array([float(row["mag_auto"] or "nan") for row in nsc])
@@ -55,7 +57,8 @@ def compare(sep, nsc, expected_ids):
                            within_one_arcsec=bool(forward[i] <= MATCH_RADIUS)))
     valid = mutual & np.isfinite(difference) & (auto[good][nearest] < 90)
     residual = angular_residual(a[valid], b[nearest[valid]])
-    measures = np.column_stack((sep["mag_ab"][valid], residual, difference[valid]))
+    measures = np.column_stack((sep["mag_ab"][valid], residual, difference[valid],
+                                sep["x_pix"][valid]/width, sep["y_pix"][valid]/height))
     return dict(sep_rows=len(sep), nsc_rows=len(nsc), nsc_finite_positions=int(good.sum()),
                 mutual_matches=int(mutual.sum()),
                 median_separation_arcsec=float(np.median(forward[mutual]) * ARCSEC_PER_RADIAN) if mutual.any() else None,
@@ -87,6 +90,32 @@ def magnitude_summary(groups):
     return output
 
 
+def position_summary(groups):
+    output = []
+    edges = np.linspace(0, 1, 5)
+    for band, pieces in sorted(groups.items()):
+        pairs = np.concatenate(pieces)
+        for (x0, x1) in zip(edges[:-1], edges[1:]):
+            for (y0, y1) in zip(edges[:-1], edges[1:]):
+                use = ((pairs[:, 4] >= x0) & (pairs[:, 4] < x1) &
+                       (pairs[:, 5] >= y0) & (pairs[:, 5] < y1))
+                sample = pairs[use, 1:3]
+                if not len(sample):
+                    continue
+                output.append(dict(band=band, x_fraction=[float(x0), float(x1)],
+                                   y_fraction=[float(y0), float(y1)], matches=len(sample),
+                                   median_east_north_arcsec=np.median(sample, axis=0).tolist(),
+                                   median_separation_arcsec=float(np.median(np.linalg.norm(sample, axis=1)))))
+    return output
+
+
+def classifications(path, ccd_keys):
+    with np.load(path/"classified.npz", allow_pickle=False) as data:
+        table, reasons = data["detections"], data["reasons"]
+    return {(exp, ccd): dict(Counter(reasons[(table["expnum"] == exp) & (table["ccdname"] == ccd)]))
+            for exp, ccd in ccd_keys}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("work", type=Path)
@@ -106,19 +135,29 @@ def main():
         if not rows:
             raise ValueError(f"No CCD overlap for {target}")
         indexes = np.unique(np.linspace(0, len(rows)-1, min(len(rows), args.ccds_per_control), dtype=int))
+        keys = [(rows[i]["expnum"], rows[i]["ccdname"]) for i in indexes]
+        retained_sep = classifications(run, keys)
+        retained_nsc = classifications(work/"runs"/NSC_RUNS[target], keys)
+        dimensions = {(int(row["expnum"]), str(row["ccdname"]).strip()):
+                      (float(row["width"]), float(row["height"]))
+                      for row in np.load(run/"exposures.npy", allow_pickle=False)}
         raw = np.load(run / "raw.npy", mmap_mode="r", allow_pickle=False)
         for i in indexes:
             row = rows[i]
             use = (raw["expnum"] == row["expnum"]) & (raw["ccdname"] == row["ccdname"])
             nsc = query_measurements(row["nsc_exposure"], row["nsc_ccdnum"], work / "v2/nsc_query_cache")
-            stats, measures = compare(raw[use], nsc, members)
+            key = (row["expnum"], row["ccdname"])
+            stats, measures = compare(raw[use], nsc, members, *dimensions[key])
             magnitudes.setdefault(row["band"], []).append(measures)
             summaries.append(dict(target=target, expnum=row["expnum"], ccdname=row["ccdname"],
-                                  band=row["band"], nsc_ccdnum=row["nsc_ccdnum"], **stats))
+                                  band=row["band"], nsc_ccdnum=row["nsc_ccdnum"], **stats,
+                                  sep_after_calibration=retained_sep[key],
+                                  nsc_after_calibration=retained_nsc[key]))
     print(json.dumps(dict(method="same CCD, reciprocal nearest positions within 1 arcsec",
                           sep="v1 raw CP WCS positions and aperture magnitudes",
                           nsc="calibrated NSC positions and AUTO magnitudes",
-                          magnitude_statistics=magnitude_summary(magnitudes), results=summaries), indent=2))
+                          magnitude_statistics=magnitude_summary(magnitudes),
+                          ccd_position_statistics=position_summary(magnitudes), results=summaries), indent=2))
 
 
 if __name__ == "__main__":

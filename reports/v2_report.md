@@ -20,6 +20,8 @@
 
 两控制场中选取包含已回收成员的 27 个共同 CCD，NSC 和 SEP 分别有 36,085 和 43,571 条源记录，获得 33,585 个 1″ 内的互为最近邻配对。按波段和 SEP 星等分组报告位置差与 AUTO − 孔径星等的分位数。各星等组的匹配位置偏差中位数约为 0.016–0.089″；AUTO 与 SEP 孔径差有波段及亮度依赖，无法用单一零点平移概括。各场各波段的 Gaia 东、北分量 CCD 中位偏移绝对值均小于 0.036″。归一化没有强制将 Gaia 偏移写回 NSC 坐标。[同 CCD 统计](../results/v2/nsc-sep-by-magnitude.json) · [星等趋势图](../results/v2/figures/nsc_sep_comparison.png) · [Gaia 与 CP 掩膜质控](../results/v2/nsc-qc-summary.json)
 
+在上游 NSC 的 DR2 自行修正实现中，`raerr` 由角秒转为毫角秒，权重对应已乘以 cos δ 的东西向位置差。这里直接使用角秒误差，不再重复乘 cos δ。拟合残差由单位方向投影至局部东西和南北基底。[NSC 上游切平面换算](https://github.com/noaodatalab/noaosourcecatalog/blob/7c0756eea30b7a3afcab0e204310ee39e1c5dabc/python/nsc/fix_pms.py#L229-L240)
+
 ## 冻结全池盲搜
 
 | 目标 | A 几何曝光 | B 实测 | C 入池 | D 可关联 | E 盲搜 | 相应距离箱 |
@@ -42,9 +44,11 @@ OF201 场用于测试四夜门槛。共 23,810 个干净检测进入搜索。真
 
 ## 已知库与候选图像审查
 
-对匿名链逐历元查询冻结的 MPCORB 小行星轨道快照（1,580,903 条），使用 Astcheck 在 W84 站点、120″ 半径和预测可见星等 30 的界限下作多夜初筛。TV158 链只得到一个多夜关联，MPC 编码 h7360 覆盖全部六夜，JPL 编号 437360 对应 2013 TV158。初筛坐标的分量 RMS 为 42.34″，身份判断结合独立 Horizons 复核。OF201 场七条四夜链均无多夜 MPCORB 初筛匹配，单历元均未达到返回限制。[JPL SBDB 记录](https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=437360) · [TV158 MPCORB 筛查](../results/v2/tv158/mpcorb_review.json) · [OF201 场 MPCORB 筛查](../results/v2/of201/mpcorb_review.json)
+对匿名链逐历元查询 2026-11-16 UTC 冻结的 MPCORB 小行星轨道快照（1,580,903 条），使用 Astcheck 在 W84 站点、120″ 半径和预测可见星等 30 的界限下作多夜初筛。TV158 链只得到一个多夜关联，MPC 编码 h7360 覆盖全部六夜，JPL 编号 437360 对应 2013 TV158。初筛坐标的分量 RMS 为 42.34″，身份判断结合独立 Horizons 复核。OF201 场七条四夜链均无多夜 MPCORB 初筛匹配，单历元均未达到返回限制。[JPL SBDB 记录](https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=437360) · [TV158 MPCORB 筛查](../results/v2/tv158/mpcorb_review.json) · [OF201 场 MPCORB 筛查](../results/v2/of201/mpcorb_review.json)
 
 作业 61392580 生成了七条 OF201 场匿名链的全部 28 个逐夜 CP 图像、DQ 和权重小图。各检测中心 DQ 为 0。目视仍发现拉长特征、亮源混叠和条带，四夜轨道在仅用三夜初始化时只有 6/28 次获得可用预测。七条链的证据不足以列为优先天体候选。图中青圈标记检测位置，橙色十字标记轨道预测。[图像与留出记录](../results/v2/of201/candidate_review.json) · [OF201 的 v1 SEP 对照小图](../results/v2/of201-sep/figures/candidate_stamps_C0004.png)
+
+逐检测成员比对证实 C0002 与 C0003 共享三夜，C0004 与 C0007 共享两夜。需将它们视为竞争关联。原始候选编号保留供追溯。[成员交集与距离箱计时](../results/v2/nsc-link-bin-profiles.json) · [七条候选轨迹](../results/v2/of201/figures/candidate_tracks.png)
 
 | 匿名链 | 训练夜独立预测 | 图像审查 |
 |---|---:|---|
@@ -73,6 +77,8 @@ OF201 从 v1 盲搜得到的四个 SEP 成员初始化 23 个短弧可接受轨�
 | [全静态歧义对照](../results/v2/sensitivity/ambiguity/run_manifest.json) | 173,839 | 21.66 s | 21/24 | 18/24 | 0（部分搜索） |
 
 全静态歧义分支额外加入 166,134 条记录，所计关联和拟合用时约为主分支 9.2 倍，已枚举约 4,962 万个点对。该分支出现截断，新增回收数的比较仍受未处理距离箱限制。
+
+作业 61392818 重放了冻结的试点与 OF201 场搜索，候选成员、计数、重排映射和距离箱截断均与原运行一致。试点实场关联 2.28 s，没有进入拟合的链，夜重排 1.66 s。OF201 场实场关联 82.87 s、候选拟合 50.62 s、夜重排 202.32 s。试点原运行的星表载入与筛选共 412.75 s，是本场的主要支出。OF201 与全歧义分支扩大后，关联组合数成为限制。[逐箱计时与状态图](../results/v2/figures/nsc_bin_costs.png)
 
 可在 Perlmutter 用冻结代码重跑主试点。作业对已经封存的 NSC 产品使用续跑路径。
 

@@ -2,6 +2,8 @@
 
 ## 2026-11-16
 
+- Completed job 61392818 and checked that the frozen replay reproduced the exact pilot and OF201 search counts, accepted member IDs, night permutations and truncation. The seven OF201-field chains contain two competitive pairs sharing three and two detections. Archived per-bin counts, worker time and figures. Joined field/year/band product coverage and confirmed 2,805 usable NSC CCDs of 2,810 in the four pre-2021 scopes. Checked upstream NSC RA-error units against its tangent-plane proper-motion implementation and prepared an upstream im.sefn verification on the actual audit ledgers.
+
 - Archived the OF201 cross-season Horizons score and pilot sensitivity runs. Both extra NSC nights matched Horizons. The two reciprocal independent predictions missed by 0.37 and 0.85 arcsec. Six observations extend the v1 arc to 464.73 d. The SNR ≥8 sensitivity finished all bins, and the 173,839-source ambiguity run stopped at 21 real and 18 permuted bin budgets. Prepared same-core clean/ambiguity and OF201 stress reruns with an explicit first-endpoint radius.
 
 - Recovered image and MPCORB results from completed job 61392580. Viewed all seven OF201-field image strips covering 28 candidate-night stamps. No multipoint MPCORB match among those chains; six showed clear image contamination or competing associations, and one is unresolved with low confidence. The TV158 chain's single multi-night alternative is MPC h7360, verified as JPL 437360. Prepared a versioned replay with per-bin counters, same-CCD magnitude trends and a joined coverage ledger.
