@@ -1,0 +1,230 @@
+{
+  "naming_rule": "legacypipe DR11.1.0 set_calib_filenames",
+  "sample": "v1 CP product audit",
+  "results": [
+    {
+      "expnum": 229046,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V5.5LS/CP20130830/c4d_130831_000916_ooi_r_ls11.fits.fz",
+      "mjd": 56535.00644024,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V5.5LS/CP20130830/c4d_130831_000916_ooi_r_ls11/c4d_130831_000916_ooi_r_ls11-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V5.5LS/CP20130830/c4d_130831_000916_ooi_r_ls11/c4d_130831_000916_ooi_r_ls11-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 339232,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V5.2.2LS/CP20140719/c4d_140720_003419_ooi_g_ls10.fits.fz",
+      "mjd": 56858.02277925,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V5.2.2LS/CP20140719/c4d_140720_003419_ooi_g_ls10/c4d_140720_003419_ooi_g_ls10-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V5.2.2LS/CP20140719/c4d_140720_003419_ooi_g_ls10/c4d_140720_003419_ooi_g_ls10-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 396017,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V4.8.2a/CP20150108/c4d_150109_024826_ooi_z_ls9.fits.fz",
+      "mjd": 57031.11534695,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20150108/c4d_150109_024826_ooi_z_ls9/c4d_150109_024826_ooi_z_ls9-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20150108/c4d_150109_024826_ooi_z_ls9/c4d_150109_024826_ooi_z_ls9-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 470029,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V4.8.2a/CP20150901/c4d_150902_055107_ooi_z_ls9.fits.fz",
+      "mjd": 57267.24218175,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20150901/c4d_150902_055107_ooi_z_ls9/c4d_150902_055107_ooi_z_ls9-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20150901/c4d_150902_055107_ooi_z_ls9/c4d_150902_055107_ooi_z_ls9-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 535933,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V4.8.2a/CP20160409/c4d_160410_022448_ooi_g_ls9.fits.fz",
+      "mjd": 57488.09823838,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20160409/c4d_160410_022448_ooi_g_ls9/c4d_160410_022448_ooi_g_ls9-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20160409/c4d_160410_022448_ooi_g_ls9/c4d_160410_022448_ooi_g_ls9-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 600546,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V4.8.2/CP20161206/c4d_161207_042037_ooi_z_ls9.fits.fz",
+      "mjd": 57729.17935904,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V4.8.2/CP20161206/c4d_161207_042037_ooi_z_ls9/c4d_161207_042037_ooi_z_ls9-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V4.8.2/CP20161206/c4d_161207_042037_ooi_z_ls9/c4d_161207_042037_ooi_z_ls9-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 660479,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V4.8.2/CP20170720/c4d_170721_062326_ooi_g_ls9.fits.fz",
+      "mjd": 57955.26452462,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V4.8.2/CP20170720/c4d_170721_062326_ooi_g_ls9/c4d_170721_062326_ooi_g_ls9-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V4.8.2/CP20170720/c4d_170721_062326_ooi_g_ls9/c4d_170721_062326_ooi_g_ls9-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 707435,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V4.9/CP20171225/c4d_171226_040519_ooi_z_ls9.fits.fz",
+      "mjd": 58113.17036658,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V4.9/CP20171225/c4d_171226_040519_ooi_z_ls9/c4d_171226_040519_ooi_z_ls9-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V4.9/CP20171225/c4d_171226_040519_ooi_z_ls9/c4d_171226_040519_ooi_z_ls9-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 769182,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V4.8.2a/CP20180904/c4d_180905_070017_ooi_r_ls9.fits.fz",
+      "mjd": 58366.2918675,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20180904/c4d_180905_070017_ooi_r_ls9/c4d_180905_070017_ooi_r_ls9-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20180904/c4d_180905_070017_ooi_r_ls9/c4d_180905_070017_ooi_r_ls9-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 823085,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V5.5.2LS/CP20190213/c4d_190214_030921_ooi_i_ls11.fits.fz",
+      "mjd": 58528.13149899,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V5.5.2LS/CP20190213/c4d_190214_030921_ooi_i_ls11/c4d_190214_030921_ooi_i_ls11-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V5.5.2LS/CP20190213/c4d_190214_030921_ooi_i_ls11/c4d_190214_030921_ooi_i_ls11-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 906637,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V4.8.2a/CP20191106/c4d_191107_012246_ooi_i_v1.fits.fz",
+      "mjd": 58794.05748676,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20191106/c4d_191107_012246_ooi_i_v1/c4d_191107_012246_ooi_i_v1-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V4.8.2a/CP20191106/c4d_191107_012246_ooi_i_v1/c4d_191107_012246_ooi_i_v1-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 976999,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V5.2/CP20210324/c4d_210325_032641_ooi_i_v1.fits.fz",
+      "mjd": 59298.14353662,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V5.2/CP20210324/c4d_210325_032641_ooi_i_v1/c4d_210325_032641_ooi_i_v1-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V5.2/CP20210324/c4d_210325_032641_ooi_i_v1/c4d_210325_032641_ooi_i_v1-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 1119494,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V5.5/CP20220810/c4d_220811_085306_ooi_z_v1.fits.fz",
+      "mjd": 59802.37021966,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V5.5/CP20220810/c4d_220811_085306_ooi_z_v1/c4d_220811_085306_ooi_z_v1-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V5.5/CP20220810/c4d_220811_085306_ooi_z_v1/c4d_220811_085306_ooi_z_v1-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    },
+    {
+      "expnum": 1326804,
+      "ccdname": "S29",
+      "image_filename": "decam/CP/V5.5.2/CP20240910/c4d_240911_034212_ooi_i_v1.fits.fz",
+      "mjd": 60564.15431328,
+      "paths": [
+        {
+          "path": "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11/calib/se/decam/CP/V5.5.2/CP20240910/c4d_240911_034212_ooi_i_v1/c4d_240911_034212_ooi_i_v1-S29-se.fits",
+          "status": "missing"
+        },
+        {
+          "path": "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11/calib/se/decam/CP/V5.5.2/CP20240910/c4d_240911_034212_ooi_i_v1/c4d_240911_034212_ooi_i_v1-S29-se.fits",
+          "status": "missing"
+        }
+      ]
+    }
+  ]
+}
