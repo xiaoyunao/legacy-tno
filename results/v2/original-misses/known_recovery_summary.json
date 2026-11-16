@@ -1,0 +1,47 @@
+{
+  "catalog": "DES Y6 published 814-object validation catalog",
+  "catalog_commit": "8f254ca30fa0e8fc1576a5a9fad7300124d3b3ee",
+  "geometry": "TAN approximation with five-pixel interior margin; not pixel-mask completeness",
+  "counts": {
+    "A": 2,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F_guided_only": 0
+  },
+  "objects": [
+    {
+      "target": "2013 RD124",
+      "m_r": 22.8084941,
+      "reference_distance_au": 39.93584041078247,
+      "A_geometry_exposures": 11,
+      "B_raw_detections": 0,
+      "C_clean_detections": 0,
+      "C_any_calibrated": 0,
+      "geometry_nights": 11,
+      "clean_nights": 0,
+      "clean_arc_days": null,
+      "D_linkable": false,
+      "E_blind": false,
+      "F_guided_only": false,
+      "outcome": "no_catalog_detection"
+    },
+    {
+      "target": "2013 RQ157",
+      "m_r": 23.59405977,
+      "reference_distance_au": 36.37564797223996,
+      "A_geometry_exposures": 9,
+      "B_raw_detections": 0,
+      "C_clean_detections": 0,
+      "C_any_calibrated": 0,
+      "geometry_nights": 9,
+      "clean_nights": 0,
+      "clean_arc_days": null,
+      "D_linkable": false,
+      "E_blind": false,
+      "F_guided_only": false,
+      "outcome": "no_catalog_detection"
+    }
+  ]
+}
