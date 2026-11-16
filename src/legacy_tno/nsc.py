@@ -90,3 +90,33 @@ def query_measurements(name, ccdnum, cache, max_rows=15000):
     if len(rows) > max_rows:
         raise ValueError(f"NSC CCD {name}/{ccdnum} exceeds {max_rows} rows")
     return rows
+
+FULL_CHIP_COLUMNS = ("exposure ccdnum nmeas fwhm depth10sig vertex_ra1 vertex_ra2 vertex_ra3 vertex_ra4 "
+                     "vertex_dec1 vertex_dec2 vertex_dec3 vertex_dec4").split()
+FULL_MEAS_COLUMNS = MEAS_COLUMNS + "x y asemi bsemi fwhm filter".split()
+
+
+def query_chip_details(name, cache):
+    rows = query(f"SELECT {','.join(FULL_CHIP_COLUMNS)} FROM nsc_dr2.chip "
+                 f"WHERE exposure={exposure_literal(name)}", FULL_CHIP_COLUMNS, cache)
+    chips = {int(row["ccdnum"]): row for row in rows}
+    if len(chips) != len(rows) or any(row["exposure"] != name for row in rows):
+        raise ValueError(f"Non-unique or inconsistent NSC chip table for {name}")
+    return chips
+
+
+def query_measurement_group(name, ccdnums, cache, max_rows=60000):
+    """Read a complete group of CCDs, with an explicit overflow failure."""
+    ccdnums = sorted(set(map(int, ccdnums)))
+    if not 1 <= len(ccdnums) <= 8 or not 1 <= max_rows <= 100000:
+        raise ValueError("Request 1–8 CCDs and at most 100,000 rows per query")
+    ids = ",".join(map(str, ccdnums))
+    rows = query(f"SELECT {','.join(FULL_MEAS_COLUMNS)} FROM nsc_dr2.meas "
+                 f"WHERE exposure={exposure_literal(name)} AND ccdnum IN ({ids}) LIMIT {max_rows + 1}",
+                 FULL_MEAS_COLUMNS, cache)
+    if len(rows) > max_rows:
+        raise OverflowError(f"NSC {name}/{ids} exceeds {max_rows} rows")
+    selected = set(ccdnums)
+    if any(row["exposure"] != name or int(row["ccdnum"]) not in selected for row in rows):
+        raise ValueError(f"Unexpected NSC exposure or CCD in query for {name}/{ids}")
+    return rows

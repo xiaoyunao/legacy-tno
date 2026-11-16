@@ -10,6 +10,7 @@ from astropy_healpix import HEALPix
 from scipy.spatial import cKDTree
 
 from .geometry import ARCSEC, angular_residual, sky, unit
+from .nsc_adapter import FATAL_EXTRACTOR_FLAGS, PRODUCT
 
 QUALITY = 1
 ASTROM = 2
@@ -28,6 +29,16 @@ SWEEP_COLUMNS = ["ra","dec","type","flux_g","flux_r","flux_i","flux_z",
 
 def chord(arcsec):
     return 2*np.sin(arcsec/(2*ARCSEC))
+
+
+def link_classes(cfg):
+    return (["transient_clean", "ambiguous_static_match"]
+            if cfg["link"].get("include_ambiguous_static", False) else ["transient_clean"])
+
+
+def link_mask(table, reasons, cfg):
+    minimum = cfg["link"].get("min_catalog_snr", cfg["filter"]["search_snr"])
+    return np.isin(reasons, link_classes(cfg)) & (table["snr"] >= minimum)
 
 
 @lru_cache(maxsize=12)
@@ -65,12 +76,15 @@ def gaia_directions(table, mjd_tdb, observer):
     return direction/np.linalg.norm(direction, axis=1)[:, None]
 
 
-def calibrate(table, gaia, mjd_tdb, observer, cfg):
+def calibrate(table, gaia, mjd_tdb, observer, cfg, *, apply_offset=True):
     source = unit(table["ra_deg"], table["dec_deg"])
     ref = gaia_directions(gaia, mjd_tdb, observer)
     tree = cKDTree(ref)
     dist, idx = tree.query(source, distance_upper_bound=chord(cfg["gaia_calibration_radius_arcsec"]))
-    i = np.flatnonzero(np.isfinite(dist) & (table["snr"] > 18) & (table["mask_fraction"] < .03))
+    good_reference = np.isfinite(dist) & (table["snr"] > 18) & (table["mask_fraction"] < .03)
+    if not apply_offset:
+        good_reference &= (table["extractor_flags"] & FATAL_EXTRACTOR_FLAGS) == 0
+    i = np.flatnonzero(good_reference)
     i = i[(gaia["phot_g_mean_mag"][idx[i]] > 15.0) & (gaia["phot_g_mean_mag"][idx[i]] < 20.5)]
     residual = angular_residual(ref[idx[i]], source[i])
     if len(i) < cfg["min_gaia_matches"]:
@@ -80,19 +94,20 @@ def calibrate(table, gaia, mjd_tdb, observer, cfg):
     good = np.linalg.norm(residual-offset, axis=1) < min(1, max(.18, 4*max(scatter)))
     if np.count_nonzero(good) < cfg["min_gaia_matches"]:
         return None, dict(n_gaia=int(np.count_nonzero(good)), exclusion="Gaia clipping"), []
-    # Remove a single robust CP-to-Gaia offset. Keep x/y residuals for trend diagnostics.
+    # Measure a single robust offset and retain x/y residuals for trend diagnostics.
     offset = np.median(residual[good], axis=0)
     centered = residual[good]-offset
     scatter = 1.4826*np.median(np.abs(centered), axis=0)
     details = dict(n_gaia=int(np.count_nonzero(good)), offset_arcsec=offset.tolist(),
-                   mad_arcsec=scatter.tolist())
+                   mad_arcsec=scatter.tolist(), offset_applied=apply_offset)
     if max(scatter) > cfg["max_astrom_scatter_arcsec"]:
         details["exclusion"] = "Gaia scatter"
         return None, details, []
     aligned = table.copy()
-    aligned["ra_deg"] = (table["ra_deg"] + offset[0] /
-                        (3600*np.cos(np.deg2rad(table["dec_deg"])))) % 360
-    aligned["dec_deg"] = table["dec_deg"] + offset[1]/3600
+    if apply_offset:
+        aligned["ra_deg"] = (table["ra_deg"] + offset[0] /
+                            (3600*np.cos(np.deg2rad(table["dec_deg"])))) % 360
+        aligned["dec_deg"] = table["dec_deg"] + offset[1]/3600
     aligned["sigma_arcsec"] = np.sqrt(aligned["sigma_arcsec"]**2 +
                                      max(cfg["astrom_floor_arcsec"], float(max(scatter)))**2)
     diagnostics = np.c_[table["x_pix"][i[good]], table["y_pix"][i[good]],
@@ -127,11 +142,13 @@ def classify(table, gaia, sweep, tdb, observers, cfg):
     p = unit(table["ra_deg"], table["dec_deg"])
     mask = np.zeros(len(table), dtype=np.uint16)
     faint = table["snr"] < cfg["search_snr"]
+    nsc = table["processing_version"] == PRODUCT
     width = np.sqrt(table["a_pix"]*table["b_pix"])*2.35482*.262
     bad = ((width < cfg["min_fwhm_ratio"]*table["fwhm_arcsec"]) |
            (table["a_pix"] > cfg["max_axis_ratio"]*table["b_pix"]) |
            (table["edge_distance_pix"] < cfg["min_edge_pix"]) |
-           (table["mask_fraction"] > cfg["max_mask_fraction"]))
+           (table["mask_fraction"] > cfg["max_mask_fraction"]) |
+           (nsc & ((table["extractor_flags"] & FATAL_EXTRACTOR_FLAGS) != 0)))
     mask[faint] |= LOW_SNR
     mask[bad] |= ARTIFACT
     matched_source = np.full(len(table), -1, dtype=np.int64)
@@ -153,7 +170,8 @@ def classify(table, gaia, sweep, tdb, observers, cfg):
     has_deep = np.isfinite(distance)
     excess = np.full(len(table), np.nan)
     for band in ("g","r","i","z"):
-        i = np.flatnonzero((table["band"] == band) & has_deep)
+        # NSC AUTO and Sweep PSF fluxes require an empirical cross-calibration.
+        i = np.flatnonzero((table["band"] == band) & has_deep & ~nsc)
         d = sweep[deep_idx[i]]
         is_psf = np.char.strip(d["type"].astype(str)) == "PSF"
         i, d = i[is_psf], d[is_psf]

@@ -44,11 +44,22 @@ def compare(sep, nsc, expected_ids):
     difference = auto[good][nearest] - sep["mag_ab"]
     phot = difference[mutual & np.isfinite(difference) & (auto[good][nearest] < 90)]
     targets = np.isin(sep["det_id"], sorted(expected_ids))
+    checks = []
+    nsc_indices = np.flatnonzero(good)
+    for i in np.flatnonzero(targets):
+        source = nsc[nsc_indices[nearest[i]]]
+        checks.append(dict(sep_snr=float(sep["snr"][i]), sep_mag_ab=float(sep["mag_ab"][i]),
+                           sep_mask_fraction=float(sep["mask_fraction"][i]),
+                           nearest_nsc_arcsec=float(forward[i]*ARCSEC_PER_RADIAN),
+                           nearest_nsc_flags=int(source["flags"]),
+                           reciprocal=bool(reverse[nearest[i]] == i),
+                           within_one_arcsec=bool(forward[i] <= MATCH_RADIUS)))
     return dict(sep_rows=len(sep), nsc_rows=len(nsc), nsc_finite_positions=int(good.sum()),
                 mutual_matches=int(mutual.sum()),
                 median_separation_arcsec=float(np.median(forward[mutual]) * ARCSEC_PER_RADIAN) if mutual.any() else None,
                 median_auto_minus_sep_aperture_mag=float(np.median(phot)) if len(phot) else None,
                 v1_members_seen=int(targets.sum()), v1_members_with_nsc_match=int((targets & mutual).sum()),
+                member_diagnostics=checks,
                 flags=dict(Counter(row["flags"] for row in nsc)))
 
 

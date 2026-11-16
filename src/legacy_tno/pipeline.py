@@ -2,7 +2,7 @@
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
 from datetime import datetime, timezone
-from hashlib import sha256
+from hashlib import file_digest, sha256
 from importlib.metadata import version
 import json
 import os
@@ -16,9 +16,10 @@ from scipy.spatial import cKDTree
 from .catalog import extract
 from .geometry import angular_residual, night_id, sky, unit
 from .link import search, season_labels
+from .nsc_adapter import PRODUCT
 from .orbit import Dynamics, fit, heliocentric_elements, observatory
 from .select import eligible, evaluate_footprint, select_rows
-from .static import calibrate, classify, gaia_field, sweep_field
+from .static import calibrate, classify, gaia_field, link_classes, link_mask, sweep_field
 
 
 def json_default(obj):
@@ -44,8 +45,27 @@ def save_npz(path, **data):
 
 
 def raw_tile(job):
-    row, root, cfg, out = job
-    path = out / f'decam-{row["expnum"]}-{str(row["ccdname"]).strip()}.npz'
+    row, root, cfg, out, prepared, fallback = job
+    expnum, ccdname = int(row["expnum"]), str(row["ccdname"]).strip()
+    filename = f"decam-{expnum}-{ccdname}.npz"
+    path = out / filename
+    if prepared is not None:
+        directory, expected = prepared
+        if expected is not None:
+            path = directory / filename
+            with path.open("rb") as handle:
+                if file_digest(handle, "sha256").hexdigest() != expected:
+                    raise ValueError(f"Prepared catalog integrity check failed for {path}")
+            with np.load(path, allow_pickle=False) as data:
+                qc = json.loads(str(data["qc"]))
+            if (qc["expnum"], qc["ccdname"], qc["source_backend"]) != (expnum, ccdname, PRODUCT):
+                raise ValueError(f"Prepared catalog identity check failed for {path}")
+            if qc["usable_fraction"] < cfg["minimum_good_fraction"]:
+                return None, dict(qc, error="Insufficient usable CP pixels")
+            return path, qc
+        if not fallback:
+            return None, dict(expnum=expnum, ccdname=ccdname, source_backend=PRODUCT,
+                              error="No prepared NSC catalog for this physical CCD")
     if path.exists():
         with np.load(path, allow_pickle=False) as data:
             return path, json.loads(str(data["qc"]))
@@ -54,11 +74,12 @@ def raw_tile(job):
     except (ValueError, OSError, IndexError, KeyError, RuntimeError) as exc:
         return None, dict(expnum=int(row["expnum"]), ccdname=str(row["ccdname"]),
                           file=str(root/str(row["image_filename"]).strip()), error=str(exc))
+    qc["source_backend"] = "SEP"
     save_npz(path, detections=table, qc=json.dumps(qc, default=json_default))
     return path, qc
 
 
-def build_catalogs(out, table, field, cfg, kernel):
+def build_catalogs(out, table, field, cfg, kernel, prepared=None):
     tiles = out / "tiles"
     tiles.mkdir(exist_ok=True)
     gaia = gaia_field(cfg["gaia_root"], field)
@@ -66,7 +87,14 @@ def build_catalogs(out, table, field, cfg, kernel):
     times = table["mjd_obs"] + table["exptime"]/(2*86400)
     uniq, indices = np.unique(times, return_inverse=True)
     tdb, obs = observatory(uniq, kernel)
-    jobs = [(row, Path(cfg["image_root"]), cfg["extract"], tiles) for row in table]
+    jobs = []
+    for row in table:
+        source = None
+        if prepared is not None:
+            directory, checksums = prepared
+            source = directory, checksums.get((int(row["expnum"]), str(row["ccdname"]).strip()))
+        jobs.append((row, Path(cfg["image_root"]), cfg["extract"], tiles, source,
+                     cfg.get("catalog", {}).get("fallback_sep", False)))
     with ProcessPoolExecutor(max_workers=int(os.environ.get("LEGACY_TNO_WORKERS", "4"))) as pool:
         for i, (path, qc) in enumerate(pool.map(raw_tile, jobs, chunksize=2)):
             stats.append(qc)
@@ -74,8 +102,9 @@ def build_catalogs(out, table, field, cfg, kernel):
                 with np.load(path, allow_pickle=False) as handle:
                     detections = handle["detections"]
                 raw.append(detections)
-                adjusted, correction, sampled = calibrate(detections, gaia, tdb[indices[i]],
-                                                          obs[indices[i]], cfg["filter"])
+                adjusted, correction, sampled = calibrate(
+                    detections, gaia, tdb[indices[i]], obs[indices[i]], cfg["filter"],
+                    apply_offset=qc.get("source_backend") != PRODUCT)
                 qc["astrometry"] = correction
                 if adjusted is not None:
                     aligned.append(adjusted)
@@ -189,12 +218,14 @@ def footprint_summary(rows, field, valid):
                 grid_step_deg=step)
 
 
-def reuse_catalogs(parent, out, rows, field, cfg):
+def reuse_catalogs(parent, out, rows, field, cfg, product_hash):
     original = json.loads((parent / "run_manifest.json").read_text())
     if "extract_and_clean" not in original["stages"]:
         raise ValueError("Catalog cache has no completed extraction stage")
-    relevant = ("schema_version", "inventory_file", "image_root", "gaia_root", "sweep_root", "extract", "filter")
-    if original["field"] != field or any(original["config"][key] != cfg[key] for key in relevant):
+    relevant = ("schema_version", "inventory_file", "image_root", "gaia_root", "sweep_root",
+                "extract", "filter", "catalog")
+    if (original["field"] != field or original.get("catalog_product_hash") != product_hash
+            or any(original["config"].get(key) != cfg.get(key) for key in relevant)):
         raise ValueError("Catalog cache field or extraction configuration is different")
     archived = np.load(parent / "exposures.npy", allow_pickle=False)
     if rows.dtype != archived.dtype or rows.shape != archived.shape or rows.tobytes() != archived.tobytes():
@@ -214,9 +245,28 @@ def reuse_catalogs(parent, out, rows, field, cfg):
 def catalog_code_signature():
     h = sha256()
     root = Path(__file__).parent
-    for name in ("profile.py", "catalog.py", "geometry.py", "static.py"):
+    for name in ("profile.py", "catalog.py", "geometry.py", "static.py", "nsc_adapter.py"):
         h.update((root / name).read_bytes())
     return h.hexdigest()
+
+
+def prepared_catalog(work, cfg, field):
+    choice = cfg.get("catalog", {})
+    backend = choice.get("backend", "sep")
+    if backend == "sep":
+        return None, None, False
+    if backend != "nsc-dr2":
+        raise ValueError(f"Unknown catalog backend {backend}")
+    directory = work / choice["tiles"]
+    source = (directory / "manifest.json").read_bytes()
+    manifest = json.loads(source)
+    if (manifest["backend"] != PRODUCT or manifest["mask_config"] != cfg["extract"]
+            or manifest["legacy_field"] != field):
+        raise ValueError("Prepared catalog product, field or mask configuration differs")
+    digests = {(r["expnum"], r["ccdname"]): r["sha256"] for r in manifest["ccds"]}
+    if len(digests) != len(manifest["ccds"]) or len(digests) != manifest["prepared_ccds"]:
+        raise ValueError("Prepared catalog CCD manifest is inconsistent")
+    return (directory, digests), sha256(source).hexdigest(), manifest["diagnostic_subset"]
 
 
 def run(config_path, work, field_path, field_name, run_code_commit, resume, stop_after=None, catalog_parent=None):
@@ -224,6 +274,9 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
     field = next(field for field in json.loads(field_path.read_text())["fields"] if field["id"] == field_name)
     source = Path(__file__).parent
     h = sha256(config_path.read_bytes() + json.dumps(field, sort_keys=True).encode())
+    prepared, product_hash, diagnostic_subset = prepared_catalog(work, cfg, field)
+    if product_hash is not None:
+        h.update(product_hash.encode())
     for p in sorted(source.glob("*.py")):
         h.update(p.read_bytes())
     inventory = work / cfg["inventory_file"]
@@ -243,6 +296,7 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
                     dependencies={name:version(name) for name in ("numpy","scipy","astropy","fitsio","sep","jplephem")},
                     status="running", path=str(out), stages={},
                     catalog_code_signature=catalog_code_signature(),
+                    catalog_product_hash=product_hash, diagnostic_catalog_subset=diagnostic_subset,
                     catalog_parent=str(catalog_parent) if catalog_parent else None)
     write_json(out / "run_manifest.json", manifest)
     start = monotonic()
@@ -254,9 +308,9 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
             raise RuntimeError("No eligible CCDs in field")
         np.save(out / "exposures.npy", rows, allow_pickle=False)
         if catalog_parent and not (out / "classified.npz").exists():
-            reuse_catalogs(catalog_parent, out, rows, field, cfg)
+            reuse_catalogs(catalog_parent, out, rows, field, cfg, product_hash)
         if not (out / "classified.npz").exists():
-            stats = build_catalogs(out, rows, field, cfg, kernel)
+            stats = build_catalogs(out, rows, field, cfg, kernel, prepared)
         else:
             stats = json.loads((out / "ccd_audit.json").read_text())
         valid = {(q["expnum"],q["ccdname"]) for q in stats if "astrometry" in q and "exclusion" not in q["astrometry"]}
@@ -285,10 +339,9 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
         stage = "blind_link_and_fit"
         print("Starting anonymous association", flush=True)
         t0 = monotonic()
-        minimum = cfg["link"].get("min_catalog_snr", cfg["filter"]["search_snr"])
-        disqualified = (reasons == "transient_clean") & (table["snr"] < minimum)
-        reasons[disqualified] = "quality_rejected"
-        use = reasons == "transient_clean"
+        use = link_mask(table, reasons, cfg)
+        classes_used = link_classes(cfg)
+        disqualified = np.isin(reasons, classes_used) & ~use
         indices = np.flatnonzero(use)
         dynamics = Dynamics(tdb.min(), tdb.max(), kernel)
         search_result = search(table[use], tdb[use], obs[use], field, cfg["link"])
@@ -297,16 +350,18 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
             candidate["members"] = indices[candidate["members"]]
         write_json(out / "blind_candidates.json", solutions)
         domain = dict(truncated=search_result.truncated, pair_counts=dict(search_result.counts), fit_counts=fit_counts,
-                      link_input=len(indices), excluded_by_bright_search=int(np.count_nonzero(disqualified)))
+                      link_input=len(indices), link_classes=classes_used,
+                      excluded_by_bright_search=int(np.count_nonzero(disqualified)))
         write_json(out / "search_domain_summary.json", domain)
         manifest["stages"][stage] = dict(domain, seconds=monotonic()-t0)
         stage = "identify_and_validate"
         print("Writing post-search identity and controls", flush=True)
         from .validate import validate
-        validate(out, work, selected, table, reasons, tdb, obs, field, cfg, dynamics, solutions)
+        validate(out, work, selected, table, reasons, tdb, obs, field, cfg, dynamics, solutions,
+                 geometry_exposures=rows if prepared is not None else selected)
         from .plot import plot
         plot(out)
-        manifest["status"] = "partial" if (search_result.truncated or fit_counts.get("fit_budget_exhausted") or
+        manifest["status"] = "partial" if (diagnostic_subset or search_result.truncated or fit_counts.get("fit_budget_exhausted") or
                                           len(selected) != len(rows)) else "completed"
         return out
     except Exception as exc:

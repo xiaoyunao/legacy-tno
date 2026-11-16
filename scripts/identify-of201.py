@@ -13,6 +13,7 @@ from legacy_tno.orbit import Dynamics, observatory
 from legacy_tno.pipeline import write_json
 from legacy_tno.plot import plot
 from legacy_tno.select import evaluate_footprint
+from legacy_tno.static import link_mask
 from legacy_tno.validate import leave_night_out, matches
 
 
@@ -36,9 +37,10 @@ def main():
     with np.load(out/"classified.npz",allow_pickle=False) as npz:
         table,reasons,t,o=(npz[k] for k in ("detections","reasons","tdb","observer"))
     exposures=np.load(out/"exposures.npy",allow_pickle=False)
-    qc=json.loads((out/"ccd_audit.json").read_text())
-    use={(r["expnum"],r["ccdname"]) for r in qc if "astrometry" in r and "exclusion" not in r["astrometry"]}
-    exposures=exposures[[(int(r["expnum"]),str(r["ccdname"]).strip()) in use for r in exposures]]
+    if not manifest.get("catalog_product_hash"):
+        qc=json.loads((out/"ccd_audit.json").read_text())
+        use={(r["expnum"],r["ccdname"]) for r in qc if "astrometry" in r and "exclusion" not in r["astrometry"]}
+        exposures=exposures[[(int(r["expnum"]),str(r["ccdname"]).strip()) in use for r in exposures]]
     utc=exposures["mjd_obs"]+exposures["exptime"]/(2*86400)
     dates,first,index=np.unique(utc,return_index=True,return_inverse=True)
     kernel=str(args.work/"inputs"/"de440s.bsp")
@@ -51,11 +53,12 @@ def main():
     raw=np.load(out/"raw.npy",mmap_mode="r",allow_pickle=False)
     B=matches(raw,expected[valid],exp,2.25)
     calibrated=matches(table,expected[valid],exp,1.25)
-    clean=calibrated[reasons[calibrated]=="transient_clean"]
+    clean=calibrated[link_mask(table[calibrated],reasons[calibrated],config)]
     linked=search(table[clean],t[clean],o[clean],field,config["link"])
     known=set(calibrated)
     matches_pure=[]
-    plot_members=json.loads((out/"blind_known_plot_data.json").read_text())
+    plot_members=[row for row in json.loads((out/"blind_known_plot_data.json").read_text())
+                  if row["target"] != "2017 OF201"]
     summary={row["candidate_id"]:row for row in recovered}
     for result in blind:
         members=np.asarray(result["members"],dtype=int)
@@ -64,7 +67,7 @@ def main():
             continue
         result["members"]=members
         result["initial_state"]=np.asarray(result["initial_state"])
-        holds=leave_night_out(result,table,t,o,model)
+        holds=leave_night_out(result,table,t,o,model,config=config)
         matches_pure.append(result["candidate_id"])
         candidate=summary[result["candidate_id"]]
         candidate.update(status="known_recovered_blind", catalog_association="2017 OF201",

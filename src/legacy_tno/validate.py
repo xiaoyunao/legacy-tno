@@ -5,12 +5,12 @@ from pathlib import Path
 import numpy as np
 from scipy.spatial import cKDTree
 
-from .geometry import ARCSEC, angular_residual, basis, night_id, sky, unit
-from .link import search
-from .orbit import GM, LIGHT_SPEED, fit, observatory
+from .geometry import ARCSEC, angular_residual, basis, night_id, project, sky, unit
+from .link import initial_linear, search
+from .orbit import GM, LIGHT_SPEED, fit, heliocentric_elements, observatory
 from .pipeline import fit_chains, write_json
 from .select import DES_EPOCH_TDB, des_orbits, evaluate_footprint, possible_arc
-from .static import gaia_field, sweep_field, classify
+from .static import gaia_field, sweep_field, classify, link_mask
 
 
 def time_map(mjd, kernel):
@@ -35,22 +35,59 @@ def matches(table, positions, exposure, radius):
     return np.asarray(found, dtype=int)
 
 
-def leave_night_out(candidate, table, tdb, obs, model):
+def training_arc_fits(table, tdb, obs, model, cfg):
+    """Initialize each orbit solely from the training positions and their observing geometry."""
+    directions = unit(table["ra_deg"], table["dec_deg"])
+    axes = basis(*sky(directions.mean(axis=0)))
+    angles = project(directions, axes)
+    epoch = float(np.median(tdb))
+    sigma = table["sigma_arcsec"]
+    edges = np.geomspace(cfg["min_distance_au"], cfg["max_distance_au"], 9)
+    fits = []
+    for lo, hi in zip(edges[:-1], edges[1:]):
+        radial_limit = np.sqrt(2*GM["sun"]/(lo-2)) * cfg["escape_padding"]
+        seed = initial_linear(angles, obs @ axes.T, tdb-epoch, (lo, hi), radial_limit, sigma)
+        state = np.r_[seed[:3] @ axes, seed[3:] @ axes]
+        state[:3] += state[3:] * np.linalg.norm(state[:3]) / LIGHT_SPEED
+        try:
+            result = fit(model, state, epoch, tdb, obs, directions, sigma)
+            elements = heliocentric_elements(model, result.state, epoch)
+        except (ValueError, RuntimeError, FloatingPointError, np.linalg.LinAlgError):
+            continue
+        if result.convergence and edges[0] <= elements["r_au"] <= edges[-1] and elements["bound"]:
+            fits.append(result)
+    return sorted(fits, key=lambda result: result.chi2)
+
+
+def leave_night_out(candidate, table, tdb, obs, model, *, config=None):
     all_members = candidate["members"]
     direction = unit(table["ra_deg"], table["dec_deg"])
     results = []
     for night in np.unique(table["night"][all_members]):
         keep = table["night"][all_members] != night
         train, test = all_members[keep], all_members[~keep]
-        if len(train)<4 or len(np.unique(table["night"][train]))<3:
+        independent = config is not None and config["validation"].get("training_only_initialization", False)
+        if len(train) < (3 if independent else 4) or len(np.unique(table["night"][train])) < 3:
             results.append(dict(night=night, status="insufficient_training_data"))
             continue
-        fit_result = fit(model, candidate["initial_state"], candidate["epoch_tdb_mjd"],
-                         tdb[train], obs[train], direction[train], table["sigma_arcsec"][train])
+        if independent:
+            fits = training_arc_fits(table[train], tdb[train], obs[train], model, config["link"])
+            if not fits:
+                results.append(dict(night=night, status="no_training_only_orbit",
+                                    n_train=len(train), n_test=len(test), training_starts=8))
+                continue
+            fit_result = fits[0]
+        else:
+            fit_result = fit(model, candidate["initial_state"], candidate["epoch_tdb_mjd"],
+                             tdb[train], obs[train], direction[train], table["sigma_arcsec"][train])
         direction_predicted = model.apparent(fit_result.state, fit_result.epoch, tdb[test], obs[test])
         offsets = angular_residual(direction_predicted, direction[test])
         results.append(dict(night=night, status="converged" if fit_result.convergence else "fit_failed",
                             n_train=len(train), n_test=len(test), mjd=tdb[test],
+                            initialization="training_only" if independent else "full_chain_seed",
+                            training_dof=fit_result.dof, training_rms_arcsec=fit_result.rms,
+                            training_starts=8 if independent else 1,
+                            acceptable_training_fits=len(fits) if independent else int(fit_result.convergence),
                             offsets_arcsec=offsets, rms_arcsec=np.sqrt(np.mean(offsets**2))))
     return results
 
@@ -67,6 +104,7 @@ def verify_truth(out, work, exposures, table, reasons, tdb, obs, field, cfg, wor
     _, row_index = np.unique(dates,return_index=True)
     result = []
     membership = {}
+    searchable = link_mask(table, reasons, cfg)
     for name, state, mag in des_orbits(work/"inputs"/"des-y6-tno.fits"):
         dt = np.mean(times)-DES_EPOCH_TDB
         approximate = state[:3] + dt*state[3:] - np.mean(observer,axis=0)
@@ -86,7 +124,7 @@ def verify_truth(out, work, exposures, table, reasons, tdb, obs, field, cfg, wor
         close = cfg["validation"]["truth_match_arcsec"]
         r = matches(raw, direct, exp, close+1)
         c = matches(table, direct, exp, close)
-        cleaned = c[reasons[c]=="transient_clean"]
+        cleaned = c[searchable[c]]
         a = len(exposures_here)
         row = dict(target=name, m_r=mag, reference_distance_au=np.linalg.norm(state[:3]),
                    A_geometry_exposures=a, B_raw_detections=len(r),
@@ -113,7 +151,7 @@ def verify_truth(out, work, exposures, table, reasons, tdb, obs, field, cfg, wor
         if n == len(i) and (len(scored) == 1 or scored[1][0] < n):
             solution["status"] = "known_recovered_blind"
             row_by_name[target]["E_blind"] = True
-            solution["held_nights"] = leave_night_out(solution, table, tdb, obs, world)
+            solution["held_nights"] = leave_night_out(solution, table, tdb, obs, world, config=cfg)
         else:
             solution["status"] = "contaminated_or_ambiguous"
     for row in result:
@@ -239,8 +277,7 @@ def catalog_injections(exposures, table, reasons, tdb, obs, field, cfg, model, k
         combined = np.concatenate([*group, table])
         inj_tdb, inj_obs = time_map(combined["mjd_mid_utc"], kernel)
         kinds, *_ = classify(combined, gaia, sweep, inj_tdb, inj_obs, cfg["filter"])
-        minimum = cfg["link"].get("min_catalog_snr",cfg["filter"]["search_snr"])
-        take = (kinds=="transient_clean") & (combined["snr"]>=minimum)
+        take = link_mask(combined, kinds, cfg)
         linked = search(combined[take],inj_tdb[take],inj_obs[take],field,cfg["link"])
         fitted, counts = fit_chains(combined[take],inj_tdb[take],inj_obs[take],model,linked,cfg)
         pure = set()
@@ -277,9 +314,11 @@ def write_identity(out, work, exposures, table, reasons, tdb, obs, field, cfg, m
     write_json(out/"blind_known_plot_data.json",members)
 
 
-def validate(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions):
-    write_identity(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions)
-    use = reasons=="transient_clean"
+def validate(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions,
+             *, geometry_exposures=None):
+    write_identity(out, work, exposures if geometry_exposures is None else geometry_exposures,
+                   table, reasons, tdb, obs, field, cfg, model, solutions)
+    use = link_mask(table, reasons, cfg)
     t, o = tdb[use],obs[use]
     row = table[use]
     nights = np.unique(row["night"])

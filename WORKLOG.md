@@ -2,6 +2,10 @@
 
 ## 2026-11-16
 
+- Expanded comparison job 61392081 completed in 27 s with exit 0:0. Reciprocal matches within 1 arcsec exist for 23/23 TV158 and 3/4 OF201 v1 SEP chain members. OF201 EXPNUM 759212 remains absent in this guided overlap test.
+- Jobs 61392122 and 61392123 completed in 51 s and 53 s with exit 0:0. Fetched 1,356,317 sources on 923 TV158-field CCDs and 936,200 sources on 962 OF201-field CCDs. Every fetched CCD's row count matched the NSC chip metadata. Added grouped downloads with persisted query caches and a manifest of the actual matched CCDs.
+- Added the normalization and catalog-run adapters. Source coordinates and NSC AUTO magnitudes are retained, epochs use the CP exposure midpoint, and CP weight/DQ footprints plus NSC extractor flags are audited. The first four-CCD normalization job (61392174) encountered a tile-compressed FITS dimension mismatch from reading NAXIS. Switched to decoded image dimensions. Reruns 61392190 and 61392191 generate the full-field products. Checked Python compilation, the Slurm script's shell syntax, and git diff whitespace before staging the frozen control configurations.
+
 - Job 61392069 completed in 14 s with exit 0:0. On six selected same-exposure CCDs, the median reciprocal-match separations per CCD ranged from 0.049 to 0.062 arcsec. The v1 SEP control detections had NSC counterparts on all three TV158 samples and two of three OF201 samples. This is a guided catalog-overlap diagnostic. The unmatched OF201 trial was EXPNUM 759212. Job 61392081 extends the diagnostic to all CCDs containing members of the two v1 recovered chains.
 
 - Slurm job 61392018 completed in 61 s with exit 0:0. Checked Legacy image HDU EXTNAME and physical CCDNUM against the NSC chip listings. The three control fields have 670/670, 923/928 and 962/962 listed CCDs. The five unmatched TV158-field CCDs belong to the exposure with no NSC record. Submitted same-CCD comparison of three CCDs per recovered control to job 61392069.
