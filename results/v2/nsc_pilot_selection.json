@@ -1,0 +1,43 @@
+{
+  "fields": [
+    {
+      "id": "exploration",
+      "ra_deg": 38.0,
+      "dec_deg": 10.0,
+      "core_radius_deg": 0.2,
+      "read_radius_deg": 0.96,
+      "mjd_min": 58394.210210820005,
+      "mjd_max": 58407.30271693,
+      "exclude_des": true
+    }
+  ],
+  "ranking": [
+    {
+      "field": {
+        "id": "exploration",
+        "ra_deg": 38.0,
+        "dec_deg": 10.0,
+        "core_radius_deg": 0.2,
+        "read_radius_deg": 0.96,
+        "mjd_min": 58394.210210820005,
+        "mjd_max": 58407.30271693,
+        "exclude_des": true
+      },
+      "viable_grid_points": 7,
+      "matched_exposures": 10,
+      "legacy_exposures": 10,
+      "legacy_ccds": 250,
+      "nscexp_ccds": 250,
+      "nsc_nights": 5,
+      "estimated_nscexp_density": 53564.5,
+      "fwhm_median_pix": 4.883315086364746,
+      "zpt_median": 25.163745880126953,
+      "proposal_ids": [
+        "2014B-0404"
+      ],
+      "cross_season_ccds": 212
+    }
+  ],
+  "grid_candidates": 2,
+  "selection": "cadence, NSC metadata and field-level density; no moving-source candidates read"
+}

@@ -1,0 +1,183 @@
+{
+  "method": "observing-night permutation, intra-night offsets preserved",
+  "controls": [
+    {
+      "repeat": 0,
+      "candidates": 6,
+      "fit_counts": {
+        "attempted": 283,
+        "residual_rejected": 276,
+        "accepted": 6,
+        "distance_rejected": 1
+      },
+      "truncated": [
+        {
+          "season": 0,
+          "distance_bin": 8,
+          "z_min": 121.87931668484596,
+          "z_max": 134.70871844114555,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 9,
+          "z_min": 110.27176271486061,
+          "z_max": 121.87931668484596,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 10,
+          "z_min": 99.76969007535007,
+          "z_max": 110.27176271486061,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 11,
+          "z_min": 90.26781483007862,
+          "z_max": 99.76969007535007,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 12,
+          "z_min": 81.67088008435684,
+          "z_max": 90.26781483007862,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 13,
+          "z_min": 73.8927010287038,
+          "z_max": 81.67088008435684,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 14,
+          "z_min": 66.855300930732,
+          "z_max": 73.8927010287038,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 15,
+          "z_min": 60.48812941351943,
+          "z_max": 66.855300930732,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 16,
+          "z_min": 54.72735518366044,
+          "z_max": 60.48812941351943,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 17,
+          "z_min": 49.51522611854992,
+          "z_max": 54.72735518366044,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 18,
+          "z_min": 44.79949029773564,
+          "z_max": 49.51522611854992,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 19,
+          "z_min": 40.532872174141765,
+          "z_max": 44.79949029773564,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 20,
+          "z_min": 36.672598633747306,
+          "z_max": 40.532872174141765,
+          "reason": "triplet budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 21,
+          "z_min": 33.179970192438034,
+          "z_max": 36.672598633747306,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 22,
+          "z_min": 30.01997303125346,
+          "z_max": 33.179970192438034,
+          "reason": "pair budget exceeded"
+        },
+        {
+          "season": 0,
+          "distance_bin": 23,
+          "z_min": 30.0,
+          "z_max": 30.01997303125346,
+          "reason": "pair budget exceeded"
+        }
+      ],
+      "night_mapping": [
+        [
+          58323,
+          58363
+        ],
+        [
+          58324,
+          58340
+        ],
+        [
+          58339,
+          58405
+        ],
+        [
+          58340,
+          58339
+        ],
+        [
+          58341,
+          58324
+        ],
+        [
+          58363,
+          58364
+        ],
+        [
+          58364,
+          58407
+        ],
+        [
+          58368,
+          58406
+        ],
+        [
+          58392,
+          58368
+        ],
+        [
+          58405,
+          58421
+        ],
+        [
+          58406,
+          58323
+        ],
+        [
+          58407,
+          58341
+        ],
+        [
+          58421,
+          58392
+        ]
+      ]
+    }
+  ]
+}

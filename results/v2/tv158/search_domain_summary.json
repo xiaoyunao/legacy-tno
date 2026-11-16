@@ -1,0 +1,17 @@
+{
+  "truncated": [],
+  "pair_counts": {
+    "pairs": 1415837,
+    "triplets": 16652,
+    "chains": 2
+  },
+  "fit_counts": {
+    "attempted": 1,
+    "accepted": 1
+  },
+  "link_input": 3861,
+  "link_classes": [
+    "transient_clean"
+  ],
+  "excluded_by_bright_search": 0
+}

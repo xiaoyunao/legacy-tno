@@ -1,0 +1,13 @@
+{
+  "target": "2017 OF201",
+  "reference": "JPL Horizons vector",
+  "A_geometry_exposures": 4,
+  "A_geometry_nights": 4,
+  "B_raw_detections": 3,
+  "C_clean_detections": 3,
+  "C_calibrated_detections": 3,
+  "D_linkable": false,
+  "E_blind": false,
+  "pure_chains": [],
+  "E_geometry_caveat": "TAN footprints tested, pixel completeness unmeasured"
+}

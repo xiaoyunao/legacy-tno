@@ -23,7 +23,7 @@ The five archived v1 fields were checked against 7,446 unique DR11.1.0 SE paths 
 
 The archived image headers confirmed 2,555 common control-field CCDs listed in NSC. The expanded comparison found reciprocal counterparts for 23/23 recovered TV158 members and 3/4 OF201 members. The OF201 miss is EXPNUM 759212. Full measurements for the two fields were fetched and checked against the chip counts. The 923 TV158-field CCDs yielded 1,356,317 measurements and the 962 OF201-field CCDs yielded 936,200.
 
-1. Finish and validate the sealed NSC normalization on Perlmutter. Report detector-mask and Gaia QC, including source-retention counts by reason.
-2. Run the frozen NSC-only controls at SNR ≥ 5. Save full-pool linkage, truncation, the post-search A–F evaluation and per-epoch diagnostics. Keep the independent SEP comparison for catalog misses. Re-run with static-ambiguous sources and report cost and any additions.
-3. Freeze independent search shards and their core/overlap geometry. Run the declared 30–300 au domain and close any truncations by reruns or explicitly scoped subdivision.
+1. Add Gaia QC summaries to the completed NSC normalization and catalog runs, including astrometric offsets and source-retention counts by reason.
+2. The frozen TV158 control was recovered blind. OF201 has three surviving epochs, cannot meet the baseline four-night test, and had 15 truncated bins. Finish the original-miss control and independent Horizons epoch diagnostics. Run a bounded ambiguity branch and a product-independent SEP sensitivity check.
+3. The independent pilot geometry is frozen at RA 38°, Dec +10° with a 0.20° core and 0.96° read radius, 13.1 days and five Legacy nights. Run the declared 30–300 au domain at SNR ≥ 5 and close any truncations by reruns or explicitly scoped subdivision.
 4. Attempt the two cross-season extensions from anonymous training arcs and conduct equivalent identity, image and hold-out checks. Run stratified catalog injections, then package the public audit. Keep complete source measurements and tables under NERSC scratch.
