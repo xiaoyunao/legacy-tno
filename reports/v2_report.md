@@ -36,6 +36,22 @@ OF201 场用于测试四夜门槛。共 23,810 个干净检测也进入了搜索
 
 以公开归档的 v1 盲搜成员作为独立输入，使用 Find_Orb 命令行 2026-10-21 版、JPL DE440 和 W84 站点重新拟合。输入是观测中点 UTC 的匿名 MPC 80 列记录，未附带各测量的拟合误差。Find_Orb 使用全部 23 个 TV158 位置和四个 OF201 位置，报告 RMS 分别为 0.11667″ 和 0.03690″。OF201 的独立拟合在抛物线边界附近（偏心率 1.00214），四点短弧对轨道能量约束弱。脚本、星历与输入记录的散列在仓库中可核验。[Find_Orb](https://www.projectpluto.com/fo_usage.htm) · [TV158 独立拟合](../results/v2/find_orb_v1_tv158.json) · [OF201 独立拟合](../results/v2/find_orb_v1_of201.json)
 
+## 已知库与候选图像审查
+
+对匿名链逐历元查询冻结的 MPCORB 小行星轨道快照（1,580,903 条），使用 Astcheck 在 W84 站点、120″ 半径和预测可见星等 30 的界限下作多夜初筛。TV158 链只得到一个多夜关联，MPC 编码 h7360 覆盖全部六夜，JPL 编号 437360 对应 2013 TV158。初筛坐标的分量 RMS 为 42.34″，身份判断结合独立 Horizons 复核。OF201 场七条四夜链均无多夜 MPCORB 初筛匹配，单历元均未达到返回限制。[JPL SBDB 记录](https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=437360) · [TV158 MPCORB 筛查](../results/v2/tv158/mpcorb_review.json) · [OF201 场 MPCORB 筛查](../results/v2/of201/mpcorb_review.json)
+
+作业 61392580 生成了七条 OF201 场匿名链的全部 28 个逐夜 CP 图像、DQ 和权重小图。各检测中心 DQ 为 0。目视仍发现拉长特征、亮源混叠和条带，四夜轨道在仅用三夜初始化时只有 6/28 次获得可用预测。七条链的证据不足以列为优先天体候选。图中青圈标记检测位置，橙色十字标记轨道预测。[图像与留出记录](../results/v2/of201/candidate_review.json) · [OF201 的 v1 SEP 对照小图](../results/v2/of201-sep/figures/candidate_stamps_C0004.png)
+
+| 匿名链 | 训练夜独立预测 | 图像审查 |
+|---|---:|---|
+| [C0001](../results/v2/of201/figures/candidate_stamps_C0001.png) | 1/4 | 首夜检测沿细条纹，后续两夜有混叠，组合伪迹 |
+| [C0002](../results/v2/of201/figures/candidate_stamps_C0002.png) | 2/4 | 末夜弯曲细线，首夜受邻近亮源影响，组合伪迹 |
+| [C0003](../results/v2/of201/figures/candidate_stamps_C0003.png) | 2/4 | 前三夜图像与 C0002 一致，末夜选择同类弯曲细线，竞争关联且有伪迹 |
+| [C0004](../results/v2/of201/figures/candidate_stamps_C0004.png) | 1/4 | 首夜弯曲条纹，第二夜模型与检测位置分离，组合伪迹 |
+| [C0005](../results/v2/of201/figures/candidate_stamps_C0005.png) | 0/4 | 首夜长条通过检测中心，第二夜有大范围亮源混叠，组合伪迹 |
+| [C0006](../results/v2/of201/figures/candidate_stamps_C0006.png) | 0/4 | 第二夜受邻源混叠且模型偏离；身份未识别、低可信 |
+| [C0007](../results/v2/of201/figures/candidate_stamps_C0007.png) | 0/4 | 中间两夜与 C0004 图像一致，末夜检测沿长条纹，竞争关联且有伪迹 |
+
 ## 独立试点的冻结范围
 
 采用 Legacy 采样节奏、NSC 曝光覆盖和曝光源密度作初选，冻结中心 RA 38°、Dec +10°，核心半径 0.20°，读取半径 0.96°。时间窗为 MJD 58394.21021082–58407.30271693，含五个 Legacy 夜、10 张曝光、250 个候选 CCD，来自提案 2014B-0404。全部 10 张曝光在 NSC 元数据有唯一匹配。仅排除 DES 提案曝光，天区是否与 DES 搜索重叠需要单独核验。主运行保留 SNR ≥ 5、24 个距离箱。关联内部按种子参考时刻的 SSB 切平面深度分箱；最终轨道另按种子参考时刻的日心瞬时距离 30–300 au 验收。该试点只有一个核心与读取缓冲区，不声明连续多分片覆盖。[选区证据](../results/v2/nsc_pilot_selection.json) · [冻结参数](../configs/v2-nsc-pilot.json)

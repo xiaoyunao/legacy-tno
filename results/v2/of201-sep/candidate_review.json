@@ -1,0 +1,59 @@
+[
+  {
+    "candidate_id": "C0004",
+    "holdouts": [
+      {
+        "night": 58324,
+        "status": "insufficient_training_data"
+      },
+      {
+        "night": 58339,
+        "status": "insufficient_training_data"
+      },
+      {
+        "night": 58340,
+        "status": "insufficient_training_data"
+      },
+      {
+        "night": 58421,
+        "status": "insufficient_training_data"
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58325.42913804148,
+        "band": "z",
+        "catalog_snr": 7.122725486755371,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.015873015873015872,
+        "sky_mad_adu": 39.98604052734375
+      },
+      {
+        "utc_mjd": 58340.38536521223,
+        "band": "g",
+        "catalog_snr": 8.451713562011719,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 7.48417095336914
+      },
+      {
+        "utc_mjd": 58341.374839581484,
+        "band": "r",
+        "catalog_snr": 9.552063941955566,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 6.194056031799316
+      },
+      {
+        "utc_mjd": 58422.16980381037,
+        "band": "r",
+        "catalog_snr": 8.493218421936035,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 10.929017028808593
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  }
+]

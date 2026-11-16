@@ -1,0 +1,51 @@
+{
+  "run_id": "validation-2757671f191346",
+  "dataset": "MPCORB asteroid orbits",
+  "snapshot_sha256": "e61c2ceb18ac81875010f63452d81b49f01f999279c827be2dcfd3f9997d025a",
+  "rows": 1580903,
+  "screening_radius_arcsec": 120,
+  "limiting_vmag": 30,
+  "scope": "Astcheck preliminary propagation, W84; reliable identities require further ephemeris verification",
+  "candidates": [
+    {
+      "candidate_id": "C0001",
+      "measured_epochs": 23,
+      "measured_nights": 6,
+      "epochs_hitting_output_limit": 0,
+      "alternatives": [
+        {
+          "mpc_id": "h7360",
+          "nights": 6,
+          "measurements": 23,
+          "component_rms_arcsec": 42.343647276940096,
+          "expnums": [
+            388176,
+            389822,
+            389823,
+            389824,
+            389825,
+            389826,
+            392033,
+            392034,
+            392035,
+            392036,
+            392037,
+            393863,
+            393864,
+            393865,
+            393866,
+            393867,
+            396320,
+            396321,
+            396322,
+            396323,
+            396324,
+            399227,
+            399230
+          ]
+        }
+      ],
+      "status": "mpcorb_identity_requires_ephemeris"
+    }
+  ]
+}

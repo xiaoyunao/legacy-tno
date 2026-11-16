@@ -5,6 +5,7 @@ from contextlib import nullcontext
 from dataclasses import dataclass
 from itertools import combinations
 import os
+from time import monotonic
 
 import numpy as np
 from scipy.optimize import lsq_linear
@@ -19,6 +20,7 @@ class SearchResult:
     chains: dict
     counts: Counter
     truncated: list
+    bins: list
 
 
 def depth_bins(inner, outer, fraction):
@@ -83,9 +85,9 @@ def endpoint_envelope(theta_first, theta_last, observers, times, depths, escape)
 
 def search(table, time, observer, field, cfg):
     counts = Counter()
-    chains, truncated = {}, []
+    chains, truncated, details = {}, [], []
     if len(table) == 0:
-        return SearchResult(chains, counts, truncated)
+        return SearchResult(chains, counts, truncated, details)
     axes = basis(field["ra_deg"], field["dec_deg"])
     directions = unit(table["ra_deg"], table["dec_deg"])
     theta = project(directions, axes)
@@ -112,15 +114,17 @@ def search(table, time, observer, field, cfg):
             jobs = [(table["night"][ix], time, theta, observ, sigma, in_core, ix, exposures,
                      trees, axes, bounds, cfg) for bounds in bins]
             results = (pool.map(search_distance_bin, jobs) if pool else map(search_distance_bin, jobs))
-            for bin_number, (found, bin_counts, reason) in enumerate(results):
+            for bin_number, (found, bin_counts, reason, seconds) in enumerate(results):
                 counts.update(bin_counts)
                 for key, value in found.items():
                     chains.setdefault(key, value)
+                lo, hi = bins[bin_number]
+                index = dict(season=int(season), distance_bin=bin_number, z_min=lo, z_max=hi)
+                details.append(dict(**index, status="truncated" if reason else "complete",
+                                    counts=dict(bin_counts), worker_wall_seconds=seconds))
                 if reason:
-                    bounds = bins[bin_number]
-                    truncated.append(dict(season=int(season), distance_bin=bin_number,
-                                          z_min=bounds[0], z_max=bounds[1], reason=reason))
-    return SearchResult(chains, counts, truncated)
+                    truncated.append(dict(**index, reason=reason))
+    return SearchResult(chains, counts, truncated, details)
 
 
 class SearchLimit(Exception):
@@ -130,11 +134,12 @@ class SearchLimit(Exception):
 def search_distance_bin(args):
     counts, chains = Counter(), {}
     reason = None
+    start = monotonic()
     try:
         search_bin(*args, counts, chains)
     except SearchLimit as exc:
         reason = str(exc)
-    return chains, counts, reason
+    return chains, counts, reason, monotonic() - start
 
 
 def search_bin(night, time, theta, observ, sigma, in_core, ix, exposures, trees, axes,

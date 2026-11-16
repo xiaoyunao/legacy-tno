@@ -350,6 +350,7 @@ def run(config_path, work, field_path, field_name, run_code_commit, resume, stop
             candidate["members"] = indices[candidate["members"]]
         write_json(out / "blind_candidates.json", solutions)
         domain = dict(truncated=search_result.truncated, pair_counts=dict(search_result.counts), fit_counts=fit_counts,
+                      distance_bins=search_result.bins,
                       link_input=len(indices), link_classes=classes_used,
                       excluded_by_bright_search=int(np.count_nonzero(disqualified)))
         write_json(out / "search_domain_summary.json", domain)

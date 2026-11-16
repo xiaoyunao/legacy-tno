@@ -314,13 +314,7 @@ def write_identity(out, work, exposures, table, reasons, tdb, obs, field, cfg, m
     write_json(out/"blind_known_plot_data.json",members)
 
 
-def validate(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions,
-             *, geometry_exposures=None):
-    write_identity(out, work, exposures if geometry_exposures is None else geometry_exposures,
-                   table, reasons, tdb, obs, field, cfg, model, solutions)
-    use = link_mask(table, reasons, cfg)
-    t, o = tdb[use],obs[use]
-    row = table[use]
+def night_permutations(row, field, cfg, model, kernel):
     nights = np.unique(row["night"])
     rng = np.random.default_rng(cfg["validation"]["seed"])
     controls = []
@@ -330,14 +324,22 @@ def validate(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, 
         scramble = row.copy()
         scramble["night"] = mapped_nights[mapping]
         scramble["mjd_mid_utc"] += scramble["night"] - row["night"]
-        ts, os = time_map(scramble["mjd_mid_utc"],str(work/"inputs"/"de440s.bsp"))
+        ts, os = time_map(scramble["mjd_mid_utc"], kernel)
         linked = search(scramble,ts,os,field,cfg["link"])
         candidates, counts = fit_chains(scramble,ts,os,model,linked,cfg)
         controls.append(dict(repeat=k,candidates=len(candidates),fit_counts=counts,truncated=linked.truncated,
+                             distance_bins=linked.bins, pair_counts=dict(linked.counts),
                              night_mapping=np.c_[nights,mapped_nights]))
-    write_json(out/"null_test_summary.json",dict(method="observing-night permutation, intra-night offsets preserved",
-                                                 controls=controls))
+    return dict(method="observing-night permutation, intra-night offsets preserved", controls=controls)
+
+
+def validate(out, work, exposures, table, reasons, tdb, obs, field, cfg, model, solutions,
+             *, geometry_exposures=None):
+    write_identity(out, work, exposures if geometry_exposures is None else geometry_exposures,
+                   table, reasons, tdb, obs, field, cfg, model, solutions)
+    use = link_mask(table, reasons, cfg)
     kernel = str(work/"inputs"/"de440s.bsp")
+    write_json(out/"null_test_summary.json", night_permutations(table[use], field, cfg, model, kernel))
     if cfg["validation"]["injection_objects"]:
         injection = catalog_injections(exposures,table,reasons,tdb,obs,field,cfg,model,kernel)
         write_json(out/"injection_recovery_summary.json", injection)

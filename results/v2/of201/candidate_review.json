@@ -1,0 +1,569 @@
+[
+  {
+    "candidate_id": "C0001",
+    "holdouts": [
+      {
+        "night": 58323,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58340,
+        "status": "converged",
+        "n_train": 3,
+        "n_test": 1,
+        "mjd": [
+          58341.37149532063
+        ],
+        "initialization": "training_only",
+        "training_dof": 0,
+        "training_rms_arcsec": 1.1449996853268664e-11,
+        "training_starts": 8,
+        "acceptable_training_fits": 8,
+        "offsets_arcsec": [
+          [
+            -0.5847298649197917,
+            -0.10540463818242775
+          ]
+        ],
+        "rms_arcsec": 0.4201304277718328
+      },
+      {
+        "night": 58341,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58421,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58324.41099743297,
+        "band": "z",
+        "catalog_snr": 6.371280193328857,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 46.63348901367187
+      },
+      {
+        "utc_mjd": 58341.37069459148,
+        "band": "r",
+        "catalog_snr": 84.11343383789062,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 8.14923251953125
+      },
+      {
+        "utc_mjd": 58342.37950879556,
+        "band": "r",
+        "catalog_snr": 126.92730712890625,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 14.834981204223633
+      },
+      {
+        "utc_mjd": 58422.16980381037,
+        "band": "r",
+        "catalog_snr": 41.306304931640625,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 15.980344903564452
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  },
+  {
+    "candidate_id": "C0002",
+    "holdouts": [
+      {
+        "night": 58323,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58340,
+        "status": "converged",
+        "n_train": 3,
+        "n_test": 1,
+        "mjd": [
+          58341.40765797247
+        ],
+        "initialization": "training_only",
+        "training_dof": 0,
+        "training_rms_arcsec": 1.6192740839021806e-11,
+        "training_starts": 8,
+        "acceptable_training_fits": 8,
+        "offsets_arcsec": [
+          [
+            -0.010805728888399323,
+            0.7451077816048897
+          ]
+        ],
+        "rms_arcsec": 0.526926166547539
+      },
+      {
+        "night": 58341,
+        "status": "converged",
+        "n_train": 3,
+        "n_test": 1,
+        "mjd": [
+          58342.380309524444
+        ],
+        "initialization": "training_only",
+        "training_dof": 0,
+        "training_rms_arcsec": 1.0452369266497359e-11,
+        "training_starts": 8,
+        "acceptable_training_fits": 8,
+        "offsets_arcsec": [
+          [
+            0.03493437730854547,
+            -0.7688430289492492
+          ]
+        ],
+        "rms_arcsec": 0.5442150374079128
+      },
+      {
+        "night": 58421,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58324.41099743297,
+        "band": "z",
+        "catalog_snr": 21.455541610717773,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 56.208493359375
+      },
+      {
+        "utc_mjd": 58341.40685724333,
+        "band": "g",
+        "catalog_snr": 132.1490020751953,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 11.763386737060546
+      },
+      {
+        "utc_mjd": 58342.37950879556,
+        "band": "r",
+        "catalog_snr": 62.842864990234375,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 12.711209188842773
+      },
+      {
+        "utc_mjd": 58422.16980381037,
+        "band": "r",
+        "catalog_snr": 47.74565505981445,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 11.139611563110352
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  },
+  {
+    "candidate_id": "C0003",
+    "holdouts": [
+      {
+        "night": 58323,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58340,
+        "status": "converged",
+        "n_train": 3,
+        "n_test": 1,
+        "mjd": [
+          58341.40765797247
+        ],
+        "initialization": "training_only",
+        "training_dof": 0,
+        "training_rms_arcsec": 1.3221317530910061e-11,
+        "training_starts": 8,
+        "acceptable_training_fits": 8,
+        "offsets_arcsec": [
+          [
+            -0.015064790297884498,
+            0.7401735405938054
+          ]
+        ],
+        "rms_arcsec": 0.5234901231646538
+      },
+      {
+        "night": 58341,
+        "status": "converged",
+        "n_train": 3,
+        "n_test": 1,
+        "mjd": [
+          58342.380309524444
+        ],
+        "initialization": "training_only",
+        "training_dof": 0,
+        "training_rms_arcsec": 2.192507474208837e-11,
+        "training_starts": 8,
+        "acceptable_training_fits": 8,
+        "offsets_arcsec": [
+          [
+            0.03928184588413441,
+            -0.7637378115929518
+          ]
+        ],
+        "rms_arcsec": 0.5407580365897746
+      },
+      {
+        "night": 58421,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58324.41099743297,
+        "band": "z",
+        "catalog_snr": 21.455541610717773,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 56.208493359375
+      },
+      {
+        "utc_mjd": 58341.40685724333,
+        "band": "g",
+        "catalog_snr": 132.1490020751953,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 11.763386737060546
+      },
+      {
+        "utc_mjd": 58342.37950879556,
+        "band": "r",
+        "catalog_snr": 62.842864990234375,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 12.711209188842773
+      },
+      {
+        "utc_mjd": 58422.16980381037,
+        "band": "r",
+        "catalog_snr": 40.62928009033203,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 11.786326135253905
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  },
+  {
+    "candidate_id": "C0004",
+    "holdouts": [
+      {
+        "night": 58323,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58339,
+        "status": "converged",
+        "n_train": 3,
+        "n_test": 1,
+        "mjd": [
+          58340.386165941636
+        ],
+        "initialization": "training_only",
+        "training_dof": 0,
+        "training_rms_arcsec": 1.4781882375612283e-11,
+        "training_starts": 8,
+        "acceptable_training_fits": 8,
+        "offsets_arcsec": [
+          [
+            2.9916940114665587,
+            3.2001041018967964
+          ]
+        ],
+        "rms_arcsec": 3.0976522820695656
+      },
+      {
+        "night": 58340,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58421,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58324.41099743297,
+        "band": "z",
+        "catalog_snr": 15.901233673095703,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 45.0354228515625
+      },
+      {
+        "utc_mjd": 58340.38536521223,
+        "band": "g",
+        "catalog_snr": 10.237771987915039,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 8.853680172729492
+      },
+      {
+        "utc_mjd": 58341.374839581484,
+        "band": "r",
+        "catalog_snr": 423.1239929199219,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 13.048852697753906
+      },
+      {
+        "utc_mjd": 58422.16980381037,
+        "band": "r",
+        "catalog_snr": 6.451042175292969,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 11.30165782470703
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  },
+  {
+    "candidate_id": "C0005",
+    "holdouts": [
+      {
+        "night": 58323,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58339,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58340,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58405,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58324.41099743297,
+        "band": "z",
+        "catalog_snr": 8.399499893188477,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 41.66410048828125
+      },
+      {
+        "utc_mjd": 58340.38536521223,
+        "band": "g",
+        "catalog_snr": 70.5252456665039,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 24.331778942871093
+      },
+      {
+        "utc_mjd": 58341.374839581484,
+        "band": "r",
+        "catalog_snr": 32.60273361206055,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 5.978394017028808
+      },
+      {
+        "utc_mjd": 58406.165947188885,
+        "band": "z",
+        "catalog_snr": 11.91833209991455,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 34.7614681640625
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  },
+  {
+    "candidate_id": "C0006",
+    "holdouts": [
+      {
+        "night": 58323,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58340,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58341,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58405,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58324.41099743297,
+        "band": "z",
+        "catalog_snr": 14.416893005371094,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 45.37060048828125
+      },
+      {
+        "utc_mjd": 58341.40685724333,
+        "band": "g",
+        "catalog_snr": 7.775753498077393,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 7.105851864624023
+      },
+      {
+        "utc_mjd": 58342.37950879556,
+        "band": "r",
+        "catalog_snr": 344.4594421386719,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 12.156840399169921
+      },
+      {
+        "utc_mjd": 58406.165947188885,
+        "band": "z",
+        "catalog_snr": 18.754512786865234,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 45.66161865234375
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  },
+  {
+    "candidate_id": "C0007",
+    "holdouts": [
+      {
+        "night": 58323,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58339,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58340,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58405,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58324.41099743297,
+        "band": "z",
+        "catalog_snr": 17.261306762695312,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 44.95796279296875
+      },
+      {
+        "utc_mjd": 58340.38536521223,
+        "band": "g",
+        "catalog_snr": 10.237771987915039,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 8.853680172729492
+      },
+      {
+        "utc_mjd": 58341.374839581484,
+        "band": "r",
+        "catalog_snr": 423.1239929199219,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 13.048852697753906
+      },
+      {
+        "utc_mjd": 58406.165947188885,
+        "band": "z",
+        "catalog_snr": 6.615220069885254,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 34.37272001953125
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  }
+]

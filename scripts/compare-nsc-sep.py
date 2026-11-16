@@ -8,10 +8,9 @@ from pathlib import Path
 import numpy as np
 from scipy.spatial import cKDTree
 
-from legacy_tno.geometry import unit
+from legacy_tno.geometry import ARCSEC as ARCSEC_PER_RADIAN, angular_residual, unit
 from legacy_tno.nsc import query_measurements
 
-ARCSEC_PER_RADIAN = 180 * 3600 / np.pi
 MATCH_RADIUS = 1 / ARCSEC_PER_RADIAN
 CONTROLS = {
     "validation-97d3348bc5c4b3": "2013 TV158",
@@ -54,13 +53,38 @@ def compare(sep, nsc, expected_ids):
                            nearest_nsc_flags=int(source["flags"]),
                            reciprocal=bool(reverse[nearest[i]] == i),
                            within_one_arcsec=bool(forward[i] <= MATCH_RADIUS)))
+    valid = mutual & np.isfinite(difference) & (auto[good][nearest] < 90)
+    residual = angular_residual(a[valid], b[nearest[valid]])
+    measures = np.column_stack((sep["mag_ab"][valid], residual, difference[valid]))
     return dict(sep_rows=len(sep), nsc_rows=len(nsc), nsc_finite_positions=int(good.sum()),
                 mutual_matches=int(mutual.sum()),
                 median_separation_arcsec=float(np.median(forward[mutual]) * ARCSEC_PER_RADIAN) if mutual.any() else None,
                 median_auto_minus_sep_aperture_mag=float(np.median(phot)) if len(phot) else None,
                 v1_members_seen=int(targets.sum()), v1_members_with_nsc_match=int((targets & mutual).sum()),
                 member_diagnostics=checks,
-                flags=dict(Counter(row["flags"] for row in nsc)))
+                flags=dict(Counter(row["flags"] for row in nsc))), measures
+
+
+def magnitude_summary(groups):
+    edges = np.arange(16.0, 25.0)
+    output = []
+    for band, pieces in sorted(groups.items()):
+        pairs = np.concatenate(pieces)
+        for index, (lo, hi) in enumerate(zip(edges[:-1], edges[1:])):
+            use = ((pairs[:, 0] >= (lo if index else -np.inf)) &
+                   (pairs[:, 0] < (hi if index < len(edges) - 2 else np.inf)))
+            sample = pairs[use]
+            if not len(sample):
+                continue
+            output.append(dict(
+                band=band, sep_mag_lower=float(lo) if index else None,
+                sep_mag_upper=float(hi) if index < len(edges) - 2 else None,
+                median_sep_mag=float(np.median(sample[:, 0])), matches=len(sample),
+                east_arcsec=np.quantile(sample[:, 1], [.16, .5, .84]).tolist(),
+                north_arcsec=np.quantile(sample[:, 2], [.16, .5, .84]).tolist(),
+                separation_arcsec=np.quantile(np.linalg.norm(sample[:, 1:3], axis=1), [.16, .5, .84]).tolist(),
+                nsc_minus_sep_mag=np.quantile(sample[:, 3], [.16, .5, .84]).tolist()))
+    return output
 
 
 def main():
@@ -71,6 +95,7 @@ def main():
     work = args.work
     inventory = json.loads((work / "v2/nsc_ccds.json").read_text())
     summaries = []
+    magnitudes = {}
     for run_id, target in CONTROLS.items():
         run = work / "runs" / run_id
         candidate = get_control(run, target)
@@ -86,11 +111,14 @@ def main():
             row = rows[i]
             use = (raw["expnum"] == row["expnum"]) & (raw["ccdname"] == row["ccdname"])
             nsc = query_measurements(row["nsc_exposure"], row["nsc_ccdnum"], work / "v2/nsc_query_cache")
+            stats, measures = compare(raw[use], nsc, members)
+            magnitudes.setdefault(row["band"], []).append(measures)
             summaries.append(dict(target=target, expnum=row["expnum"], ccdname=row["ccdname"],
-                                  nsc_ccdnum=row["nsc_ccdnum"], **compare(raw[use], nsc, members)))
+                                  band=row["band"], nsc_ccdnum=row["nsc_ccdnum"], **stats))
     print(json.dumps(dict(method="same CCD, reciprocal nearest positions within 1 arcsec",
                           sep="v1 raw CP WCS positions and aperture magnitudes",
-                          nsc="calibrated NSC positions and AUTO magnitudes", results=summaries), indent=2))
+                          nsc="calibrated NSC positions and AUTO magnitudes",
+                          magnitude_statistics=magnitude_summary(magnitudes), results=summaries), indent=2))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,67 @@
+{
+  "run_id": "validation-ef4655b225ac2a",
+  "dataset": "MPCORB asteroid orbits",
+  "snapshot_sha256": "e61c2ceb18ac81875010f63452d81b49f01f999279c827be2dcfd3f9997d025a",
+  "rows": 1580903,
+  "screening_radius_arcsec": 120,
+  "limiting_vmag": 30,
+  "scope": "Astcheck preliminary propagation, W84; reliable identities require further ephemeris verification",
+  "candidates": [
+    {
+      "candidate_id": "C0001",
+      "measured_epochs": 4,
+      "measured_nights": 4,
+      "epochs_hitting_output_limit": 0,
+      "alternatives": [],
+      "status": "no_multipoint_match"
+    },
+    {
+      "candidate_id": "C0002",
+      "measured_epochs": 4,
+      "measured_nights": 4,
+      "epochs_hitting_output_limit": 0,
+      "alternatives": [],
+      "status": "no_multipoint_match"
+    },
+    {
+      "candidate_id": "C0003",
+      "measured_epochs": 4,
+      "measured_nights": 4,
+      "epochs_hitting_output_limit": 0,
+      "alternatives": [],
+      "status": "no_multipoint_match"
+    },
+    {
+      "candidate_id": "C0004",
+      "measured_epochs": 4,
+      "measured_nights": 4,
+      "epochs_hitting_output_limit": 0,
+      "alternatives": [],
+      "status": "no_multipoint_match"
+    },
+    {
+      "candidate_id": "C0005",
+      "measured_epochs": 4,
+      "measured_nights": 4,
+      "epochs_hitting_output_limit": 0,
+      "alternatives": [],
+      "status": "no_multipoint_match"
+    },
+    {
+      "candidate_id": "C0006",
+      "measured_epochs": 4,
+      "measured_nights": 4,
+      "epochs_hitting_output_limit": 0,
+      "alternatives": [],
+      "status": "no_multipoint_match"
+    },
+    {
+      "candidate_id": "C0007",
+      "measured_epochs": 4,
+      "measured_nights": 4,
+      "epochs_hitting_output_limit": 0,
+      "alternatives": [],
+      "status": "no_multipoint_match"
+    }
+  ]
+}
