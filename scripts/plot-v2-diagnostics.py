@@ -103,6 +103,31 @@ def plot_costs(records, output):
     plt.close(fig)
 
 
+def plot_growth(records, output):
+    fig, axes = plt.subplots(1, 3, figsize=(11, 4.2), layout="constrained")
+    labels = [row["target"] for row in records]
+    refined = [row["anonymous_refinement"] for row in records]
+    positions = np.arange(len(records))
+    for ax, first, second, label in (
+        (axes[0], [r["old_span_days"] for r in refined], [r["new_span_days"] for r in refined],
+         "Observed arc (days)"),
+        (axes[1], [r["before"]["distance_sigma_au"] for r in refined],
+         [r["after"]["distance_sigma_au"] for r in refined], "Distance uncertainty (au)"),
+        (axes[2], [r["before"]["inverse_a_sigma_per_au"] for r in refined],
+         [r["after"]["inverse_a_sigma_per_au"] for r in refined], "1/a uncertainty (au⁻¹)"),
+    ):
+        ax.bar(positions-.18, first, width=.32, color="#708796", label="Original arc")
+        ax.bar(positions+.18, second, width=.32, color="#1c78af", label="Joint fit")
+        ax.set(xticks=positions, xticklabels=labels, ylabel=label)
+        ax.grid(axis="y", alpha=.22)
+    axes[1].set_yscale("log")
+    axes[2].set_yscale("log")
+    axes[0].legend(fontsize=8)
+    fig.suptitle("Horizons-verified cross-season measurements · local linearized uncertainties")
+    fig.savefig(output, dpi=170)
+    plt.close(fig)
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("results", type=Path)
@@ -116,6 +141,9 @@ def main():
     for filename, key, figure, draw in chart:
         data = json.loads((root/filename).read_text())
         draw(data[key] if key else data, output/figure)
+    growth = [json.loads((root/f"nsc-grow-{key}-refined-summary.json").read_text())
+              for key in ("tv158", "of201")]
+    plot_growth(growth, output/"nsc_growth.png")
 
 
 if __name__ == "__main__":

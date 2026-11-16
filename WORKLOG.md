@@ -2,6 +2,8 @@
 
 ## 2026-11-16
 
+- Both anonymous growth selections were independently scored in completed jobs 61392681 and 61392984. TV158 added 20 Horizons-confirmed measurements across seven nights and extended its arc to 444.89 d; OF201 added two and extended to 464.73 d. Archived both local orbit-energy/distance uncertainties and training-night predictions. Job 61392865 finished both 0.06-degree pilot controls untruncated. The ambiguity-inclusive control yielded one provisional hyperbolic chain. A 0.35-degree OF201 control reduced real truncation from 15 bins to seven and may add one different chain; prepared image/identity review of the differences and a final smaller OF201 variant.
+
 - Completed job 61392818 and checked that the frozen replay reproduced the exact pilot and OF201 search counts, accepted member IDs, night permutations and truncation. The seven OF201-field chains contain two competitive pairs sharing three and two detections. Archived per-bin counts, worker time and figures. Joined field/year/band product coverage and confirmed 2,805 usable NSC CCDs of 2,810 in the four pre-2021 scopes. Checked upstream NSC RA-error units against its tangent-plane proper-motion implementation and prepared an upstream im.sefn verification on the actual audit ledgers.
 
 - Archived the OF201 cross-season Horizons score and pilot sensitivity runs. Both extra NSC nights matched Horizons. The two reciprocal independent predictions missed by 0.37 and 0.85 arcsec. Six observations extend the v1 arc to 464.73 d. The SNR ≥8 sensitivity finished all bins, and the 173,839-source ambiguity run stopped at 21 real and 18 permuted bin budgets. Prepared same-core clean/ambiguity and OF201 stress reruns with an explicit first-endpoint radius.

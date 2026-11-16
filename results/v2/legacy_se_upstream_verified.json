@@ -1,0 +1,31 @@
+{
+  "tag": "DR11.1.0",
+  "commit": "769e266b837196a7d5c2dfda245cd1f5d64abd91",
+  "source_sha256": "1393c86ebb55c391bfd0de68630ada3679a24c251b8727380813ae234ab1d1ba",
+  "source": "https://github.com/legacysurvey/legacypipe/blob/769e266b837196a7d5c2dfda245cd1f5d64abd91/py/legacypipe/image.py",
+  "method": "Executed get_base_name and set_calib_filenames on the audited image metadata",
+  "paths_verified": 7946,
+  "per_field": {
+    "validation-c36e0a643fc984": {
+      "missing": 1340
+    },
+    "validation-97d3348bc5c4b3": {
+      "missing": 1856
+    },
+    "validation-7185aa85687161": {
+      "missing": 1924
+    },
+    "exploration-f742d8b20d9ab4": {
+      "missing": 2326
+    },
+    "exploration-cb6d398cc191bd": {
+      "missing": 566
+    },
+    "pilot-38-10": {
+      "missing": 500
+    }
+  },
+  "archived_status": {
+    "missing": 7946
+  }
+}

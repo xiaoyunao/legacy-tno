@@ -22,14 +22,14 @@ def main():
     p.add_argument("work",type=Path)
     p.add_argument("run")
     p.add_argument("--all", action="store_true", help="Inspect every unresolved chain")
-    p.add_argument("--candidate", help="Inspect one candidate regardless of its identity status")
+    p.add_argument("--candidate", action="append", help="Inspect a specific candidate; may be repeated")
     args=p.parse_args()
     out=args.work/"runs"/args.run
     record=json.loads((out/"run_manifest.json").read_text())
     root=Path(record["config"]["image_root"])
     blind=json.loads((out/"blind_candidates.json").read_text())
     valid=json.loads((out/"candidate_summary.json").read_text())
-    target_ids = ({args.candidate} if args.candidate else
+    target_ids = (set(args.candidate) if args.candidate else
                   {v["candidate_id"] for v in valid if v["status"]=="known_status_unresolved"})
     index=np.load(out/"exposures.npy",allow_pickle=False)
     by_ccd={(int(row["expnum"]),str(row["ccdname"]).strip()):row for row in index}
@@ -40,7 +40,7 @@ def main():
     fig_root=out/"figures"
     fig_root.mkdir(exist_ok=True)
     unresolved = [b for b in blind if b["candidate_id"] in target_ids]
-    for source in unresolved if args.all else unresolved[:3]:
+    for source in unresolved if args.all or args.candidate else unresolved[:3]:
         ident=source["candidate_id"]
         members=np.asarray(source["members"],dtype=int)
         source["members"]=members

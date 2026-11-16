@@ -1,0 +1,481 @@
+{
+  "run_id": "validation-2757671f191346",
+  "candidate_id": "C0001",
+  "window_days": 760,
+  "season_gap_days": 120,
+  "initial_sky_gate_deg": 17,
+  "footprint_count": 111,
+  "attempted_ccds": 111,
+  "attempted_subset": false,
+  "family_count": 28,
+  "training_arc_days": 31.899551340007747,
+  "training_distance_range_au": [
+    36.97176357014538,
+    37.09176341796301
+  ],
+  "checks": {
+    "catalog_read": 98,
+    "no_unique_nsc_exposure": 13
+  },
+  "source_matches": 145,
+  "single_epoch_refits": 145,
+  "independent_night_prediction_pairs": 583,
+  "scope": "Legacy exposures only, NSC AUTO detections, bound training orbit grid",
+  "anonymous_refinement": {
+    "run_id": "validation-2757671f191346",
+    "candidate_id": "C0001",
+    "status": "anonymous_extension_selected",
+    "available_pairs": 336,
+    "tried_seeds": 24,
+    "alternatives": [
+      {
+        "nights": 7,
+        "measurements": 20,
+        "overlap_with_best": 20,
+        "chi2": 12.504948928499315
+      },
+      {
+        "nights": 3,
+        "measurements": 9,
+        "overlap_with_best": 0,
+        "chi2": 73.39270920335358
+      },
+      {
+        "nights": 2,
+        "measurements": 6,
+        "overlap_with_best": 0,
+        "chi2": 6.271808282717193
+      },
+      {
+        "nights": 2,
+        "measurements": 6,
+        "overlap_with_best": 0,
+        "chi2": 42.98387078436466
+      },
+      {
+        "nights": 2,
+        "measurements": 5,
+        "overlap_with_best": 0,
+        "chi2": 25.03578538753525
+      },
+      {
+        "nights": 2,
+        "measurements": 5,
+        "overlap_with_best": 0,
+        "chi2": 42.01539451780701
+      },
+      {
+        "nights": 2,
+        "measurements": 5,
+        "overlap_with_best": 0,
+        "chi2": 85.87616469653457
+      },
+      {
+        "nights": 2,
+        "measurements": 4,
+        "overlap_with_best": 0,
+        "chi2": 15.074763323397443
+      },
+      {
+        "nights": 2,
+        "measurements": 4,
+        "overlap_with_best": 0,
+        "chi2": 30.799417395978466
+      },
+      {
+        "nights": 2,
+        "measurements": 2,
+        "overlap_with_best": 1,
+        "chi2": 8.76945724439695
+      },
+      {
+        "nights": 2,
+        "measurements": 2,
+        "overlap_with_best": 0,
+        "chi2": 11.239164481580074
+      },
+      {
+        "nights": 2,
+        "measurements": 2,
+        "overlap_with_best": 0,
+        "chi2": 11.327599925597987
+      },
+      {
+        "nights": 2,
+        "measurements": 2,
+        "overlap_with_best": 0,
+        "chi2": 22.998356385721003
+      }
+    ],
+    "old_measurements": 23,
+    "new_measurements": 20,
+    "old_span_days": 31.899551350463298,
+    "new_span_days": 444.888726321813,
+    "epoch_tdb_mjd": 57007.16214801994,
+    "before": {
+      "distance_au": 37.03176347024687,
+      "inverse_a_per_au": 0.009278481970838796,
+      "elements": {
+        "r_au": 37.031763470246865,
+        "a_au": 107.77625080728552,
+        "e": 0.6591763381672692,
+        "i_deg": 31.192370994117912,
+        "node_deg": 181.1470183641222,
+        "argperi_deg": 227.73285986262334,
+        "mean_anomaly_deg": 358.2027060196003,
+        "q_au": 36.73269645874191,
+        "bound": true,
+        "frame": "heliocentric ecliptic J2000 osculating"
+      },
+      "arc_rms_arcsec": 0.04451991858683642,
+      "chi2": 3.0647980708590885,
+      "dof": 40,
+      "distance_sigma_au": 0.020277286727449842,
+      "inverse_a_sigma_per_au": 0.0018526230059191912
+    },
+    "after": {
+      "distance_au": 37.03409683891151,
+      "inverse_a_per_au": 0.008908360474063286,
+      "elements": {
+        "r_au": 37.03409683891151,
+        "a_au": 112.25410140412504,
+        "e": 0.6755520881763531,
+        "i_deg": 31.17312113392279,
+        "node_deg": 181.1197326939538,
+        "argperi_deg": 232.66503073817546,
+        "mean_anomaly_deg": 357.6205239301354,
+        "q_au": 36.42060879420827,
+        "bound": true,
+        "frame": "heliocentric ecliptic J2000 osculating"
+      },
+      "arc_rms_arcsec": 0.06229656991479641,
+      "chi2": 12.504948928499315,
+      "dof": 80,
+      "distance_sigma_au": 0.003521654600234928,
+      "inverse_a_sigma_per_au": 5.2625744801055884e-05
+    },
+    "uncertainty": "local linearized Jacobian using assigned astrometric errors",
+    "holdouts": [
+      {
+        "night": 56593,
+        "n_test": 1,
+        "success": true,
+        "angular_rms_arcsec": 0.17279109870637488,
+        "maximum_arcsec": 0.17279109870637488
+      },
+      {
+        "night": 56601,
+        "n_test": 4,
+        "success": true,
+        "angular_rms_arcsec": 0.03504336961592423,
+        "maximum_arcsec": 0.04964856130241743
+      },
+      {
+        "night": 56614,
+        "n_test": 2,
+        "success": true,
+        "angular_rms_arcsec": 0.09346506108707814,
+        "maximum_arcsec": 0.10180244564139515
+      },
+      {
+        "night": 56617,
+        "n_test": 4,
+        "success": true,
+        "angular_rms_arcsec": 0.07405689637523388,
+        "maximum_arcsec": 0.10916395401484967
+      },
+      {
+        "night": 56682,
+        "n_test": 1,
+        "success": true,
+        "angular_rms_arcsec": 0.047052996352393135,
+        "maximum_arcsec": 0.047052996352393135
+      },
+      {
+        "night": 56690,
+        "n_test": 4,
+        "success": true,
+        "angular_rms_arcsec": 0.09382284382640797,
+        "maximum_arcsec": 0.1756228540705619
+      },
+      {
+        "night": 56697,
+        "n_test": 4,
+        "success": true,
+        "angular_rms_arcsec": 0.20188243640838127,
+        "maximum_arcsec": 0.39114845886240796
+      }
+    ]
+  },
+  "selected_epoch_scores": [
+    {
+      "expnum": 283729,
+      "night": 56697,
+      "ccdname": "S20",
+      "mjd_mid_utc": 56698.04195022741,
+      "snr": 5.405706882476807,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.09228275375631177,
+        -0.05506601742266798
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 283728,
+      "night": 56697,
+      "ccdname": "S20",
+      "mjd_mid_utc": 56698.03931380741,
+      "snr": 8.225959777832031,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.09583038985488469,
+        0.022794517806852113
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 283727,
+      "night": 56697,
+      "ccdname": "S20",
+      "mjd_mid_utc": 56698.036667117405,
+      "snr": 7.7934465408325195,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.022677816570697198,
+        -0.03195335064444743
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 283726,
+      "night": 56697,
+      "ccdname": "S20",
+      "mjd_mid_utc": 56698.034291235555,
+      "snr": 5.644498348236084,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        0.17645227994068804,
+        -0.34578104243671265
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 280676,
+      "night": 56690,
+      "ccdname": "S20",
+      "mjd_mid_utc": 56691.07018798741,
+      "snr": 10.70629596710205,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.11197068798655868,
+        0.08792173367152051
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 280675,
+      "night": 56690,
+      "ccdname": "S20",
+      "mjd_mid_utc": 56691.067544337406,
+      "snr": 8.904805183410645,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.008695784347841734,
+        -0.0023451915070981225
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 280673,
+      "night": 56690,
+      "ccdname": "S20",
+      "mjd_mid_utc": 56691.06251361556,
+      "snr": 12.712496757507324,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.04420489724809573,
+        -0.0627983965878351
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 280672,
+      "night": 56690,
+      "ccdname": "S20",
+      "mjd_mid_utc": 56691.06029756148,
+      "snr": 9.731609344482422,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.00711146451935085,
+        -0.06579103301321121
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 277835,
+      "night": 56682,
+      "ccdname": "S14",
+      "mjd_mid_utc": 56683.05405861148,
+      "snr": 7.773359298706055,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.07554602565495804,
+        -0.014356386057124785
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 257209,
+      "night": 56617,
+      "ccdname": "S16",
+      "mjd_mid_utc": 56618.04133535741,
+      "snr": 11.473366737365723,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.06349310390143789,
+        -0.041399814922786396
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 257208,
+      "night": 56617,
+      "ccdname": "S16",
+      "mjd_mid_utc": 56618.03867960741,
+      "snr": 10.5950288772583,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        0.012436399025432912,
+        -0.08318788845010551
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 257206,
+      "night": 56617,
+      "ccdname": "S16",
+      "mjd_mid_utc": 56618.03364756556,
+      "snr": 19.540281295776367,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.055097178906836214,
+        0.015805156102605442
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 257205,
+      "night": 56617,
+      "ccdname": "S16",
+      "mjd_mid_utc": 56618.031433041484,
+      "snr": 11.631309509277344,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.08333542035139942,
+        -0.043219400281197674
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 255858,
+      "night": 56614,
+      "ccdname": "S16",
+      "mjd_mid_utc": 56615.02608717555,
+      "snr": 6.516085147857666,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.13729136119458024,
+        -0.004770586578155453
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 255857,
+      "night": 56614,
+      "ccdname": "S16",
+      "mjd_mid_utc": 56615.02384094148,
+      "snr": 6.353198528289795,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.13070980009075153,
+        -0.04607104263612936
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 251093,
+      "night": 56601,
+      "ccdname": "S17",
+      "mjd_mid_utc": 56602.07423676741,
+      "snr": 15.311036109924316,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.03592446413525388,
+        -0.03392197070192419
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 251092,
+      "night": 56601,
+      "ccdname": "S17",
+      "mjd_mid_utc": 56602.07154306741,
+      "snr": 14.803138732910156,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.03114817371254149,
+        -0.00209956946933842
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 251090,
+      "night": 56601,
+      "ccdname": "S17",
+      "mjd_mid_utc": 56602.06645877555,
+      "snr": 22.382160186767578,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        -0.045143636896205735,
+        -0.004788458102505491
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 251089,
+      "night": 56601,
+      "ccdname": "S17",
+      "mjd_mid_utc": 56602.06424379148,
+      "snr": 15.328978538513184,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        0.008495951010660923,
+        -0.04847431337060678
+      ],
+      "matched": true
+    },
+    {
+      "expnum": 247976,
+      "night": 56593,
+      "ccdname": "N16",
+      "mjd_mid_utc": 56594.17219547333,
+      "snr": 5.760821342468262,
+      "mask_fraction": 0.0,
+      "residual_arcsec": [
+        0.1125690660701739,
+        -0.13415274926600218
+      ],
+      "matched": true
+    }
+  ],
+  "target": "2013 TV158",
+  "scorer": {
+    "source": "NASA/JPL Horizons API",
+    "version": "1.2"
+  },
+  "candidates_in_scoring": 20,
+  "horizon_matches": 20,
+  "confirmed_unique_nights": 7,
+  "independently_reproduced_pairs": []
+}
