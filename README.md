@@ -3,6 +3,7 @@
 Catalog-first search for distant Solar System objects in single-epoch DECam observations. The v2 search uses NSC DR2 measurements on matched Legacy Surveys DR11 exposures, CP image weights and DQ, Gaia EDR3, and the DR11 Sweep static reference. The v1 SEP input remains available for comparison and for years outside NSC coverage. Both paths use detection-level linking and anonymous orbital fits with DE440s planetary perturbations.
 
 - [v2 实测运行报告](reports/v2_report.md)
+- [v2 复跑与续跑](docs/v2_operations.md)
 - [v1 基准报告](reports/v1_report.md)
 - [NERSC operations](docs/operations.md)
 - [Input audit](docs/data_inventory.md) and [methods](docs/method_v1.md)

@@ -1,0 +1,71 @@
+[
+  {
+    "candidate_id": "C0001",
+    "holdouts": [
+      {
+        "night": 58393,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 3,
+        "training_starts": 8
+      },
+      {
+        "night": 58395,
+        "status": "no_training_only_orbit",
+        "n_train": 5,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58405,
+        "status": "no_training_only_orbit",
+        "n_train": 5,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58406,
+        "status": "no_training_only_orbit",
+        "n_train": 5,
+        "n_test": 1,
+        "training_starts": 8
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58394.21157540334,
+        "band": "r",
+        "catalog_snr": 9.062150001525879,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 8.277955572509764
+      },
+      {
+        "utc_mjd": 58396.17406221149,
+        "band": "r",
+        "catalog_snr": 6.396881103515625,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 10.231107330322265
+      },
+      {
+        "utc_mjd": 58406.146415936295,
+        "band": "z",
+        "catalog_snr": 5.951000213623047,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 33.079607592773435
+      },
+      {
+        "utc_mjd": 58407.302168318885,
+        "band": "r",
+        "catalog_snr": 6.941115379333496,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 9.067849090576171
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  }
+]

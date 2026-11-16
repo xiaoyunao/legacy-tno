@@ -1,0 +1,120 @@
+{
+  "run_id": "validation-2757671f191346",
+  "expected_missing_ccds": 5,
+  "status_counts": {
+    "gaia_usable": 5
+  },
+  "ccds": [
+    {
+      "expnum": 389798,
+      "ccdname": "S26",
+      "status": "gaia_usable",
+      "seconds": 6.275415748008527,
+      "product": "SEP",
+      "error": null,
+      "rows": 1199,
+      "astrometry": {
+        "n_gaia": 72,
+        "offset_arcsec": [
+          -0.014334114628169584,
+          0.002387669963492784
+        ],
+        "mad_arcsec": [
+          0.011870539763053953,
+          0.014593437719865446
+        ],
+        "offset_applied": true
+      },
+      "cache_hit_verified": true
+    },
+    {
+      "expnum": 389798,
+      "ccdname": "S27",
+      "status": "gaia_usable",
+      "seconds": 4.135768065985758,
+      "product": "SEP",
+      "error": null,
+      "rows": 1044,
+      "astrometry": {
+        "n_gaia": 84,
+        "offset_arcsec": [
+          0.005018033507825119,
+          -0.015443974649572385
+        ],
+        "mad_arcsec": [
+          0.007255600394556008,
+          0.016048586455151947
+        ],
+        "offset_applied": true
+      },
+      "cache_hit_verified": true
+    },
+    {
+      "expnum": 389798,
+      "ccdname": "S28",
+      "status": "gaia_usable",
+      "seconds": 3.677258610026911,
+      "product": "SEP",
+      "error": null,
+      "rows": 1089,
+      "astrometry": {
+        "n_gaia": 60,
+        "offset_arcsec": [
+          0.011542666773050875,
+          -0.01348463188477761
+        ],
+        "mad_arcsec": [
+          0.01172297870376757,
+          0.024189609129962916
+        ],
+        "offset_applied": true
+      },
+      "cache_hit_verified": true
+    },
+    {
+      "expnum": 389798,
+      "ccdname": "S29",
+      "status": "gaia_usable",
+      "seconds": 3.918619977950584,
+      "product": "SEP",
+      "error": null,
+      "rows": 1101,
+      "astrometry": {
+        "n_gaia": 72,
+        "offset_arcsec": [
+          -0.012436148035775911,
+          -0.023648570434342178
+        ],
+        "mad_arcsec": [
+          0.013948416218944515,
+          0.016125148058649008
+        ],
+        "offset_applied": true
+      },
+      "cache_hit_verified": true
+    },
+    {
+      "expnum": 389798,
+      "ccdname": "S31",
+      "status": "gaia_usable",
+      "seconds": 4.316131493018474,
+      "product": "SEP",
+      "error": null,
+      "rows": 1044,
+      "astrometry": {
+        "n_gaia": 72,
+        "offset_arcsec": [
+          -0.008678997370055203,
+          -0.002857312980179969
+        ],
+        "mad_arcsec": [
+          0.008973437631266738,
+          0.011371948064905364
+        ],
+        "offset_applied": true
+      },
+      "cache_hit_verified": true
+    }
+  ],
+  "scope": "Separate fallback validation on the missing physical CCDs only"
+}

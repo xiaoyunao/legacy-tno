@@ -1,0 +1,85 @@
+[
+  {
+    "candidate_id": "C0007",
+    "holdouts": [
+      {
+        "night": 58324,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58340,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58341,
+        "status": "no_training_only_orbit",
+        "n_train": 3,
+        "n_test": 1,
+        "training_starts": 8
+      },
+      {
+        "night": 58405,
+        "status": "converged",
+        "n_train": 3,
+        "n_test": 1,
+        "mjd": [
+          58406.16674791045
+        ],
+        "initialization": "training_only",
+        "training_dof": 0,
+        "training_rms_arcsec": 1.8104034629044864e-11,
+        "training_starts": 8,
+        "acceptable_training_fits": 8,
+        "offsets_arcsec": [
+          [
+            4.9686974474471715,
+            11.715627866957538
+          ]
+        ],
+        "rms_arcsec": 8.998441271723122
+      }
+    ],
+    "stamps": [
+      {
+        "utc_mjd": 58325.42913804148,
+        "band": "z",
+        "catalog_snr": 13.500319480895996,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 43.25275561523437
+      },
+      {
+        "utc_mjd": 58341.40685724333,
+        "band": "g",
+        "catalog_snr": 6.203497886657715,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 7.226000921630859
+      },
+      {
+        "utc_mjd": 58342.37950879556,
+        "band": "r",
+        "catalog_snr": 21.419139862060547,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 12.14770083618164
+      },
+      {
+        "utc_mjd": 58406.165947188885,
+        "band": "z",
+        "catalog_snr": 13.944903373718262,
+        "dq_center": 0,
+        "central_invalid_fraction": 0.0,
+        "sky_mad_adu": 34.4574193359375
+      }
+    ],
+    "review_status": "CP cutout montage generated",
+    "image_status": "review_context_only"
+  }
+]

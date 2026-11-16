@@ -1,0 +1,11 @@
+{
+  "baseline": "exploration-74d5a152a0336a",
+  "replay": "exploration-4cbf95aec89763",
+  "chains": [
+    {
+      "replay_id": "C0001",
+      "identical_baseline": [],
+      "competing_baseline": []
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "baseline": "validation-ef4655b225ac2a",
+  "replay": "validation-2b067401f24cc8",
+  "chains": [
+    {
+      "replay_id": "C0001",
+      "identical_baseline": [
+        "C0001"
+      ],
+      "competing_baseline": []
+    },
+    {
+      "replay_id": "C0002",
+      "identical_baseline": [
+        "C0002"
+      ],
+      "competing_baseline": [
+        {
+          "baseline_id": "C0003",
+          "shared_measurements": 3
+        }
+      ]
+    },
+    {
+      "replay_id": "C0003",
+      "identical_baseline": [
+        "C0003"
+      ],
+      "competing_baseline": [
+        {
+          "baseline_id": "C0002",
+          "shared_measurements": 3
+        }
+      ]
+    },
+    {
+      "replay_id": "C0004",
+      "identical_baseline": [
+        "C0004"
+      ],
+      "competing_baseline": [
+        {
+          "baseline_id": "C0007",
+          "shared_measurements": 2
+        }
+      ]
+    },
+    {
+      "replay_id": "C0005",
+      "identical_baseline": [
+        "C0006"
+      ],
+      "competing_baseline": []
+    },
+    {
+      "replay_id": "C0006",
+      "identical_baseline": [
+        "C0007"
+      ],
+      "competing_baseline": [
+        {
+          "baseline_id": "C0004",
+          "shared_measurements": 2
+        }
+      ]
+    },
+    {
+      "replay_id": "C0007",
+      "identical_baseline": [],
+      "competing_baseline": []
+    }
+  ]
+}

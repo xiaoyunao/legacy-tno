@@ -18,6 +18,8 @@
 
 三个控制场和独立试点共 2,810 个 Legacy CCD，其中 2,805 个可直接使用 NSC，覆盖 94/95 张曝光。唯一缺口出现在 TV158 场的一张曝光。2021 年宽、窄归档场的 1,163 和 283 个 CCD 均无 NSC 曝光匹配，现有 SEP 归档支持两个范围。这两个视场可能重叠。逐 CCD 账本合并了 Legacy 路径、NSC 查询键、实际载入与 Gaia 校验状态、检测数和足迹索引，保存在 NERSC 的 `v2/nsc-coverage-ledger.json`。[按场、年份和波段的覆盖表](../results/v2/nsc-coverage-public.json) · [覆盖与年份图](../results/v2/figures/nsc_coverage.png)
 
+独立后备分支在缺少 NSC 的 EXPNUM 389798 上运行 SEP。五个 CCD 全部通过 Gaia 检查，共提取 5,477 个测量，重复读取均命中 SEP 缓存。关闭后备时，这五个 CCD 保持缺失，NSC-only 的回收统计据此计数。该测试只计作后备产品可用性。[SEP 后备分支实测](../results/v2/nsc-sep-fallback.json)
+
 两控制场中选取包含已回收成员的 27 个共同 CCD，NSC 和 SEP 分别有 36,085 和 43,571 条源记录，获得 33,585 个 1″ 内的互为最近邻配对。按波段和 SEP 星等分组报告位置差与 AUTO − 孔径星等的分位数。各星等组的匹配位置偏差中位数约为 0.016–0.089″；AUTO 与 SEP 孔径差有波段及亮度依赖，无法用单一零点平移概括。各场各波段的 Gaia 东、北分量 CCD 中位偏移绝对值均小于 0.036″。归一化没有强制将 Gaia 偏移写回 NSC 坐标。[同 CCD 统计](../results/v2/nsc-sep-by-magnitude.json) · [星等趋势图](../results/v2/figures/nsc_sep_comparison.png) · [Gaia 与 CP 掩膜质控](../results/v2/nsc-qc-summary.json)
 
 同一批 CCD 内，按波段将 CCD 物理像素位置划为 4×4 网格，各格中位位置分离为 0.033–0.089″，统计覆盖全部 33,585 个配对。进入静态分类的 SEP 和 NSC 分别有 43,571 和 35,950 条，其中干净瞬变分类有 876 和 211 条，定义及分类标志见逐 CCD 统计。两套提源和测光的差异也会改变输入池构成。
@@ -89,7 +91,9 @@ TV158 从 v2 的 23 个匿名 NSC 成员初始化 28 个轨道，检查 111 个�
 
 全静态歧义分支额外加入 166,134 条记录，所计关联和拟合用时约为主分支 9.2 倍，已枚举约 4,962 万个点对。该分支出现截断，新增回收数的比较仍受未处理距离箱限制。
 
-进一步把第一种子端点限制在同一试点中心的 0.06° 内。保留原读取缓冲区，干净源与包含歧义源两组均完整跑完 24 箱，夜重排同样未截断。干净源关联 0.27 s，零链；含歧义源关联与拟合共 10.97 s，新增一条六点四夜链，夜重排零链。新增链的无约束拟合为强双曲线，仍需结合图像、留夜和已知库审查。OF201 应力场用 0.35° 第一端点复跑，将实场截断由 15 箱降到七箱，原全场与有界分支各自保留。[有界干净对照](../results/v2/sensitivity/clean-core/run_manifest.json) · [有界歧义对照](../results/v2/sensitivity/ambiguity-core/run_manifest.json) · [OF201 有界复跑](../results/v2/sensitivity/of201-core/run_manifest.json)
+进一步把第一种子端点限制在同一试点中心的 0.06° 内。两组共用原读取缓冲区，干净源与包含歧义源两组均完整跑完 24 箱，夜重排同样未截断。干净源关联 0.27 s，零链。含歧义源关联与拟合共 10.97 s，新增一条六点四夜链，夜重排零链。这条链的无约束拟合偏心率为 102.45，四次留夜均无可接受的训练轨道，图像显示多个成员与延展或混叠源重合。MPCORB 无多夜匹配，链判为不可靠。独立小核心的歧义增量因此为一条数值候选、零条审查后天体候选。[有界干净对照](../results/v2/sensitivity/clean-core/run_manifest.json) · [有界歧义对照](../results/v2/sensitivity/ambiguity-core/run_manifest.json) · [新增链图像](../results/v2/sensitivity/ambiguity-core/figures/candidate_stamps_C0001.png) · [留夜与图像记录](../results/v2/sensitivity/ambiguity-core/candidate_review.json)
+
+OF201 应力场用 0.35° 第一端点复跑，将实场截断由 15 箱降到七箱。七条数值链中六条与原场成员完全一致。新增 C0007 首末夜检测沿明显非点源条纹，唯一可行的留夜预测偏差分量 RMS 约为 9.0″，MPCORB 无多夜匹配，判为伪关联。[OF201 有界复跑](../results/v2/sensitivity/of201-core/run_manifest.json) · [成员去重](../results/v2/sensitivity/of201-core/candidate_delta.json) · [新增链图像](../results/v2/sensitivity/of201-core/figures/candidate_stamps_C0007.png)
 
 作业 61392818 重放了冻结的试点与 OF201 场搜索，候选成员、计数、重排映射和距离箱截断均与原运行一致。试点实场关联 2.28 s，没有进入拟合的链，夜重排 1.66 s。OF201 场实场关联 82.87 s、候选拟合 50.62 s、夜重排 202.32 s。试点原运行的星表载入与筛选共 412.75 s，是本场的主要支出。OF201 与全歧义分支扩大后，关联组合数成为限制。[逐箱计时与状态图](../results/v2/figures/nsc_bin_costs.png)
 
@@ -110,6 +114,6 @@ sbatch --account=desi --constraint=cpu --qos=debug \
 
 ## 尚待验收
 
-有界复跑中新出现的链仍需最终审查。该试点的全 DR11 代表性及图像级完整度未经标定。
+OF201 的 0.16° 复跑仍需归档。该试点的全 DR11 代表性及图像级完整度未经标定。
 
 各阶段的可恢复入口、归档路径和版本用法见 [v2 复跑与续跑](../docs/v2_operations.md)。
