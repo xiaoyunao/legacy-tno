@@ -101,7 +101,8 @@ def growth(model, kernel, epoch, family, new_sources, track, old_tdb, old_obs):
         elements = heliocentric_elements(model, first.state, epoch)
         if not elements["bound"] or not 30 <= elements["r_au"] <= 300:
             continue
-        sample = dict(added_expnum=int(candidate["expnum"]), added_night=int(candidate["night"]),
+        sample = dict(added_detection_id=str(candidate["det_id"]),
+                      added_expnum=int(candidate["expnum"]), added_night=int(candidate["night"]),
                       single_night_trial_rms_arcsec=first.rms, independent_predictions=[])
         predicted = model.apparent(first.state, epoch, all_t, all_o)
         for k, unseen in enumerate(new_sources):
@@ -116,7 +117,8 @@ def growth(model, kernel, epoch, family, new_sources, track, old_tdb, old_obs):
                 if final.convergence and final.reduced_chi2() < 5:
                     e = heliocentric_elements(model, final.state, epoch)
                     if e["bound"] and 30 <= e["r_au"] <= 300:
-                        sample["independent_predictions"].append(dict(expnum=int(jd["expnum"]),
+                        sample["independent_predictions"].append(dict(detection_id=str(jd["det_id"]),
+                            expnum=int(jd["expnum"]),
                             night=int(jd["night"]), predicted_residual_arcsec=residual,
                             two_night_refit_rms_arcsec=final.rms, heliocentric=e))
         solutions.append(sample)
@@ -151,6 +153,7 @@ def main():
     center = unit(tracks["ra_deg"], tracks["dec_deg"]).mean(axis=0)
     separation = np.linalg.norm(unit(possible["ra"], possible["dec"]) - center, axis=1)
     rows = eligible(possible[separation <= 2*np.sin(np.deg2rad(17)/2)])
+    del possible, separation
     mid, indices = np.unique(rows["mjd_obs"]+rows["exptime"]/(2*86400), return_inverse=True)
     t, observer = observatory(mid, kernel)
     directions = [model.apparent(item["state"], candidate["epoch_tdb_mjd"], t, observer) for item in family]
@@ -219,7 +222,14 @@ def main():
                    single_epoch_refits=len(extension),
                    independent_night_prediction_pairs=sum(len(r["independent_predictions"]) for r in extension),
                    growth=extension, scope="Legacy exposures only, NSC AUTO detections, bound training orbit grid")
-    write_json(args.output, dict(**summary, footprint_audit=trace, orbit_family=family))
+    measurements = []
+    for item in detections.values():
+        point = item["detection"]
+        measurements.append({key: point[key] for key in (
+            "det_id", "expnum", "ccdname", "night", "mjd_mid_utc", "ra_deg", "dec_deg",
+            "mag_ab", "snr", "sigma_arcsec", "extractor_flags", "dq_flags", "mask_fraction")})
+    write_json(args.output, dict(**summary, footprint_audit=trace, orbit_family=family,
+                                 supporting_measurements=measurements))
     print(json.dumps({k: v for k, v in summary.items() if k != "growth"}), flush=True)
 
 
