@@ -1,0 +1,21 @@
+{
+  "fields": {
+    "validation-c36e0a643fc984": {
+      "chip_listed": 670
+    },
+    "validation-97d3348bc5c4b3": {
+      "chip_listed": 923,
+      "no_nsc_exposure": 5
+    },
+    "validation-7185aa85687161": {
+      "chip_listed": 962
+    },
+    "exploration-f742d8b20d9ab4": {
+      "no_nsc_exposure": 1163
+    },
+    "exploration-cb6d398cc191bd": {
+      "no_nsc_exposure": 283
+    }
+  },
+  "detail_path": "/pscratch/sd/y/yunao/legacy-tno/v2/nsc_ccds.json"
+}

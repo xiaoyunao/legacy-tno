@@ -2,6 +2,8 @@
 
 ## 2026-11-16
 
+- Slurm job 61392018 completed in 61 s with exit 0:0. Checked Legacy image HDU EXTNAME and physical CCDNUM against the NSC chip listings. The three control fields have 670/670, 923/928 and 962/962 listed CCDs. The five unmatched TV158-field CCDs belong to the exposure with no NSC record. Submitted same-CCD comparison of three CCDs per recovered control to job 61392069.
+
 
 - Extended the corrected Legacy SE audit to five v1 fields. All 7,446 unique paths were absent in the two sampled DR11 roots. The full path ledger is under Perlmutter scratch v2.
 - Recovered NSC DR2 access through the NOIRLab Query Client SQL endpoint after TAP timeouts. Against the archived Legacy data, read and matched 84 of 85 control exposures by DECam EXPNUM, filter, time and duration. All matched exposures had entries in the NSC chip table. The maximum start-time disagreement was under 0.5 ms. Both 2021 fields had zero exposure matches. A bounded real CCD query returned 1,104 detections for reference exposure 339232, CCD 1.
