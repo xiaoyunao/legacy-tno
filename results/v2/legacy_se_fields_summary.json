@@ -1,0 +1,61 @@
+{
+  "naming_rule": "legacypipe DR11.1.0 set_calib_filenames",
+  "survey_roots": [
+    "/global/cfs/cdirs/cosmo/data/legacysurvey/dr11",
+    "/global/cfs/cdirs/cosmo/work/legacysurvey/dr11"
+  ],
+  "unique_paths_checked": 7446,
+  "samples": [
+    {
+      "sample": "validation-c36e0a643fc984",
+      "ccd_rows": 670,
+      "exposures": 11,
+      "mjd_min": 58071.02202209,
+      "mjd_max": 58086.04300374,
+      "status_counts": {
+        "missing": 1340
+      }
+    },
+    {
+      "sample": "validation-97d3348bc5c4b3",
+      "ccd_rows": 928,
+      "exposures": 36,
+      "mjd_min": 57007.1608496,
+      "mjd_max": 57039.05883844,
+      "status_counts": {
+        "missing": 1856
+      }
+    },
+    {
+      "sample": "validation-7185aa85687161",
+      "ccd_rows": 962,
+      "exposures": 38,
+      "mjd_min": 58324.40975322,
+      "mjd_max": 58422.16912094,
+      "status_counts": {
+        "missing": 1924
+      }
+    },
+    {
+      "sample": "exploration-f742d8b20d9ab4",
+      "ccd_rows": 1163,
+      "exposures": 63,
+      "mjd_min": 59265.39235186,
+      "mjd_max": 59367.13230483,
+      "status_counts": {
+        "missing": 2326
+      }
+    },
+    {
+      "sample": "exploration-cb6d398cc191bd",
+      "ccd_rows": 283,
+      "exposures": 23,
+      "mjd_min": 59274.40256005,
+      "mjd_max": 59297.1733711,
+      "status_counts": {
+        "missing": 566
+      }
+    }
+  ],
+  "detail_path": "/pscratch/sd/y/yunao/legacy-tno/v2/legacy_se_fields.json"
+}

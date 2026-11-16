@@ -1,0 +1,57 @@
+{
+  "fields": {
+    "validation-c36e0a643fc984": {
+      "exposures": 11,
+      "status_counts": {
+        "matched": 11
+      },
+      "exposures_with_nsc_chips": 11,
+      "max_match_time_delta_s": 0.0003627268597483635
+    },
+    "validation-97d3348bc5c4b3": {
+      "exposures": 36,
+      "status_counts": {
+        "matched": 35,
+        "no_nsc_exposure": 1
+      },
+      "exposures_with_nsc_chips": 35,
+      "max_match_time_delta_s": 0.0004306202754378319
+    },
+    "validation-7185aa85687161": {
+      "exposures": 38,
+      "status_counts": {
+        "matched": 38
+      },
+      "exposures_with_nsc_chips": 38,
+      "max_match_time_delta_s": 0.0004677101969718933
+    },
+    "exploration-f742d8b20d9ab4": {
+      "exposures": 63,
+      "status_counts": {
+        "no_nsc_exposure": 63
+      },
+      "exposures_with_nsc_chips": 0,
+      "max_match_time_delta_s": null
+    },
+    "exploration-cb6d398cc191bd": {
+      "exposures": 23,
+      "status_counts": {
+        "no_nsc_exposure": 23
+      },
+      "exposures_with_nsc_chips": 0,
+      "max_match_time_delta_s": null
+    }
+  },
+  "tolerances": {
+    "epoch_seconds": 2,
+    "exptime_seconds": 0.1
+  },
+  "reference_probe": {
+    "exposure": "c4d_140720_003419_ooi_g_v1",
+    "ccdnum": 1,
+    "exposure_measurements": 86153,
+    "chip_count": 60,
+    "measurement_rows": 1104
+  },
+  "detail_path": "/pscratch/sd/y/yunao/legacy-tno/v2/nsc_inventory.json"
+}

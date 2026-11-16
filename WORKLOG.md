@@ -2,6 +2,11 @@
 
 ## 2026-11-16
 
+
+- Extended the corrected Legacy SE audit to five v1 fields. All 7,446 unique paths were absent in the two sampled DR11 roots. The full path ledger is under Perlmutter scratch v2.
+- Recovered NSC DR2 access through the NOIRLab Query Client SQL endpoint after TAP timeouts. Against the archived Legacy data, read and matched 84 of 85 control exposures by DECam EXPNUM, filter, time and duration. All matched exposures had entries in the NSC chip table. The maximum start-time disagreement was under 0.5 ms. Both 2021 fields had zero exposure matches. A bounded real CCD query returned 1,104 detections for reference exposure 339232, CCD 1.
+- Added cached per-exposure, per-chip and bounded measurement reads. Submitted a Perlmutter header-only check to establish the physical detector mapping before counting common CCDs.
+
 - Verified Perlmutter access and inspected 28 exact Legacy SE paths for the 14 v1 audit CCDs in the DR11 data and work roots using the DR11.1.0 path rule. All 28 were absent. This sampled result leaves the control- and exploration-field audit open. Initial NOIRLab TAP GET timed out and Query Client HTTP probes did not return catalog rows.
 
 - Established the active catalog-first v2 goal and created the codex/catalog-first-v2 branch from the clean, synchronized v1 baseline. Added the GPT Pro execution specification and the first catalog audit milestones.
