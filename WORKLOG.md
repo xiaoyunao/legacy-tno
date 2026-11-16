@@ -2,7 +2,7 @@
 
 ## 2026-11-16
 
-- Independent Horizons and CP WCS checks for the original misses confirmed 11 usable RD124 and nine usable RQ157 positions with no NSC detection within 1.25 arcsec. Added bounded parallel CCD reads and progress output to the anonymous extension worker after the 111-CCD TV158 trial ran slowly. Syntax and whitespace checks passed.
+- Independent Horizons and CP WCS checks for the original misses confirmed 11 usable RD124 and nine usable RQ157 positions with no NSC detection within 1.25 arcsec. Added bounded parallel CCD reads and progress output to the anonymous extension worker after the 111-CCD TV158 trial ran slowly. Replaced the pending serial scoring job 61392581 with parallel job 61392681, which also produces Gaia QC. Image/MPCORB review is job 61392580. Syntax and whitespace checks passed.
 
 - Injection job 61392486 completed in 138 s with exit 0:0. Twelve independent trajectories entered the real pilot catalog in six two-track batches. Seventy of 72 measurements passed catalog cuts. Pure recovery was 3/4 at 30–60 au, 1/4 at 60–120 au and 0/4 at 120–300 au. No batch truncated. Generated and checked the distance/magnitude recovery plot. Submitted pilot sensitivities 61392617 (SNR ≥ 8) and 61392618 (ambiguous static included).
 - Cross-season OF201 trial 61392436 completed in 74 s with exit 0:0. The anonymous v1 short arc produced 23 acceptable sampled orbits with reference distances 86.15–86.62 au. All three prospective Legacy CCDs had NSC measurements. Two directions supported reciprocal new-night predictions after refitting. Added post-selection Horizons scoring so the two detections can be independently attributed before accepting the extension.
