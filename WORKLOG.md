@@ -2,6 +2,8 @@
 
 ## 2026-11-16
 
+- Established the active catalog-first v2 goal and created the codex/catalog-first-v2 branch from the clean, synchronized v1 baseline. Added the GPT Pro execution specification and the first catalog audit milestones.
+
 - Recovered 2013 TV158 blind with 23/23 clean matched detections across six nights. The fit RMS was 0.107 arcsec and held-night RMS values ranged from 0.043 to 0.444 arcsec. An independent bound-constrained fit produced nearly the same residual RMS, emphasizing energy degeneracy.
 - Recovered high-eccentricity 2017 OF201 with four independent nights, four pure members and a 96.74-day arc in the four-detection stress branch. The separate published W84 benchmark also agreed with Horizons.
 - The broad non-DES replay retained one weak, nominally hyperbolic chain and 18 truncated distance bins. Its held-night residuals and CP striping support a low validation grade. Completed the bounded non-DES field in job 61347537 with 283 CCDs, 23 exposures, 10 nights, and no truncated boxes or accepted chains.
