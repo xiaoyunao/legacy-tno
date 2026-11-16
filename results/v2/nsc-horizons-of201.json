@@ -1,0 +1,108 @@
+{
+  "reference": "JPL Horizons W84 astrometric ICRF at CP midpoint UTC",
+  "run_id": "validation-ef4655b225ac2a",
+  "targets": [
+    {
+      "target": "2017 OF201",
+      "retrieved_utc": "2026-11-16T07:47:44.464901+00:00",
+      "api": {
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
+      },
+      "epoch_status_counts": {
+        "no_independent_detection_within_radius": 1,
+        "search_input": 3
+      },
+      "ccd_epochs": [
+        {
+          "expnum": 759212,
+          "ccdname": "N26",
+          "band": "z",
+          "midpoint_utc_mjd": 58325.42913804151,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 1511.6220873796228,
+            "y": 1462.3136494009086,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 0.9876543209876543
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 32.65917430226516,
+          "nearest_raw_snr": 8.531972885131836,
+          "nearest_classified_arcsec": 32.65917430226516,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 763813,
+          "ccdname": "N26",
+          "band": "g",
+          "midpoint_utc_mjd": 58340.38536521225,
+          "status": "search_input",
+          "mask": {
+            "x": 909.2050095888208,
+            "y": 1270.5611138728561,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.09167949600875923,
+          "nearest_raw_snr": 6.804563999176025,
+          "nearest_classified_arcsec": 0.09167949600875923,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 764289,
+          "ccdname": "N26",
+          "band": "r",
+          "midpoint_utc_mjd": 58341.37483958148,
+          "status": "search_input",
+          "mask": {
+            "x": 827.7941400752043,
+            "y": 1251.4740594288726,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.023686236419349593,
+          "nearest_raw_snr": 7.12668514251709,
+          "nearest_classified_arcsec": 0.023686236419349593,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 789411,
+          "ccdname": "N28",
+          "band": "r",
+          "midpoint_utc_mjd": 58422.16980381039,
+          "status": "search_input",
+          "mask": {
+            "x": 998.2922673320973,
+            "y": 3468.292360195025,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.23173613259876968,
+          "nearest_raw_snr": 7.596385478973389,
+          "nearest_classified_arcsec": 0.23173613259876968,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        }
+      ]
+    }
+  ]
+}

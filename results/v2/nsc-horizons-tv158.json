@@ -1,0 +1,694 @@
+{
+  "reference": "JPL Horizons W84 astrometric ICRF at CP midpoint UTC",
+  "run_id": "validation-2757671f191346",
+  "targets": [
+    {
+      "target": "2013 TV158",
+      "retrieved_utc": "2026-11-16T07:46:59.053221+00:00",
+      "api": {
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
+      },
+      "epoch_status_counts": {
+        "search_input": 23,
+        "no_independent_detection_within_radius": 3
+      },
+      "ccd_epochs": [
+        {
+          "expnum": 388176,
+          "ccdname": "S19",
+          "band": "i",
+          "midpoint_utc_mjd": 57007.16137043336,
+          "status": "search_input",
+          "mask": {
+            "x": 1168.2266372567483,
+            "y": 3962.011542445442,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.08539798426450483,
+          "nearest_raw_snr": 9.16890811920166,
+          "nearest_classified_arcsec": 0.08539798426450483,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 389822,
+          "ccdname": "N9",
+          "band": "i",
+          "midpoint_utc_mjd": 57012.12337511344,
+          "status": "search_input",
+          "mask": {
+            "x": 1441.8633546723745,
+            "y": 253.5040039010097,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.034309504197657444,
+          "nearest_raw_snr": 23.229768753051758,
+          "nearest_classified_arcsec": 0.034309504197657444,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 389823,
+          "ccdname": "N9",
+          "band": "i",
+          "midpoint_utc_mjd": 57012.127857373445,
+          "status": "search_input",
+          "mask": {
+            "x": 1443.7853380083702,
+            "y": 253.60101177935536,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.07851858100553846,
+          "nearest_raw_snr": 23.49163055419922,
+          "nearest_classified_arcsec": 0.07851858100553846,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 389824,
+          "ccdname": "N9",
+          "band": "i",
+          "midpoint_utc_mjd": 57012.13234187344,
+          "status": "search_input",
+          "mask": {
+            "x": 1426.3064164297216,
+            "y": 261.1926711043664,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.06006340574747014,
+          "nearest_raw_snr": 20.971494674682617,
+          "nearest_classified_arcsec": 0.06006340574747014,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 389825,
+          "ccdname": "N9",
+          "band": "i",
+          "midpoint_utc_mjd": 57012.13682729344,
+          "status": "search_input",
+          "mask": {
+            "x": 1426.3787220764657,
+            "y": 265.2625998973351,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.06890885208501779,
+          "nearest_raw_snr": 20.990550994873047,
+          "nearest_classified_arcsec": 0.06890885208501779,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 389826,
+          "ccdname": "N9",
+          "band": "i",
+          "midpoint_utc_mjd": 57012.14132204344,
+          "status": "search_input",
+          "mask": {
+            "x": 1432.3130382745676,
+            "y": 276.8668263224283,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.10550886513408664,
+          "nearest_raw_snr": 18.23847198486328,
+          "nearest_classified_arcsec": 0.10550886513408664,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 392033,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57018.15570483344,
+          "status": "search_input",
+          "mask": {
+            "x": 1309.546276675294,
+            "y": 3705.6604692858496,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.09893253607355877,
+          "nearest_raw_snr": 12.766158103942871,
+          "nearest_classified_arcsec": 0.09893253607355877,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 392034,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57018.160206533445,
+          "status": "search_input",
+          "mask": {
+            "x": 1299.94873619687,
+            "y": 3690.2002210267688,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.03370834147479382,
+          "nearest_raw_snr": 13.384652137756348,
+          "nearest_classified_arcsec": 0.03370834147479382,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 392035,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57018.16470883344,
+          "status": "search_input",
+          "mask": {
+            "x": 1283.3600273183088,
+            "y": 3710.275677443984,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.03680352489101934,
+          "nearest_raw_snr": 14.900654792785645,
+          "nearest_classified_arcsec": 0.03680352489101934,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 392036,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57018.16920962344,
+          "status": "search_input",
+          "mask": {
+            "x": 1276.5166667640742,
+            "y": 3699.557157362609,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.11902603458304171,
+          "nearest_raw_snr": 9.660176277160645,
+          "nearest_classified_arcsec": 0.11902603458304171,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 392037,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57018.17369826344,
+          "status": "search_input",
+          "mask": {
+            "x": 1288.3388986428295,
+            "y": 3711.1649153429653,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.06992964595980576,
+          "nearest_raw_snr": 10.76606559753418,
+          "nearest_classified_arcsec": 0.06992964595980576,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 393863,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57025.11771467344,
+          "status": "search_input",
+          "mask": {
+            "x": 1009.5186644446917,
+            "y": 3030.4000785743815,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.1364950423190749,
+          "nearest_raw_snr": 12.471841812133789,
+          "nearest_classified_arcsec": 0.1364950423190749,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 393864,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57025.12220053344,
+          "status": "search_input",
+          "mask": {
+            "x": 1014.2681444433501,
+            "y": 3029.4124145547353,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.026670034661982322,
+          "nearest_raw_snr": 10.469468116760254,
+          "nearest_classified_arcsec": 0.026670034661982322,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 393865,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57025.126696323445,
+          "status": "search_input",
+          "mask": {
+            "x": 995.1971620670938,
+            "y": 3044.8000316287958,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.05443064199112391,
+          "nearest_raw_snr": 11.020129203796387,
+          "nearest_classified_arcsec": 0.05443064199112391,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 393866,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57025.131193173445,
+          "status": "search_input",
+          "mask": {
+            "x": 991.5185200675969,
+            "y": 3039.182214560971,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.13005959500985254,
+          "nearest_raw_snr": 13.400345802307129,
+          "nearest_classified_arcsec": 0.13005959500985254,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 393867,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57025.135687793445,
+          "status": "search_input",
+          "mask": {
+            "x": 996.3115171123277,
+            "y": 3053.6266776469033,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.03531948165297528,
+          "nearest_raw_snr": 12.053289413452148,
+          "nearest_classified_arcsec": 0.03531948165297528,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 396320,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57032.08250410344,
+          "status": "search_input",
+          "mask": {
+            "x": 589.978325941066,
+            "y": 2629.6380502597117,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.13259859869060106,
+          "nearest_raw_snr": 16.124635696411133,
+          "nearest_classified_arcsec": 0.13259859869060106,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 396321,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57032.087002223445,
+          "status": "search_input",
+          "mask": {
+            "x": 602.9743526758343,
+            "y": 2623.0899058600107,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.03453622350225832,
+          "nearest_raw_snr": 17.149250030517578,
+          "nearest_classified_arcsec": 0.03453622350225832,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 396322,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57032.091483903445,
+          "status": "search_input",
+          "mask": {
+            "x": 574.8297723333612,
+            "y": 2634.2174161999087,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.047084665097277226,
+          "nearest_raw_snr": 16.431129455566406,
+          "nearest_classified_arcsec": 0.047084665097277226,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 396323,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57032.09596502344,
+          "status": "search_input",
+          "mask": {
+            "x": 578.6017548846712,
+            "y": 2639.3230312390683,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.04467170046973962,
+          "nearest_raw_snr": 17.26679801940918,
+          "nearest_classified_arcsec": 0.04467170046973962,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 396324,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57032.100468803445,
+          "status": "search_input",
+          "mask": {
+            "x": 588.2590764070264,
+            "y": 2663.2004593729685,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.07879633157320796,
+          "nearest_raw_snr": 18.08083724975586,
+          "nearest_classified_arcsec": 0.07879633157320796,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 399226,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57039.04295766344,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 64.92998410203427,
+            "y": 2479.602643873144,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 16.460248880450663,
+          "nearest_raw_snr": 62.54961395263672,
+          "nearest_classified_arcsec": 16.460248880450663,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 399227,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57039.047452243445,
+          "status": "search_input",
+          "mask": {
+            "x": 69.18597793305025,
+            "y": 2479.2708022973025,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.10951262743011467,
+          "nearest_raw_snr": 17.530536651611328,
+          "nearest_classified_arcsec": 0.10951262743011467,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        },
+        {
+          "expnum": 399228,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57039.05194513344,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 57.18540122525519,
+            "y": 2488.5770895141877,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 0.7777777777777778
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 21.49065271684849,
+          "nearest_raw_snr": 9.370619773864746,
+          "nearest_classified_arcsec": 21.49065271684849,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 399229,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57039.05643880344,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 61.006505942928925,
+            "y": 2487.1071328135254,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 0.7777777777777778
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 16.5426910518456,
+          "nearest_raw_snr": 71.27059173583984,
+          "nearest_classified_arcsec": 16.5426910518456,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 399230,
+          "ccdname": "N8",
+          "band": "i",
+          "midpoint_utc_mjd": 57039.060921773445,
+          "status": "search_input",
+          "mask": {
+            "x": 79.28629352226335,
+            "y": 2506.7362591993797,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 0.07815295357367429,
+          "nearest_raw_snr": 16.85768699645996,
+          "nearest_classified_arcsec": 0.07815295357367429,
+          "classified_reason": "transient_clean",
+          "raw_match": true,
+          "classified_match": true
+        }
+      ]
+    },
+    {
+      "target": "2013 TG228",
+      "retrieved_utc": "2026-11-16T07:47:31.836312+00:00",
+      "api": {
+        "source": "NASA/JPL Horizons API",
+        "version": "1.2"
+      },
+      "epoch_status_counts": {
+        "no_usable_product_at_position": 2,
+        "no_independent_detection_within_radius": 2
+      },
+      "ccd_epochs": [
+        {
+          "expnum": 389798,
+          "ccdname": "S27",
+          "band": "i",
+          "midpoint_utc_mjd": 57012.05923430742,
+          "status": "no_usable_product_at_position",
+          "mask": {
+            "x": 496.10732792390627,
+            "y": 3992.100216884006,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": "No prepared NSC catalog for this physical CCD",
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": null,
+          "nearest_raw_snr": null,
+          "nearest_classified_arcsec": null,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 390483,
+          "ccdname": "S27",
+          "band": "i",
+          "midpoint_utc_mjd": 57014.061133067415,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 373.4502648453454,
+            "y": 3725.5656673923613,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 4.627204562157327,
+          "nearest_raw_snr": 12.733668327331543,
+          "nearest_classified_arcsec": 4.627204562157327,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 392321,
+          "ccdname": "S27",
+          "band": "i",
+          "midpoint_utc_mjd": 57019.090011207416,
+          "status": "no_usable_product_at_position",
+          "mask": {
+            "x": 13.382930150084576,
+            "y": 2965.9136817258,
+            "dq_code": 1,
+            "center_usable": false,
+            "usable_fraction_9pix": 0.4444444444444444
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 32.71645227979623,
+          "nearest_raw_snr": 25.17182159423828,
+          "nearest_classified_arcsec": 32.71645227979623,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        },
+        {
+          "expnum": 394218,
+          "ccdname": "S31",
+          "band": "i",
+          "midpoint_utc_mjd": 57026.09694726742,
+          "status": "no_independent_detection_within_radius",
+          "mask": {
+            "x": 1869.898067158896,
+            "y": 240.03824674291363,
+            "dq_code": 0,
+            "center_usable": true,
+            "usable_fraction_9pix": 1.0
+          },
+          "product_error": null,
+          "gaia_exclusion": null,
+          "nearest_raw_arcsec": 26.36613929036791,
+          "nearest_raw_snr": 257.89459228515625,
+          "nearest_classified_arcsec": 26.36613929036791,
+          "classified_reason": null,
+          "raw_match": false,
+          "classified_match": false
+        }
+      ]
+    }
+  ]
+}
